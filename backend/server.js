@@ -9,7 +9,7 @@ const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/finalProject";
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 
-const UserSchema = new mongoose.Schema({
+const MemberSchema = new mongoose.Schema({
   username: {
     type: String,
     unique: true,
@@ -25,7 +25,37 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model("User", UserSchema);
+const Member = mongoose.model("Member", MemberSchema);
+
+const QuestionSchema = new mongoose.Schema({
+  question: String,
+  options: {
+    type: String,
+  },
+  level: Number,
+  correctanswer: String,
+});
+
+const Question = mongoose.model("Question", QuestionSchema);
+
+// const UserSchema = new mongoose.Schema({
+//   username: {
+//     type: String,
+//     unique: true,
+//     required: true,
+//   },
+//   password: {
+//     type: String,
+//     required: true,
+//   },
+//   accessToken: {
+//     type: String,
+//     default: () => crypto.randomBytes(128).toString("hex"),
+//   },
+// });
+
+// const User = mongoose.model("User", UserSchema);
+
 // Defines the port the app will run on. Defaults to 8080, but can be
 // overridden when starting the server. For example:
 
@@ -37,12 +67,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const authenticateUser = async (req, res, next) => {
+const authenticateMember = async (req, res, next) => {
   const accessToken = req.header("Authorization");
 
   try {
-    const user = await User.findOne({ accessToken });
-    if (user) {
+    const member = await Member.findOne({ accessToken });
+    if (member) {
       next();
     } else {
       res.status(401).json({ response: "Please login", success: false });
@@ -52,9 +82,9 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
-app.get("/thoughts", authenticateUser);
-app.get("/thoughts", (req, res) => {
-  res.send("here are your thoughts");
+app.get("/game", authenticateMember);
+app.get("/game", (req, res) => {
+  res.send("here is the game");
 });
 
 // Start defining your routes here
@@ -99,15 +129,15 @@ app.post("/register", async (req, res) => {
       throw "password must be at least 5 characters long";
     }
 
-    const newUser = await new User({
+    const newMember = await new Member({
       username,
       password: bcrypt.hashSync(password, salt),
     }).save();
     res.status(201).json({
       response: {
-        userId: newUser._id,
-        username: newUser.username,
-        accessToke: newUser.accessToken,
+        userId: newMember._id,
+        username: newMember.username,
+        accessToke: newMember.accessToken,
       },
       success: true,
     });
@@ -120,7 +150,7 @@ app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const user = await User.findOne({ username });
+    const user = await Member.findOne({ username });
 
     if (user && bcrypt.compareSync(password, user.password)) {
       res.status(200).json({
@@ -144,14 +174,14 @@ app.post("/profile/:id", async (req, res) => {
   const { username } = req.params;
 
   try {
-    const updatedUser = await User.findByIdAndUpdate(
+    const updatedMember = await Member.findByIdAndUpdate(
       { _id: id },
       { username },
       { new: true }
     );
 
     if (updatedUser) {
-      res.status(200).json({ response: updatedUser, success: true });
+      res.status(200).json({ response: updatedMember, success: true });
     } else {
       res.status(404).json({ response: "Member not found", success: false });
     }
