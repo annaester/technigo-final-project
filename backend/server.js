@@ -1,9 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
-import bcrypt from "bcrypt";
+import bcrypt, { compareSync } from "bcrypt";
 import cors from "cors";
 import crypto from "crypto";
 import mongoose from "mongoose";
+
+import questionsData from "./data/questions.json";
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/finalProject";
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -29,32 +31,28 @@ const Member = mongoose.model("Member", MemberSchema);
 
 const QuestionSchema = new mongoose.Schema({
   question: String,
-  options: {
-    type: String,
-  },
+  answerone: String,
+  answertwo: String,
+  answerthree: String,
+  answerfour: String,
   level: Number,
   correctanswer: String,
 });
 
 const Question = mongoose.model("Question", QuestionSchema);
 
-// const UserSchema = new mongoose.Schema({
-//   username: {
-//     type: String,
-//     unique: true,
-//     required: true,
-//   },
-//   password: {
-//     type: String,
-//     required: true,
-//   },
-//   accessToken: {
-//     type: String,
-//     default: () => crypto.randomBytes(128).toString("hex"),
-//   },
-// });
+if (process.env.RESET_DB) {
+  const seedDatabase = async () => {
+    await Question.deleteMany({});
 
-// const User = mongoose.model("User", UserSchema);
+    questionsData.forEach((item) => {
+      const newQuestion = new Question(item);
+      newQuestion.save();
+    });
+  };
+
+  seedDatabase();
+}
 
 // Defines the port the app will run on. Defaults to 8080, but can be
 // overridden when starting the server. For example:
@@ -92,32 +90,22 @@ app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
-// app.post("/signup", async (req, res) => {
-//   const { username, password } = req.body;
+app.get("/questions", authenticateMember);
+app.get("/questions", async (req, res) => {
+  try {
+    const { level } = req.query;
+    let question = await Question.find(req.query);
 
-//   try {
-//     const salt = bcrypt.genSaltSync();
+    if (req.query.level) {
+      const questionsByLevel = await Question.find({ level });
+      question = questionsByLevel;
+    }
 
-//     if (password.length < 5) {
-//       throw "password must be at least 5 characters long";
-//     }
-
-//     const newUser = await new User({
-//       username,
-//       password: bcrypt.hashSync(password, salt),
-//     }).save();
-//     res.status(201).json({
-//       response: {
-//         userId: newUser._id,
-//         username: newUser.username,
-//         accessToke: newUser.accessToken,
-//       },
-//       success: true,
-//     });
-//   } catch (error) {
-//     res.status(400).json({ response: error, success: false });
-//   }
-// });
+    res.status(200).json(question);
+  } catch (err) {
+    res.status(400).json({ response: "No questions found", success: false });
+  }
+});
 
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
@@ -126,7 +114,7 @@ app.post("/register", async (req, res) => {
     const salt = bcrypt.genSaltSync();
 
     if (password.length < 5) {
-      throw "password must be at least 5 characters long";
+      throw "Password must be at least 5 characters long";
     }
 
     const newMember = await new Member({
@@ -150,14 +138,14 @@ app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const user = await Member.findOne({ username });
+    const member = await Member.findOne({ username });
 
-    if (user && bcrypt.compareSync(password, user.password)) {
+    if (user && bcrypt.compareSync(password, member.password)) {
       res.status(200).json({
         response: {
-          userId: user._id,
-          username: user.username,
-          accessToken: user.accessToken,
+          userId: member._id,
+          username: member.username,
+          accessToken: member.accessToken,
         },
         success: true,
       });
