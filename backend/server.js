@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import bcrypt, { compareSync } from "bcrypt";
+import bcrypt from "bcrypt";
 import cors from "cors";
 import crypto from "crypto";
 import mongoose from "mongoose";
@@ -90,7 +90,7 @@ app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
-app.get("/questions", authenticateMember);
+// app.get("/questions", authenticateMember);
 app.get("/questions", async (req, res) => {
   try {
     const { level } = req.query;
@@ -140,7 +140,7 @@ app.post("/login", async (req, res) => {
   try {
     const member = await Member.findOne({ username });
 
-    if (user && bcrypt.compareSync(password, member.password)) {
+    if (member && bcrypt.compareSync(password, member.password)) {
       res.status(200).json({
         response: {
           userId: member._id,

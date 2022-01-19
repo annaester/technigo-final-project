@@ -36,34 +36,21 @@ const Register = () => {
         if (data.success) {
           batch(() => {
             dispatch(member.actions.setUserId(data.response.userId));
-            dispatch(member.actions.setUserName(data.response.username));
+            dispatch(member.actions.setUsername(data.response.username));
             dispatch(member.actions.setAccessToken(data.response.accessToken));
+            dispatch(member.actions.setError(null));
           });
         } else {
-          dispatch(member.actions.setError(data.response));
+          batch(() => {
+            dispatch(member.actions.setUserId(null));
+            dispatch(member.actions.setUsername(null));
+            dispatch(member.actions.setAccessToken(null));
+            dispatch(member.actions.setError(data.response));
+          });
         }
       });
-
-    // fetch(API_URL("register"), options)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.success) {
-    //       batch(() => {
-    //         dispatch(member.actions.setUserId(data.response.userId));
-    //         dispatch(member.actions.setUserName(data.response.username));
-    //         dispatch(member.actions.setAccessToken(data.response.accessToken));
-    //         dispatch(member.actions.setError(null));
-    //       });
-    //     } else {
-    //       batch(() => {
-    //         dispatch(member.actions.setUserId(null));
-    //         dispatch(member.actions.setUserName(null));
-    //         dispatch(member.actions.setAccessToken(null));
-    //         dispatch(member.actions.setError(data.response));
-    //       });
-    //     }
-    //   });
   };
+
   return (
     <>
       <div>Hello from login</div>

@@ -6,6 +6,7 @@ import "./App.css";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
+import Game from "./components/Game";
 
 import member from "./reducers/member";
 import questions from "./reducers/questions";
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/game" element={<Game />} />
           </Routes>
         </BrowserRouter>
       </Provider>

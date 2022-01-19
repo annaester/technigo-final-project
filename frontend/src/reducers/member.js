@@ -12,7 +12,7 @@ const member = createSlice({
     setUserId: (store, action) => {
       store.userId = action.payload;
     },
-    setUserName: (store, action) => {
+    setUsername: (store, action) => {
       store.username = action.payload;
     },
     setAccessToken: (store, action) => {
