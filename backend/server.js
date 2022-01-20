@@ -92,8 +92,9 @@ app.get("/", (req, res) => {
 
 // app.get("/questions", authenticateMember);
 app.get("/questions", async (req, res) => {
+  const { level } = req.query;
+
   try {
-    const { level } = req.query;
     let question = await Question.find(req.query);
 
     if (req.query.level) {
