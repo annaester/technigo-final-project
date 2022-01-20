@@ -80,7 +80,16 @@ const authenticateMember = async (req, res, next) => {
   }
 };
 
-app.get("/game", authenticateMember);
+// Vi måste göra en get och post till /results - måste göra en mongoose.model då? Jo, som i happy-thoughts-api!
+// app.get("/results", authenticateMember)
+// app.get("/results", (req, res) => {
+
+//   res.send()
+//    limit(10)
+//    sorterade på tid?
+// })
+
+app.get("/game");
 app.get("/game", (req, res) => {
   res.send("here is the game");
 });

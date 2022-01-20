@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
 import styled from "styled-components";
+import img from "../pictures/backgroundstart.jpeg";
 
 const Background = styled.div`
   background: linear-gradient(
@@ -11,19 +12,25 @@ const Background = styled.div`
     rgb(215, 208, 203) 0%,
     rgb(255, 248, 243) 100%
   );
+  background-image: url(${img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* filter: blur(1px); */
   height: 100vh;
   display: flex;
   flex-direction: column;
   padding-top: 20px;
   align-items: center;
-  font-family: Helvetica Neue;
+  font-family: "Oswald", sans-serif;
+}
 `;
 
 const LoginBox = styled.div`
   margin-top: 50px;
   padding: 20px;
   border: 1px solid white;
-  border-radius: 40px;
+  border-radius: 5px;
   height: 300px;
   width: 400px;
   display: flex;
@@ -32,6 +39,16 @@ const LoginBox = styled.div`
   color: white;
   background: rgb(163, 228, 219);
   box-shadow: 2px 2px 15px #6e6e6e;
+  /* filter: blur(0); */
+`;
+
+const Button = styled.button`
+  color: rgb(28, 109, 208);
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid rgb(254, 209, 239);
+  border-radius: 3px;
 `;
 
 const Login = () => {
@@ -60,6 +77,7 @@ const Login = () => {
       body: JSON.stringify({ username, password }),
     };
 
+    //flytta denna fetch till reducer - members
     fetch(API_URL("login"), options)
       .then((res) => res.json())
       .then((data) => {
@@ -101,9 +119,9 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" onClick={onFormSubmit}>
+          <Button type="submit" onClick={onFormSubmit}>
             Login
-          </button>
+          </Button>
         </form>
         <Link to="/register">Not member yet? Register here</Link>
       </LoginBox>

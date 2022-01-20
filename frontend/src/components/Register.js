@@ -16,14 +16,15 @@ const Background = styled.div`
   flex-direction: column;
   padding-top: 20px;
   align-items: center;
-  font-family: Helvetica Neue;
+  font-family: "Oswald", sans-serif;
+}
 `;
 
 const LoginBox = styled.div`
   margin-top: 50px;
   padding: 20px;
   border: 1px solid white;
-  border-radius: 40px;
+  border-radius: 5px;
   height: 300px;
   width: 400px;
   display: flex;
@@ -32,6 +33,15 @@ const LoginBox = styled.div`
   color: white;
   background: rgb(163, 228, 219);
   box-shadow: 2px 2px 15px #6e6e6e;
+`;
+
+const Button = styled.button`
+  color: rgb(28, 109, 208);
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid rgb(254, 209, 239);
+  border-radius: 3px;
 `;
 
 const Register = () => {
@@ -60,6 +70,7 @@ const Register = () => {
       body: JSON.stringify({ username, password }),
     };
 
+    //flytta fetch till reducer - members
     fetch(API_URL("register"), options)
       .then((res) => res.json())
       .then((data) => {
@@ -102,9 +113,9 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" onClick={onFormSubmit}>
+          <Button type="submit" onClick={onFormSubmit}>
             Register
-          </button>
+          </Button>
         </form>
         <Link to="/">Already a member? Login here</Link>
       </LoginBox>

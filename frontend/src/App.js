@@ -9,7 +9,7 @@ import NotFound from "./components/NotFound";
 import Game from "./components/Game";
 
 import member from "./reducers/member";
-import questions from "./reducers/questions";
+import { questions } from "./reducers/questions";
 
 const reducer = combineReducers({
   member: member.reducer,
