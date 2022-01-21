@@ -30,14 +30,43 @@ export const questions = createSlice({
   },
 });
 
-export const fetchQuestions = () => {
+export const fetchEasyQuestions = () => {
   return (dispatch) => {
     // dispatch(ui.actions.setLoading(true))
 
-    fetch(API_URL("questions"))
+    fetch(API_URL("questions?level=1"))
       .then((res) => res.json())
       .then((json) => {
-        dispatch(questions.actions.setQuestionList(json));
+        const randomQ = Math.floor(Math.random() * 50);
+        dispatch(questions.actions.setQuestionList(json[randomQ]));
+        // dispatch(ui.action.setLoading())
+      });
+  };
+};
+
+export const fetchMiddleQuestions = () => {
+  return (dispatch) => {
+    // dispatch(ui.actions.setLoading(true))
+
+    fetch(API_URL("questions?level=2"))
+      .then((res) => res.json())
+      .then((json) => {
+        const randomQ = Math.floor(Math.random() * 40);
+        dispatch(questions.actions.setQuestionList(json[randomQ]));
+        // dispatch(ui.action.setLoading())
+      });
+  };
+};
+
+export const fetchHardQuestions = () => {
+  return (dispatch) => {
+    // dispatch(ui.actions.setLoading(true))
+
+    fetch(API_URL("questions?level=4"))
+      .then((res) => res.json())
+      .then((json) => {
+        const randomQ = Math.floor(Math.random() * 30);
+        dispatch(questions.actions.setQuestionList(json[randomQ]));
         // dispatch(ui.action.setLoading())
       });
   };

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
 import styled from "styled-components";
-import img from "../pictures/backgroundstart.jpeg";
+import img from "../pictures/suddig_bakgrund.jpeg";
 
 const Background = styled.div`
   background: linear-gradient(

@@ -3,7 +3,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import member from "../reducers/member";
-import { fetchQuestions } from "../reducers/questions";
+import { fetchEasyQuestions } from "../reducers/questions";
+import { fetchMiddleQuestions } from "../reducers/questions";
+import { fetchHardQuestions } from "../reducers/questions";
 
 const Game = () => {
   const accessToken = useSelector((store) => store.member.accessToken);
@@ -28,15 +30,37 @@ const Game = () => {
       <div>Welcome to secret gamepage</div>
       <button
         onClick={() => {
-          dispatch(fetchQuestions());
+          dispatch(fetchEasyQuestions());
         }}
       >
-        Questions
+        Easy Questions
       </button>
-      <h2>Easy questions</h2>
+      <button
+        onClick={() => {
+          dispatch(fetchMiddleQuestions());
+        }}
+      >
+        Middle Questions
+      </button>
+      <button
+        onClick={() => {
+          dispatch(fetchHardQuestions());
+        }}
+      >
+        Hard Questions
+      </button>
+      <h2>Questions</h2>
+      {/* <div key={q._id}> */}
+      <div>
+        <p>{questions.question}</p>
+        <button>{questions.answerone}</button>
+        <button>{questions.answertwo}</button>
+        <button>{questions.answerthree}</button>
+        <button>{questions.answerfour}</button>
+      </div>
 
-      {questions
-        .filter((q) => q.level === 2)
+      {/* {questions
+        // .filter((q) => q.level === 1)
         .map((q) => (
           <div key={q._id}>
             <p>{q.question}</p>
@@ -45,12 +69,12 @@ const Game = () => {
             <button>{q.answerthree}</button>
             <button>{q.answerfour}</button>
           </div>
-        ))}
+        ))} */}
 
-      <h2>Kind of easy questions</h2>
+      {/* <h2>Kind of easy questions</h2>
 
       {questions
-        .filter((q) => q.level === 2)
+        // .filter((q) => q.level === 2)
         .map((q) => (
           <div key={q._id}>
             <p>{q.question}</p>
@@ -59,11 +83,12 @@ const Game = () => {
             <button>{q.answerthree}</button>
             <button>{q.answerfour}</button>
           </div>
-        ))}
-      <h2>Hard questions</h2>
+        ))} */}
+
+      {/* <h2>Hard questions</h2>
 
       {questions
-        .filter((q) => q.level === 4)
+        // .filter((q) => q.level === 4)
         .map((q) => (
           <div key={q._id}>
             <p>{q.question}</p>
@@ -72,7 +97,7 @@ const Game = () => {
             <button>{q.answerthree}</button>
             <button>{q.answerfour}</button>
           </div>
-        ))}
+        ))} */}
     </>
   );
 };
