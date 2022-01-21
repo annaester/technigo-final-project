@@ -1,1100 +1,854 @@
 [
   {
     "question": "What does “www” stand for in a website browser?",
-    "answerone": "Web Wow Web",
-    "answertwo": "World Wide Web",
-    "answerthree": "It means nothing",
-    "answerfour": "Wikipedia Web Winners",
+    "options": [
+      "Web Wow Web",
+      "World Wide Web",
+      "It means nothing",
+      "Wikipedia Web Winners"
+    ],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which country do the cities of Perth, Adelade & Brisbane belong to?",
-    "answerone": "New Zealand",
-    "answertwo": "Australia",
-    "answerthree": "Wales",
-    "answerfour": "Singapore",
+    "options": ["New Zealand", "Australia", "Wales", "Singapore"],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which animal can be seen on the Porsche logo?",
-    "answerone": "Dog",
-    "answertwo": "Turtle",
-    "answerthree": "Tiger",
-    "answerfour": "Horse",
+    "options": ["Dog", "Turtle", "Tiger", "Horse"],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What was the first soft drink in space?",
-    "answerone": "Coca Cola",
-    "answertwo": "Pepsi",
-    "answerthree": "Dr Pepper",
-    "answerfour": "Mountain Dew",
+    "options": ["Coca Cola", "Pepsi", "Dr Pepper", "Mountain Dew"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "Which country consumes the most chocolate per capita?",
-    "answerone": "Sweden",
-    "answertwo": "Belgium",
-    "answerthree": "Switzerland",
-    "answerfour": "USA",
+    "options": ["Sweden", "Belgium", "Switzerland", "USA"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "Which member of the Beatles married Yoko Ono?",
-    "answerone": "John",
-    "answertwo": "Ringo",
-    "answerthree": "Paul",
-    "answerfour": "George",
+    "options": ["John", "Ringo", "Paul", "George"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What famous US festival hosted over 350,000 fans in 1969?",
-    "answerone": "Coachella",
-    "answertwo": "Woodstock",
-    "answerthree": "Nevruz",
-    "answerfour": "Monterey Pop Festival",
+    "options": ["Coachella", "Woodstock", "Nevruz", "Monterey Pop Festival"],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "On the farm, what is a kid?",
-    "answerone": "The farmer’s cat",
-    "answertwo": "A baby goat",
-    "answerthree": "A small tractor",
-    "answerfour": "A barn filled with cows",
+    "options": [
+      "The farmer’s cat",
+      "A baby goat",
+      "A small tractor",
+      "A barn filled with cows"
+    ],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "“Stars and Stripes” is the nickname of the flag of which country?",
-    "answerone": "China",
-    "answertwo": "Peru",
-    "answerthree": "USA",
-    "answerfour": "Maldives",
+    "options": ["China", "Peru", "USA", "Maldives"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "Who is the patron saint of Ireland?",
-    "answerone": "St. Patrick",
-    "answertwo": "St. George",
-    "answerthree": "St. Nicolaus",
-    "answerfour": "St. Mike",
+    "options": ["St. Patrick", "St. George", "St. Nicolaus", "St. Mike"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "How many colors are there in the rainbow?",
-    "answerone": "Five",
-    "answertwo": "Six",
-    "answerthree": "Seven",
-    "answerfour": "Eight",
+    "options": ["Five", "Six", "Seven", "Eight"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What color is a ruby?",
-    "answerone": "Blue",
-    "answertwo": "Yellow",
-    "answerthree": "Purple",
-    "answerfour": "Red",
+    "options": ["Blue", "Yellow", "Purple", "Red"],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "In the poem Humpty Dumpty, where was Humpty when he fell?",
-    "answerone": "The horse",
-    "answertwo": "The sky",
-    "answerthree": "The chair",
-    "answerfour": "The wall ",
+    "options": ["The horse", "The sky", "The chair", "The wall "],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "Who was the first president of the United States?",
-    "answerone": "George Washington",
-    "answertwo": "Thomas Jefferson",
-    "answerthree": "Abraham Lincoln",
-    "answerfour": "Benjamin Franklin",
+    "options": [
+      "George Washington",
+      "Thomas Jefferson",
+      "Abraham Lincoln",
+      "Benjamin Franklin"
+    ],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is Earth's largest continent?",
-    "answerone": "Europe",
-    "answertwo": "Asia",
-    "answerthree": "North America",
-    "answerfour": "Africa",
+    "options": ["Europe", "Asia", "North America", "Africa"],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Havana is the capital of what country?",
-    "answerone": "Peru",
-    "answertwo": "South Africa",
-    "answerthree": "Cuba",
-    "answerfour": "Mexico",
+    "options": ["Peru", "South Africa", "Cuba", "Mexico"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "How many legs does a spider have?",
-    "answerone": "5",
-    "answertwo": "8",
-    "answerthree": "7",
-    "answerfour": "10",
+    "options": ["5", "8", "7", "10"],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "The name of which African animal means 'river horse'?",
-    "answerone": "Crocodile",
-    "answertwo": "Turtle",
-    "answerthree": "Alligator",
-    "answerfour": "Hippopotamus",
+    "options": ["Crocodile", "Turtle", "Alligator", "Hippopotamus"],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What is the hottest planet in the solar system (460 °C) ?",
-    "answerone": "Uranus",
-    "answertwo": "Mars",
-    "answerthree": "Venus",
-    "answerfour": "Pluto",
+    "options": ["Uranus", "Mars", "Venus", "Pluto"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What is the opposite of matter?",
-    "answerone": "Antimatter",
-    "answertwo": "Non-matter",
-    "answerthree": "Zero Matter",
-    "answerfour": "Non-vital Matter",
+    "options": ["Antimatter", "Non-matter", "Zero Matter", "Non-vital Matter"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is the nearest planet to the sun?",
-    "answerone": "Mercury",
-    "answertwo": "Earth",
-    "answerthree": "Uranus",
-    "answerfour": "Venus",
+    "options": ["Mercury", "Earth", "Uranus", "Venus"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What color is your blood when it’s inside your body?",
-    "answerone": "Brown",
-    "answertwo": "White",
-    "answerthree": "Red",
-    "answerfour": "Black",
+    "options": ["Brown", "White", "Red", "Black"],
     "level": 1,
-    "correctanswer": "Red"
+    "correctanswer": 2
   },
   {
     "question": "What’s the shortcut for the “copy” function on most computers?",
-    "answerone": "ctrl v",
-    "answertwo": "ctrl c",
-    "answerthree": "ctrl z",
-    "answerfour": "ctrl s",
+    "options": ["ctrl v", "ctrl c", "ctrl z", "ctrl s"],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which email service is owned by Microsoft?",
-    "answerone": "Yahoo",
-    "answertwo": "Gmail",
-    "answerthree": "Hotmail",
-    "answerfour": "Onemail",
+    "options": ["Yahoo", "Gmail", "Hotmail", "Onemail"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "Google Chrome, Safari, Firefox, and Explorer are different types of what?",
-    "answerone": "Operating Systems",
-    "answertwo": "Programming languages",
-    "answerthree": "Web Pages",
-    "answerfour": "Web Browsers",
+    "options": [
+      "Operating Systems",
+      "Programming languages",
+      "Web Pages",
+      "Web Browsers"
+    ],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What part of the atom has no electric charge?",
-    "answerone": "Neutron",
-    "answertwo": "Proton",
-    "answerthree": "Electron",
-    "answerfour": "Molecule",
+    "options": ["Neutron", "Proton", "Electron", "Molecule"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is the symbol for potassium?",
-    "answerone": "H",
-    "answertwo": "Ru",
-    "answerthree": "K",
-    "answerfour": "Ag",
+    "options": ["H", "Ru", "K", "Ag"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What is meteorology the study of?",
-    "answerone": "The ocean",
-    "answertwo": "The stars",
-    "answerthree": "The weather",
-    "answerfour": "Meteors",
+    "options": ["The ocean", "The stars", "The weather", "Meteors"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "Which natural disaster is measured with a Richter scale?",
-    "answerone": "Typhoons",
-    "answertwo": "Earthquakes",
-    "answerthree": "Volcano eruptions",
-    "answerfour": "Tsunamis",
+    "options": ["Typhoons", "Earthquakes", "Volcano eruptions", "Tsunamis"],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "What animals are pearls found in?",
-    "answerone": "Oysters",
-    "answertwo": "Lobsters",
-    "answerthree": "Spiders",
-    "answerfour": "Crabs",
+    "options": ["Oysters", "Lobsters", "Spiders", "Crabs"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is the name of Batman’s butler?",
-    "answerone": "Anton",
-    "answertwo": "Arnold",
-    "answerthree": "Albert",
-    "answerfour": "Alfred",
+    "options": ["Anton", "Arnold", "Albert", "Alfred"],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What does DC stand for?",
-    "answerone": "Detective Comics",
-    "answertwo": "Deceptive Comics",
-    "answerthree": "Deceiving Comics",
-    "answerfour": "Dramatic Comics",
+    "options": [
+      "Detective Comics",
+      "Deceptive Comics",
+      "Deceiving Comics",
+      "Dramatic Comics"
+    ],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is the name of the song that Queen Elsa sings as she builds her ice castle in the movie Frozen?",
-    "answerone": "Let it Go",
-    "answertwo": "Let it snow",
-    "answerthree": "Snowy Days",
-    "answerfour": "Ice wonders",
+    "options": ["Let it Go", "Let it snow", "Snowy Days", "Ice wonders"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "How many Lord of the Rings films are there?",
-    "answerone": "One",
-    "answertwo": "Four",
-    "answerthree": "Three",
-    "answerfour": "Six",
+    "options": ["One", "Four", "Three", "Six"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What was the name of the actor who played Jack Dawson in Titanic?",
-    "answerone": "Jack Nicholson",
-    "answertwo": "Leonardo DiCaprio",
-    "answerthree": "Brad Pitt",
-    "answerfour": "Anthony Hopkins",
+    "options": [
+      "Jack Nicholson",
+      "Leonardo DiCaprio",
+      "Brad Pitt",
+      "Anthony Hopkins"
+    ],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which popular TV show featured house Targaryen and Stark?",
-    "answerone": "Emelie In Paris",
-    "answertwo": "Breaking Bad",
-    "answerthree": "Friends",
-    "answerfour": "Game of Thrones",
+    "options": [
+      "Emelie In Paris",
+      "Breaking Bad",
+      "Friends",
+      "Game of Thrones"
+    ],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "Which cartoon character lives in a pineapple under the sea?",
-    "answerone": "Nemo",
-    "answertwo": "Pokémon",
-    "answerthree": "Spongebob Squarepants",
-    "answerfour": "Powerpuff Girls",
+    "options": ["Nemo", "Pokémon", "Spongebob Squarepants", "Powerpuff Girls"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "In which US city is Broadway located?",
-    "answerone": "Las Vegas",
-    "answertwo": "New Jersey",
-    "answerthree": "New York",
-    "answerfour": "Washington",
+    "options": ["Las Vegas", "New Jersey", "New York", "Washington"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "How many soccer players should each team have on the field at the start of each match?",
-    "answerone": "11",
-    "answertwo": "12",
-    "answerthree": "9",
-    "answerfour": "15",
+    "options": ["11", "12", "9", "15"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "Which Male Jamaican runner is an 11-time world champion and holds the record in the 100 and 200-meter race?",
-    "answerone": "Usain Bolt",
-    "answertwo": "Asafa Powell",
-    "answerthree": "Arthur Wint",
-    "answerfour": "John Barne",
+    "options": ["Usain Bolt", "Asafa Powell", "Arthur Wint", "John Barne"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What’s the primary ingredient in hummus?",
-    "answerone": "Potato",
-    "answertwo": "Onion",
-    "answerthree": "Chickpeas",
-    "answerfour": "Carrot",
+    "options": ["Potato", "Onion", "Chickpeas", "Carrot"],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "Which kind of alcohol is Russia notoriously known for?",
-    "answerone": "Gin",
-    "answertwo": "Vodka",
-    "answerthree": "Castoreum moonshine",
-    "answerfour": "Beer",
+    "options": ["Gin", "Vodka", "Castoreum moonshine", "Beer"],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which country is responsible for giving us pizza and pasta?",
-    "answerone": "France",
-    "answertwo": "China",
-    "answerthree": "Spain",
-    "answerfour": "Italy",
+    "options": ["France", "China", "Spain", "Italy"],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "Which organ has four chambers?",
-    "answerone": "Heart",
-    "answertwo": "Liver",
-    "answerthree": "Kidneys",
-    "answerfour": "Lungs",
+    "options": ["Heart", "Liver", "Kidneys", "Lungs"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "Which element is said to keep bones strong?",
-    "answerone": "Calcium",
-    "answertwo": "Vitamin B",
-    "answerthree": "Magnesium",
-    "answerfour": "Vitamin C",
+    "options": ["Calcium", "Vitamin B", "Magnesium", "Vitamin C"],
     "level": 1,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "Which musical legend is Jay-Z married to?",
-    "answerone": "Lizzo",
-    "answertwo": "Lady Gaga",
-    "answerthree": "Cardi B",
-    "answerfour": "Beyonce",
+    "options": ["Lizzo", "Lady Gaga", "Cardi B", "Beyonce"],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "Which British girl group had a member by the name of Mel B?",
-    "answerone": "The poppy Girls",
-    "answertwo": "The Cheeky Girls",
-    "answerthree": "Spice Girls",
-    "answerfour": "Made in London",
+    "options": [
+      "The Poppy Girls",
+      "The Cheeky Girls",
+      "Spice Girls",
+      "Made in London"
+    ],
     "level": 1,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What is the tallest building in the world?",
-    "answerone": "Tokyo Skytree",
-    "answertwo": "Burj Kalifa",
-    "answerthree": "Eiffel Tower",
-    "answerfour": "World Trade Center",
+    "options": [
+      "Tokyo Skytree",
+      "Burj Kalifa",
+      "Eiffel Tower",
+      "World Trade Center"
+    ],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Who is the richest person in the world as of 2021?",
-    "answerone": "Jeff Bezos",
-    "answertwo": "Elon Musk",
-    "answerthree": "Bill Gates",
-    "answerfour": "Larry Page",
+    "options": ["Jeff Bezos", "Elon Musk", "Bill Gates", "Larry Page"],
     "level": 1,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Bill Gates is the founder of which company?",
-    "answerone": "Apple",
-    "answertwo": "Tesla",
-    "answerthree": "Amazon",
-    "answerfour": "Microsoft",
+    "options": ["Apple", "Tesla", "Amazon", "Microsoft"],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "How many stripes does Adidas have?",
-    "answerone": "0",
-    "answertwo": "5",
-    "answerthree": "2",
-    "answerfour": "3",
+    "options": ["0", "5", "2", "3"],
     "level": 1,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "How many people live in Sweden (2020)?",
-    "answerone": "10,35 million",
-    "answertwo": "12,45 million",
-    "answerthree": "9,22 million",
-    "answerfour": "11,92 million",
+    "options": [
+      "10,35 million",
+      "12,45 million",
+      "9,22 million",
+      "11,92 million"
+    ],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What countries made up the original Axis powers in World War II?",
-    "answerone": "Sweden, Norway and Denmark",
-    "answertwo": "Italy, Spain and Maldives",
-    "answerthree": "Germany, Russia and Italy",
-    "answerfour": "Germany, Italy, and Japan",
+    "options": [
+      "Sweden, Norway and Denmark",
+      "Italy, Spain and Maldives",
+      "Germany, Russia and Italy",
+      "Germany, Italy, and Japan"
+    ],
     "level": 2,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What is the name of the biggest technology company in South Korea?",
-    "answerone": "LG",
-    "answertwo": "Dyson",
-    "answerthree": "Samsung",
-    "answerfour": "Philips",
+    "options": ["LG", "Dyson", "Samsung", "Philips"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What is the common name for dried plums?",
-    "answerone": "Kabosu",
-    "answertwo": "Prunes",
-    "answerthree": "Shiba",
-    "answerfour": "Amchoor",
+    "options": ["Kabosu", "Prunes", "Shiba", "Amchoor"],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which country produces the most coffee in the world?",
-    "answerone": "Brazil",
-    "answertwo": "Peru",
-    "answerthree": "Argentina",
-    "answerfour": "Chile",
+    "options": ["Brazil", "Peru", "Argentina", "Chile"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is the name given to Indian food cooked over charcoal in a clay oven?",
-    "answerone": "Aloo gobi",
-    "answertwo": "Tandoori",
-    "answerthree": "Tikka masala",
-    "answerfour": "Papadum",
+    "options": ["Aloo gobi", "Tandoori", "Tikka masala", "Papadum"],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which is the only edible food that never goes bad?",
-    "answerone": "Honey",
-    "answertwo": "Olive oil",
-    "answerthree": "Almonds",
-    "answerfour": "Tofu",
+    "options": ["Honey", "Olive oil", "Almonds", "Tofu"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "'Hendrick’s' 'Larios' and 'Seagram’s' are some of the best-selling brands of which spirit?",
-    "answerone": "Brandy",
-    "answertwo": "Conac",
-    "answerthree": "Vodka",
-    "answerfour": "Gin",
+    "options": ["Brandy", "Conac", "Vodka", "Gin"],
     "level": 2,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What was the first feature-length animated movie ever released?",
-    "answerone": "Sleeping beauty",
-    "answertwo": "Snow white",
-    "answerthree": "The sword in the Stone",
-    "answerfour": "Excalibur",
+    "options": [
+      "Sleeping beauty",
+      "Snow white",
+      "The sword in the Stone",
+      "Excalibur"
+    ],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Who created Sherlock Holmes?",
-    "answerone": "Charles Dickens",
-    "answertwo": "Mary Shelley",
-    "answerthree": "Arthur Conan Doyle",
-    "answerfour": "Virginia Wolf",
+    "options": [
+      "Charles Dickens",
+      "Mary Shelley",
+      "Arthur Conan Doyle",
+      "Virginia Wolf"
+    ],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What artist have the largest amount of monthly listeners on spotify (2021)?",
-    "answerone": "Justin Bieber",
-    "answertwo": "Ed Sheeran",
-    "answerthree": "The Weeknd",
-    "answerfour": "Ariana Grande",
+    "options": ["Justin Bieber", "Ed Sheeran", "The Weeknd", "Ariana Grande"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "Which two countries have not missed one of the modern-day Olympics?",
-    "answerone": "Sweden and China",
-    "answertwo": "Greece and Australia",
-    "answerthree": "China and Japan",
-    "answerfour": "Italy and Canada",
+    "options": [
+      "Sweden and China",
+      "Greece and Australia",
+      "China and Japan",
+      "Italy and Canada"
+    ],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Area 51 is located in which state?",
-    "answerone": "North Carolina",
-    "answertwo": "California",
-    "answerthree": "Nevada",
-    "answerfour": "Washington",
+    "options": ["North Carolina", "California", "Nevada", "Washington"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "Riyadh is the capital of this Middle-Eastern country.",
-    "answerone": "Qatar",
-    "answertwo": "Saudi Arabia",
-    "answerthree": "UAE",
-    "answerfour": "Iran",
+    "options": ["Qatar", "Saudi Arabia", "UAE", "Iran"],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which Central American country has a name which translates to English as 'The Saviour'?",
-    "answerone": "El Salvador",
-    "answertwo": "Peru",
-    "answerthree": "Brazil",
-    "answerfour": "Argentina",
+    "options": ["El Salvador", "Peru", "Brazil", "Argentina"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "How many hearts does an octopus have?",
-    "answerone": "1",
-    "answertwo": "7",
-    "answerthree": "3",
-    "answerfour": "15",
+    "options": ["1", "7", "3", "15"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "The unicorn is the national animal of which country?",
-    "answerone": "Scotland",
-    "answertwo": "Ireland",
-    "answerthree": "England",
-    "answerfour": "Iceland",
+    "options": ["Scotland", "Ireland", "England", "Iceland"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "How long do elephant pregnancies last?",
-    "answerone": "2 months",
-    "answertwo": "9 months",
-    "answerthree": "22 months",
-    "answerfour": "31 months",
+    "options": ["2 months", "9 months", "22 months", "31 months"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What type of animal is a Flemish giant?",
-    "answerone": "Rabbit",
-    "answertwo": "Turtle",
-    "answerthree": "Frog",
-    "answerfour": "Dog",
+    "options": ["Rabbit", "Turtle", "Frog", "Dog"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "Which of Newton’s Laws states that ‘for every action, there is an equal and opposite reaction?",
-    "answerone": "The first law of reaction",
-    "answertwo": "The tenth law of the sun",
-    "answerthree": "The fifth law of gravity",
-    "answerfour": "The third law of motion",
+    "options": [
+      "The first law of reaction",
+      "The tenth law of the sun",
+      "The fifth law of gravity",
+      "The third law of motion"
+    ],
     "level": 2,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What is a duel between three people called?",
-    "answerone": "A truel",
-    "answertwo": "A threesome",
-    "answerthree": "A tricodor",
-    "answerfour": "A triathlon",
+    "options": ["A truel", "A threesome", "A tricodor", "A triathlon"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "Iceland diverted roads to avoid disturbing communities of what?",
-    "answerone": "Goblins",
-    "answertwo": "Elves",
-    "answerthree": "Gnomes",
-    "answerfour": "Dragons",
+    "options": ["Goblins", "Elves", "Gnomes", "Dragons"],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Who invented the word 'vomit'?",
-    "answerone": "Mary Shelley",
-    "answertwo": "Friedrich Nietzsche",
-    "answerthree": "George Washington",
-    "answerfour": "William Shakespeare",
+    "options": [
+      "Mary Shelley",
+      "Friedrich Nietzsche",
+      "George Washington",
+      "William Shakespeare"
+    ],
     "level": 2,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What year was the very first model of the iPhone released?",
-    "answerone": "2005",
-    "answertwo": "2003",
-    "answerthree": "2007",
-    "answerfour": "2011",
+    "options": ["2005", "2003", "2007", "2011"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What does “HTTP” stand for?",
-    "answerone": "HyperText Transfer Protocol",
-    "answertwo": "Hyper Transfer Total Protocol",
-    "answerthree": "HyperText Total Product",
-    "answerfour": "HydraticTransfer Text Product",
+    "options": [
+      "HyperText Transfer Protocol",
+      "Hyper Transfer Total Protocol",
+      "HyperText Total Product",
+      "HydraticTransfer Text Product"
+    ],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is the longest-running Broadway show?",
-    "answerone": "Lion King",
-    "answertwo": "Cats",
-    "answerthree": "The Phantom of the Opera",
-    "answerfour": "Avenue Q",
+    "options": ["Lion King", "Cats", "The Phantom of the Opera", "Avenue Q"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What is a plié in ballet?",
-    "answerone": "A jump",
-    "answertwo": "Bending at the knees",
-    "answerthree": "A twirl",
-    "answerfour": "A split",
+    "options": ["A jump", "Bending at the knees", "A twirl", "A split"],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which company owns Bugatti, Lamborghini. Audi, Porsche, and Ducati?",
-    "answerone": "Mercedes",
-    "answertwo": "General Motors",
-    "answerthree": "Volkswagen",
-    "answerfour": "Ferrari",
+    "options": ["Mercedes", "General Motors", "Volkswagen", "Ferrari"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "How many parts (screws and bolts included) does the average car have?",
-    "answerone": "20.000",
-    "answertwo": "30.000",
-    "answerthree": "40.000",
-    "answerfour": "50.000",
+    "options": ["20.000", "30.000", "40.000", "50.000"],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Which country did AC/DC originate in?",
-    "answerone": "United States",
-    "answertwo": "Great Britain",
-    "answerthree": "Australia",
-    "answerfour": "Canada",
+    "options": ["United States", "Great Britain", "Australia", "Canada"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What was the name of the rock band formed by Jimmy Page?",
-    "answerone": "Led Zeppelin",
-    "answertwo": "AC/DC",
-    "answerthree": "Pink Floyd",
-    "answerfour": "Black Sabbath",
+    "options": ["Led Zeppelin", "AC/DC", "Pink Floyd", "Black Sabbath"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is the name of the home of the Greek Gods?",
-    "answerone": "Delta",
-    "answertwo": "Omikron",
-    "answerthree": "Valhalla",
-    "answerfour": "Olympus",
+    "options": ["Delta", "Omikron", "Valhalla", "Olympus"],
     "level": 2,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "What is a female donkey called?",
-    "answerone": "An Annie",
-    "answertwo": "Donki",
-    "answerthree": "A Charlie",
-    "answerfour": "A Jenny",
+    "options": ["An Annie", "Donki", "A Charlie", "A Jenny"],
     "level": 2,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "Which mammal has no vocal cords?",
-    "answerone": "Giraffe",
-    "answertwo": "Rhino",
-    "answerthree": "Sloth",
-    "answerfour": "Anteaters",
+    "options": ["Giraffe", "Rhino", "Sloth", "Anteaters"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What’s the fastest land animal in the world?",
-    "answerone": "Blue whale",
-    "answertwo": "Dolphin",
-    "answerthree": "Cheetah",
-    "answerfour": "Jaguar",
+    "options": ["Blue whale", "Dolphin", "Cheetah", "Jaguar"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "Which animal symbolizes good luck in Europe?",
-    "answerone": "Cat",
-    "answertwo": "Ladybug",
-    "answerthree": "Dog",
-    "answerfour": "Spider",
+    "options": ["Cat", "Ladybug", "Dog", "Spider"],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "Larry Page is the CEO of which company?",
-    "answerone": "Spotify",
-    "answertwo": "Google",
-    "answerthree": "Riot Games",
-    "answerfour": "Walmart",
+    "options": ["Spotify", "Google", "Riot Games", "Walmart"],
     "level": 2,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "What is the slogan of Apple Inc.?",
-    "answerone": "Truth in engineering",
-    "answertwo": "Simple, yet elegant",
-    "answerthree": "Think different",
-    "answerfour": "Can you hear me now?",
+    "options": [
+      "Truth in engineering",
+      "Simple, yet elegant",
+      "Think different",
+      "Can you hear me now?"
+    ],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What sport is featured in the video game “FIFA”?",
-    "answerone": "Hockey",
-    "answertwo": "American Football",
-    "answerthree": "Soccer",
-    "answerfour": "F1",
+    "options": ["Hockey", "American Football", "Soccer", "F1"],
     "level": 2,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "In the US, what month is Labor Day in?",
-    "answerone": "June",
-    "answertwo": "July",
-    "answerthree": "August",
-    "answerfour": "September",
+    "options": ["June", "July", "August", "September"],
     "level": 2,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "The Chinese New Year is celebrated on what day and month?",
-    "answerone": "25th January",
-    "answertwo": "25th February",
-    "answerthree": "25th Mars",
-    "answerfour": "25th May",
+    "options": ["25th January", "25th February", "25th Mars", "25th May"],
     "level": 2,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What geometric shape is generally used for stop signs?",
-    "answerone": "Octagon",
-    "answertwo": "Hexagon",
-    "answerthree": "Trefoil",
-    "answerfour": "Polygon",
+    "options": ["Octagon", "Hexagon", "Trefoil", "Polygon"],
     "level": 4,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What is 'cynophobia'?",
-    "answerone": "Fear of spiders",
-    "answertwo": "Fear of cynical people",
-    "answerthree": "Fear of dogs",
-    "answerfour": "Fear of heights",
+    "options": [
+      "Fear of spiders",
+      "Fear of cynical people",
+      "Fear of dogs",
+      "Fear of heights"
+    ],
     "level": 4,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "Who named the Pacific Ocean?",
-    "answerone": "Georg Brandt",
-    "answertwo": "Fredrika Bremer",
-    "answerthree": "Ferdinand Magellan",
-    "answerfour": "Henrik Ibsen",
+    "options": [
+      "Georg Brandt",
+      "Fredrika Bremer",
+      "Ferdinand Magellan",
+      "Henrik Ibsen"
+    ],
     "level": 4,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "From which country does Gouda cheese originate?",
-    "answerone": "Switzerland",
-    "answertwo": "Belgium",
-    "answerthree": "Netherlands",
-    "answerfour": "France",
+    "options": ["Switzerland", "Belgium", "Netherlands", "France"],
     "level": 4,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "What was the first toy to be advertised on television?",
-    "answerone": "Lego",
-    "answertwo": "Batman",
-    "answerthree": "Barbie",
-    "answerfour": "Mr Potato Head",
+    "options": ["Lego", "Batman", "Barbie", "Mr Potato Head"],
     "level": 4,
-    "correctanswer": "answerfour"
+    "correctanwser": 3
   },
   {
     "question": "What TV series showed the first interracial kiss on American network television?",
-    "answerone": "I love lucy",
-    "answertwo": "Star Trek",
-    "answerthree": "The Twilight Zone",
-    "answerfour": "Adventure of Superman",
+    "options": [
+      "I love lucy",
+      "Star Trek",
+      "The Twilight Zone",
+      "Adventure of Superman"
+    ],
     "level": 4,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "What are the names of Cinderella’s stepsisters?",
-    "answerone": "Anastasia and Drizella",
-    "answertwo": "Maurice and Anastasia",
-    "answerthree": "Anastasia and Perla",
-    "answerfour": "Lucifina and Anastasia",
+    "options": [
+      "Anastasia and Drizella",
+      "Maurice and Anastasia",
+      "Anastasia and Perla",
+      "Lucifina and Anastasia"
+    ],
     "level": 4,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "Which is the only American Football team to go a whole season undefeated, including the Super Bowl (1972)?",
-    "answerone": "The Miami Dolphins",
-    "answertwo": "Patriots",
-    "answerthree": "Seattle Seahawks",
-    "answerfour": "Minnesota Vikings",
+    "options": [
+      "The Miami Dolphins",
+      "Patriots",
+      "Seattle Seahawks",
+      "Minnesota Vikings"
+    ],
     "level": 4,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "What country touches the Indian Ocean, the Arabian Sea, and the Bay of Bengal?",
-    "answerone": "Japan",
-    "answertwo": "Maldives",
-    "answerthree": "India",
-    "answerfour": "Australia",
+    "options": ["Japan", "Maldives", "India", "Australia"],
     "level": 4,
-    "correctanswer": "answerthree"
+    "correctanswer": 2
   },
   {
     "question": "In what country would you find Lake Bled?",
-    "answerone": "Sweden",
-    "answertwo": "Slovenia",
-    "answerthree": "Russia",
-    "answerfour": "Croatia",
+    "options": ["Sweden", "Slovenia", "Russia", "Croatia"],
     "level": 4,
-    "correctanswer": "answertwo"
+    "correctanswer": 1
   },
   {
     "question": "What is the loudest animal on Earth?",
-    "answerone": "Elephant",
-    "answertwo": "Ant",
-    "answerthree": "Orangutang",
-    "answerfour": "Sperm Whale",
+    "options": ["Elephant", "Ant", "Orangutang", "Sperm Whale"],
     "level": 4,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "A group of ravens is known as?",
-    "answerone": "Unkindness",
-    "answertwo": "Kindness",
-    "answerthree": "Clawmen",
-    "answerfour": "Hade’s following",
+    "options": ["Unkindness", "Kindness", "Clawmen", "Hade’s following"],
     "level": 4,
-    "correctanswer": "answerone"
+    "correctanswer": 0
   },
   {
     "question": "In 2004, what was discovered on the island of Flores in Indonesia?",
-    "answerone": "A new species of dinosaur",
-    "answertwo": "A fully preserved horse aged 10.000 years",
-    "answerthree": "World’s largest medieval gold coin",
-    "answerfour": "Remains of a hobbit-sized human",
+    "options": [
+      "A new species of dinosaur",
+      "A fully preserved horse aged 10.000 years",
+      "World’s largest medieval gold coin",
+      "Remains of a hobbit-sized human"
+    ],
     "level": 4,
-    "correctanswer": "answerfour"
+    "correctanswer": 3
   },
   {
     "question": "How many teeth does an adult human have?",
-    "answerone": "31",
-    "answertwo": "32",
-    "answerthree": "33",
-    "answerfour": "34",
+    "options": ["31", "32", "33", "34"],
     "level": 4,
-    "correctanswer": "answertwo"
+    "correctanswer": 0
   },
   {
     "question": "In the state of Georgia, it’s illegal to eat what with a fork?",
-    "answerone": "Spagetti",
-    "answertwo": "Fried Chicken",
-    "answerthree": "Pizza",
-    "answerfour": "Hamburgers",
+    "options": ["Spagetti", "Fried Chicken", "Pizza", "Hamburgers"],
     "level": 4,
-    "correctanswer": "answertwo"
+    "correctanswer": 0
   },
   {
     "question": "In public places in the state of Florida, what's illegal to do when wearing a swimsuit?",
-    "answerone": "Visit a mall",
-    "answertwo": "Drink alcohol",
-    "answerthree": "Run",
-    "answerfour": "Sing",
+    "options": ["Visit a mall", "Drink alcohol", "Run", "Sing"],
     "level": 4,
-    "correctanswer": "answerfour"
+    "correctanwser": 3
   },
   {
     "question": "How long is New Zealand’s Ninety Mile Beach?",
-    "answerone": "65 miles",
-    "answertwo": "90 miles",
-    "answerthree": "55 miles",
-    "answerfour": "80 miles",
+    "options": ["65 miles", "90 miles", "55 miles", "80 miles"],
     "level": 4,
-    "correctanswer": "answerthree"
+    "correctanwser": 2
   },
   {
     "question": "In what year was the first episode of South Park aired?",
-    "answerone": "1999",
-    "answertwo": "2005",
-    "answerthree": "2001",
-    "answerfour": "1997",
+    "options": ["1999", "2005", "2001", "1997"],
     "level": 4,
-    "correctanswer": "answerfour"
+    "correctanwser": 3
   },
   {
     "question": "In what year was Broadway established?",
-    "answerone": "1650",
-    "answertwo": "1750",
-    "answerthree": "1850",
-    "answerfour": "1950",
+    "options": ["1650", "1750", "1850", "1950"],
     "level": 4,
-    "correctanswer": "answertwo"
+    "correctanwser": 1
   },
   {
     "question": "How many books are in the Catholic Bible?",
-    "answerone": "15",
-    "answertwo": "73",
-    "answerthree": "132",
-    "answerfour": "49",
+    "options": ["15", "73", "132", "49"],
     "level": 4,
-    "correctanswer": "answertwo"
+    "correctanwser": 1
   },
   {
     "question": "Where does Buddhism fall in a ranking of the world’s largest religion?",
-    "answerone": "1st",
-    "answertwo": "2nd",
-    "answerthree": "4th",
-    "answerfour": "5th",
+    "options": ["1st", "2nd", "4th", "5th"],
     "level": 4,
-    "correctanswer": "answerfour"
+    "correctanwser": 3
   },
   {
     "question": "In which country was Buddha born?",
-    "answerone": "Nepal",
-    "answertwo": "China",
-    "answerthree": "India",
-    "answerfour": "Tibet",
+    "options": ["Nepal", "China", "India", "Tibet"],
     "level": 4,
-    "correctanswer": "answerone"
+    "correctanwser": 0
   },
   {
     "question": "Independence Day in Cambodia is when?",
-    "answerone": "9th November",
-    "answertwo": "23rd December",
-    "answerthree": "14th August",
-    "answerfour": "4th June",
+    "options": ["9th November", "23rd December", "14th August", "4th June"],
     "level": 4,
-    "correctanswer": "answerone"
+    "correctanwser": 0
   },
   {
     "question": "“Astro Boy” is what genre of a video game?",
-    "answerone": "Horror",
-    "answertwo": "Platform",
-    "answerthree": "Action",
-    "answerfour": "Strategy",
+    "options": ["Horror", "Platform", "Action", "Strategy"],
     "level": 4,
-    "correctanswer": "answerthree"
+    "correctanwser": 2
   },
   {
     "question": "How many cards are there in a deck of Uno?",
-    "answerone": "106",
-    "answertwo": "107",
-    "answerthree": "108",
-    "answerfour": "109",
+    "options": ["106", "107", "108", "109"],
     "level": 4,
-    "correctanswer": "answerthree"
+    "correctanwser": 2
   },
   {
-    "question": "Which watch company has a pointed crown as its logo?",
-    "answerone": "Hermés",
-    "answertwo": "Rolex",
-    "answerthree": "Louis Vuitton",
-    "answerfour": "Prada",
+    "question": "Which company has a pointed crown as its logo?",
+    "options": ["Hermés", "Rolex", "Louis Vuitton", "Prada"],
     "level": 4,
-    "correctanswer": "answertwo"
+    "correctanwser": 1
   },
   {
     "question": "Richard Branson is the owner of which airline?",
-    "answerone": "Emirates",
-    "answertwo": "Virgin Atlantic",
-    "answerthree": "United",
-    "answerfour": "Delta",
+    "options": ["Emirates", "Virgin Atlantic", "United", "Delta"],
     "level": 4,
-    "correctanswer": "answertwo"
+    "correctanwser": 1
   },
   {
     "question": "Butch Cassidy was famous for doing what?",
-    "answerone": "Stealing",
-    "answertwo": "Murder",
-    "answerthree": "Fighting at bars",
-    "answerfour": "Eating hot dogs",
+    "options": ["Stealing", "Murder", "Fighting at bars", "Eating hot dogs"],
     "level": 4,
-    "correctanswer": "answerone"
+    "correctanwser": 0
   },
   {
     "question": "How many homicides did Ted Bundy admit to?",
-    "answerone": "20",
-    "answertwo": "33",
-    "answerthree": "27",
-    "answerfour": "30",
+    "options": ["20", "33", "27", "30"],
     "level": 4,
-    "correctanswer": "answerfour"
+    "correctanwser": 3
   },
   {
     "question": "Where can you find the Petronas Towers?",
-    "answerone": "Seattle",
-    "answertwo": "Singapore",
-    "answerthree": "Tokyo",
-    "answerfour": "Kuala Lumpur",
+    "options": ["Seattle", "Singapore", "Tokyo", "Kuala Lumpur"],
     "level": 4,
-    "correctanswer": "answerfour"
+    "correctanwser": 3
   }
 ]

@@ -7,6 +7,9 @@ export const questions = createSlice({
   initialState: {
     questionList: [],
     error: null,
+    quizStart: true,
+    quizOver: false,
+    answers: [],
   },
   reducers: {
     setQuestionList: (store, action) => {
@@ -27,6 +30,40 @@ export const questions = createSlice({
     // - tiden är slut
     // - frågorna är slut
     // - man klarade det!
+  },
+});
+
+export const quiz = createSlice({
+  name: "quiz",
+  reducers: {
+    startGame: (store, action) => {},
+
+    submitAnswer: (store, action) => {
+      const { questionId, answerIndex } = action.payload;
+      const question = store.questions.find((q) => q._id === questionId);
+
+      if (!question) {
+        throw new Error(
+          "Could not find question! Check to make sure you are passing the question id correctly."
+        );
+      }
+
+      if (question.options[answerIndex] === undefined) {
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
+      }
+
+      store.answer.push({
+        questionId,
+        answerIndex,
+        question,
+        answer: question.options[answerIndex],
+        isCorrect: question.correctanswer === answerIndex,
+      });
+    },
+
+    gameOver: (store, action) => {},
   },
 });
 

@@ -6,6 +6,8 @@ import member from "../reducers/member";
 import styled from "styled-components";
 import img from "../pictures/suddig_bakgrund.jpeg";
 
+import Timer from "./Timer";
+
 const Background = styled.div`
   background: linear-gradient(
     to bottom right,
@@ -124,6 +126,7 @@ const Login = () => {
           </Button>
         </form>
         <Link to="/register">Not member yet? Register here</Link>
+        <Timer />
       </LoginBox>
     </Background>
   );
