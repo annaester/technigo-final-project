@@ -37,7 +37,7 @@ export const fetchEasyQuestions = () => {
     fetch(API_URL("questions?level=1"))
       .then((res) => res.json())
       .then((json) => {
-        const randomQ = Math.floor(Math.random() * 50);
+        const randomQ = Math.floor(Math.random() * json.length);
         dispatch(questions.actions.setQuestionList(json[randomQ]));
         // dispatch(ui.action.setLoading())
       });
@@ -51,7 +51,7 @@ export const fetchMiddleQuestions = () => {
     fetch(API_URL("questions?level=2"))
       .then((res) => res.json())
       .then((json) => {
-        const randomQ = Math.floor(Math.random() * 40);
+        const randomQ = Math.floor(Math.random() * json.length);
         dispatch(questions.actions.setQuestionList(json[randomQ]));
         // dispatch(ui.action.setLoading())
       });
@@ -65,7 +65,7 @@ export const fetchHardQuestions = () => {
     fetch(API_URL("questions?level=4"))
       .then((res) => res.json())
       .then((json) => {
-        const randomQ = Math.floor(Math.random() * 30);
+        const randomQ = Math.floor(Math.random() * json.length);
         dispatch(questions.actions.setQuestionList(json[randomQ]));
         // dispatch(ui.action.setLoading())
       });
