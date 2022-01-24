@@ -7,6 +7,8 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import Game from "./components/Game";
+import Profile from "./components/Profile";
+import Scoreboard from "./components/Scoreboard";
 
 import member from "./reducers/member";
 import { questions } from "./reducers/questions";
@@ -27,7 +29,9 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/game" element={<Game />} />
+            <Route path="/scoreboard" element={<Scoreboard />} />
           </Routes>
         </BrowserRouter>
       </Provider>

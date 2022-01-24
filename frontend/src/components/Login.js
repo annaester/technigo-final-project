@@ -6,6 +6,8 @@ import member from "../reducers/member";
 import styled from "styled-components";
 import img from "../pictures/suddig_bakgrund.jpeg";
 
+import Rules from "./Rules";
+
 import Timer from "./Timer";
 
 const Background = styled.div`
@@ -25,6 +27,10 @@ const Background = styled.div`
   padding-top: 20px;
   align-items: center;
   font-family: "Oswald", sans-serif;
+
+  h1 {
+    color: white;
+  }
 }
 `;
 
@@ -44,6 +50,11 @@ const LoginBox = styled.div`
   /* filter: blur(0); */
 `;
 
+const FormBox = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
 const Button = styled.button`
   color: rgb(28, 109, 208);
   font-size: 1em;
@@ -56,15 +67,20 @@ const Button = styled.button`
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [rules, setRules] = useState(false);
 
   const accessToken = useSelector((store) => store.member.accessToken);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const toggleRules = () => {
+    setRules(!rules);
+  };
+
   useEffect(() => {
     if (accessToken) {
-      navigate("/game");
+      navigate("/profile");
     }
   }, [accessToken, navigate]);
 
@@ -102,9 +118,11 @@ const Login = () => {
   };
   return (
     <Background>
-      <div>Hello Again!</div>
+      <h1>Hello Again!</h1>
+      <input type="button" value="RULES" onClick={toggleRules} />
+      {rules && <Rules handleClose={toggleRules} />}
       <LoginBox>
-        <form onSubmit={onFormSubmit}>
+        <FormBox onSubmit={onFormSubmit}>
           <label htmlFor="username">Username:</label>
           <input
             id="username"
@@ -124,9 +142,9 @@ const Login = () => {
           <Button type="submit" onClick={onFormSubmit}>
             Login
           </Button>
-        </form>
+        </FormBox>
         <Link to="/register">Not member yet? Register here</Link>
-        <Timer />
+        {/* <Timer /> */}
       </LoginBox>
     </Background>
   );
