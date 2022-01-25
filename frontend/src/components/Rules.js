@@ -45,20 +45,34 @@ const Rules = (props) => {
     <RulesBackground>
       <RulesBox>
         <CloseIcon onClick={props.handleClose}>x</CloseIcon>
-        <h2>Welcome to QuizTime!</h2>
+        <h2>Welcome to Quiztep!</h2>
+        <p>Let's go over the basics and rules of this game.</p>
+        <ul>
+          <li>
+            The goal of this quiz is to reach the goal within six minutes.{" "}
+          </li>
+          <li>The path to get to the goal is 20 steps. </li>
+          <li>
+            There is 3 different types of questions: Easy, medium and hard.
+          </li>
+          <li>
+            Easy gets you one step forward, medium gets you two steps forward
+            and hard gets you 4 steps forward.
+          </li>
+          <li>The max amount of questions you are allowed to answer is 24.</li>
+          <li>
+            If you don't reach the goal within these you game over You will not
+            lose steps if you get a question wrong BUT you will lose questions!
+          </li>
+          <li>You lose 1 question for easy, 2 for medium and 4 for hard.</li>
+          <li>
+            Don't worry, you will both have a timer, a progress bar and
+            questions left when you take the quiz.{" "}
+          </li>
+        </ul>
         <p>
-          Let's go over the basics and rules of this game. The goal of this quiz
-          is to reach the goal within six minutes. The path to get to the goal
-          is 20 steps. There is 3 different types of questions: Easy, medium and
-          hard Easy gets you one step forward, medium gets you two steps forward
-          and hard gets you 4 steps forward.The max amount of questions you are
-          allowed to answer is 24. If you don't reach the goal within these you
-          game over You will not lose steps if you get a question wrong BUT you
-          will lose questions! You lose 1 question for easy, 2 for medium and 4
-          for hard.Don't worry, you will both have a timer, a progress bar and
-          questions left when you take the quiz. Challenge yourself! Can you get
-          to the goal in the least amount of questions answered in the least
-          amount of time?
+          Challenge yourself! Can you get to the goal in the least amount of
+          questions answered in the least amount of time?
         </p>
       </RulesBox>
     </RulesBackground>

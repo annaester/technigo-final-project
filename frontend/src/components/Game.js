@@ -7,6 +7,10 @@ import { fetchEasyQuestions } from "../reducers/questions";
 import { fetchMiddleQuestions } from "../reducers/questions";
 import { fetchHardQuestions } from "../reducers/questions";
 import styled from "styled-components";
+import Timer from "./Timer";
+
+import { counter } from "../reducers/counter";
+
 // import GameCard from "./GameCard";
 
 const GameBoard = styled.main`
@@ -29,9 +33,12 @@ const GameCard = styled.div`
 `;
 
 const Game = () => {
-  const [amountOfQuestions, setAmountOfQuestions] = useState(24);
+  // const [amountOfQuestions, setAmountOfQuestions] = useState(24);
   const accessToken = useSelector((store) => store.member.accessToken);
   const questions = useSelector((store) => store.questions.questionList);
+  const amountOfQ = useSelector((store) => store.questions.amountOfQuestions);
+
+  // const counter = useSelector((store) => store.counter.counter);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -55,11 +62,11 @@ const Game = () => {
       <button onClick={logout}>Sign out!</button>
       <GameBoard>
         <TimeAndQ>
-          <p>Timer 06:00</p>
-          <p>You have {amountOfQuestions} Q's left</p>
+          <Timer />
+          <p>You have {amountOfQ} Q's left</p>
         </TimeAndQ>
         <p>QuizTime</p>
-        <p>Start the game by choosing a level</p>
+        <button onClick={() => {}}>Start the game</button>
         {/* <GameCard/> */}
 
         <GameCard>
@@ -67,7 +74,7 @@ const Game = () => {
             <button
               onClick={() => {
                 dispatch(fetchEasyQuestions());
-                setAmountOfQuestions(amountOfQuestions - 1);
+                // setAmountOfQuestions(amountOfQuestions - 1);
               }}
             >
               Easy Questions
@@ -75,7 +82,7 @@ const Game = () => {
             <button
               onClick={() => {
                 dispatch(fetchMiddleQuestions());
-                setAmountOfQuestions(amountOfQuestions - 2);
+                // setAmountOfQuestions(amountOfQuestions - 2);
               }}
             >
               Middle Questions
@@ -83,7 +90,7 @@ const Game = () => {
             <button
               onClick={() => {
                 dispatch(fetchHardQuestions());
-                setAmountOfQuestions(amountOfQuestions - 4);
+                // setAmountOfQuestions(amountOfQuestions - 4);
               }}
             >
               Hard Questions

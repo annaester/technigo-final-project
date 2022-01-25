@@ -6,6 +6,7 @@ export const questions = createSlice({
   name: "questions",
   initialState: {
     questionList: [],
+    amountOfQuestions: 24,
     error: null,
     quizStart: true,
     quizOver: false,
@@ -17,6 +18,9 @@ export const questions = createSlice({
     },
     setError: (store, action) => {
       store.error = action.payload;
+    },
+    setAmountOfQuestions: (store, action) => {
+      store.amountOfQuestions = action.payload;
     },
 
     // reducers för:
@@ -76,6 +80,8 @@ export const fetchEasyQuestions = () => {
       .then((json) => {
         const randomQ = Math.floor(Math.random() * json.length);
         dispatch(questions.actions.setQuestionList(json[randomQ]));
+
+        dispatch(questions.actions.setAmountOfQuestions());
         // dispatch(ui.action.setLoading())
       });
   };

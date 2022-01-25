@@ -6,8 +6,6 @@ import styled from "styled-components";
 import Rules from "./Rules";
 
 const ProfileHeader = styled.header`
-  height: 50px;
-
   button {
     margin: 20px;
   }
@@ -22,7 +20,14 @@ const InfoBox = styled.aside`
   display: flex;
   flex-direction: column;
   width: 100px;
-  margin: 20px;
+
+  a {
+    margin-left: 20px;
+  }
+
+  button {
+    margin-left: 20px;
+  }
 `;
 
 const ProfileBox = styled.div`
@@ -43,6 +48,8 @@ const Profile = () => {
   const [rules, setRules] = useState(false);
 
   const accessToken = useSelector((store) => store.member.accessToken);
+  const username = useSelector((store) => store.member.username);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -66,14 +73,14 @@ const Profile = () => {
         <button onClick={logout}>Sign out!</button>
       </ProfileHeader>{" "}
       <InfoBox>
-        <input type="button" value="RULES" onClick={toggleRules} />
+        <button onClick={toggleRules}>RULES</button>
         {rules && <Rules handleClose={toggleRules} />}
         <Link to="/scoreboard">scoreboard</Link>
       </InfoBox>
       <ProfileMain>
         <ProfileBox>
           <AvatarPic></AvatarPic>
-          <h1>Welcome 'username' to your gamepage</h1>
+          <h1>Welcome {username} to your gamepage</h1>
           <Link to="/game">Lets start the game</Link>
         </ProfileBox>
       </ProfileMain>

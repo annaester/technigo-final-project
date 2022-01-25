@@ -16,7 +16,7 @@ const Scoreboard = () => {
   return (
     <>
       <Link to="/profile">Go back to profile</Link>
-      <h1>Scorboard</h1>
+      <h1>Scoreboard</h1>
     </>
   );
 };
