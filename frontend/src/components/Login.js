@@ -8,8 +8,6 @@ import img from "../pictures/suddig_bakgrund.jpeg";
 
 import Rules from "./Rules";
 
-import Timer from "./Timer";
-
 const Background = styled.div`
   background: linear-gradient(
     to bottom right,

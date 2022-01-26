@@ -82,7 +82,7 @@ export const fetchEasyQuestions = () => {
         const randomQ = Math.floor(Math.random() * json.length);
         dispatch(questions.actions.setQuestionList(json[randomQ]));
 
-        dispatch(questions.actions.setAmountOfQuestions());
+        // dispatch(questions.actions.setAmountOfQuestions());
         // dispatch(ui.action.setLoading())
       });
   };

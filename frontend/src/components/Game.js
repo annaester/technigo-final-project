@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import { API_URL } from "../utils/constants";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import member from "../reducers/member";
 import { fetchEasyQuestions } from "../reducers/questions";
 import { fetchMiddleQuestions } from "../reducers/questions";
@@ -34,6 +34,7 @@ const GameCard = styled.div`
 `;
 
 const Game = () => {
+  const [start, setStart] = useState(false);
   // const [amountOfQuestions, setAmountOfQuestions] = useState(24);
   const accessToken = useSelector((store) => store.member.accessToken);
   const questions = useSelector((store) => store.questions.questionList);
@@ -59,6 +60,10 @@ const Game = () => {
     dispatch(member.actions.setAccessToken(""));
   };
 
+  const exitGame = () => {
+    dispatch(questions.actions.gameOver());
+  };
+
   const onAnswerSubmit = (_id, index) => {
     dispatch(
       questions.actions.submitAnswer({
@@ -72,54 +77,65 @@ const Game = () => {
     <>
       <button onClick={logout}>Sign out!</button>
       <GameBoard>
+        <button onClick={exitGame}>Exit game</button>
         <TimeAndQ>
-          {/* {quizStart === true && <Timer />} */}
-          <Timer />
+          {start === true && <Timer />}
           <p>You have {amountOfQ} Q's left</p>
+          {/* <Timer /> */}
         </TimeAndQ>
         <p>QuizTime</p>
-        <button onClick={() => {}}>Start the game</button>
-        {/* <GameCard/> */}
+        {!start && (
+          <button
+            onClick={() => {
+              setStart(true);
+            }}
+          >
+            Start the game
+          </button>
+        )}
+        {/* <GameCard /> */}
 
-        <GameCard>
-          <div>
-            <button
-              onClick={() => {
-                dispatch(fetchEasyQuestions());
-                // setAmountOfQuestions(amountOfQuestions - 1);
-              }}
-            >
-              Easy Questions
-            </button>
-            <button
-              onClick={() => {
-                dispatch(fetchMiddleQuestions());
-                // setAmountOfQuestions(amountOfQuestions - 2);
-              }}
-            >
-              Middle Questions
-            </button>
-            <button
-              onClick={() => {
-                dispatch(fetchHardQuestions());
-                // setAmountOfQuestions(amountOfQuestions - 4);
-              }}
-            >
-              Hard Questions
-            </button>
-          </div>
-          <div>
-            <p>{questions.question}</p>
-            {questions?.options?.map((answer, index) => (
+        {start === true && (
+          <GameCard>
+            <div>
               <button
-                key={answer}
-                onClick={() => onAnswerSubmit(questions._id, index)}
+                onClick={() => {
+                  dispatch(fetchEasyQuestions());
+                  // setAmountOfQuestions(amountOfQuestions - 1);
+                }}
               >
-                {answer}
+                Easy Questions
               </button>
-            ))}
-          </div>
-        </GameCard>
+              <button
+                onClick={() => {
+                  dispatch(fetchMiddleQuestions());
+                  // setAmountOfQuestions(amountOfQuestions - 2);
+                }}
+              >
+                Middle Questions
+              </button>
+              <button
+                onClick={() => {
+                  dispatch(fetchHardQuestions());
+                  // setAmountOfQuestions(amountOfQuestions - 4);
+                }}
+              >
+                Hard Questions
+              </button>
+            </div>
+            <div>
+              <p>{questions.question}</p>
+              {questions?.options?.map((answer, index) => (
+                <button
+                  key={answer}
+                  onClick={() => onAnswerSubmit(questions._id, index)}
+                >
+                  {answer}
+                </button>
+              ))}
+            </div>
+          </GameCard>
+        )}
       </GameBoard>
     </>
   );
