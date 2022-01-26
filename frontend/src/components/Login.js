@@ -3,66 +3,18 @@ import { useSelector, useDispatch, batch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
-import styled from "styled-components";
-import img from "../pictures/suddig_bakgrund.jpeg";
-
 import Rules from "./Rules";
+import {
+  Background,
+  LoginBox,
+  FormBox,
+  InputStyle,
+  Button,
+  RulesInfo,
+  DLBtn,
+} from "./Themes";
 
-const Background = styled.div`
-  background: linear-gradient(
-    to bottom right,
-    rgb(215, 208, 203) 0%,
-    rgb(255, 248, 243) 100%
-  );
-  background-image: url(${img});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* filter: blur(1px); */
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
-  align-items: center;
-  font-family: "Oswald", sans-serif;
-
-  h1 {
-    color: white;
-  }
-}
-`;
-
-const LoginBox = styled.div`
-  margin-top: 50px;
-  padding: 20px;
-  border: 1px solid white;
-  border-radius: 5px;
-  height: 300px;
-  width: 400px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  background: rgb(163, 228, 219);
-  box-shadow: 2px 2px 15px #6e6e6e;
-  /* filter: blur(0); */
-`;
-
-const FormBox = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Button = styled.button`
-  color: rgb(28, 109, 208);
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid rgb(254, 209, 239);
-  border-radius: 3px;
-`;
-
-const Login = () => {
+const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rules, setRules] = useState(false);
@@ -114,15 +66,24 @@ const Login = () => {
         }
       });
   };
+
+  const changeTheme = () => {
+    if (props.theme === "light") {
+      props.setTheme("dark");
+    } else {
+      props.setTheme("light");
+    }
+  };
+
   return (
     <Background>
-      <h1>Hello Again!</h1>
-      <input type="button" value="RULES" onClick={toggleRules} />
-      {rules && <Rules handleClose={toggleRules} />}
+      <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
+      <h1>Welcome to QuizTime!</h1>
+      <h4>Log in to start the game.</h4>
       <LoginBox>
         <FormBox onSubmit={onFormSubmit}>
           <label htmlFor="username">Username:</label>
-          <input
+          <InputStyle
             id="username"
             type="text"
             autoComplete="username"
@@ -130,7 +91,7 @@ const Login = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
           <label htmlFor="current-password">Password:</label>
-          <input
+          <InputStyle
             id="current-password"
             type="password"
             autoComplete="current-password"
@@ -144,6 +105,11 @@ const Login = () => {
         <Link to="/register">Not member yet? Register here</Link>
         {/* <Timer /> */}
       </LoginBox>
+      <RulesInfo>
+        <p>Wanna know what this is all about..?</p>
+        <input type="button" value="RULES" onClick={toggleRules} />
+        {rules && <Rules handleClose={toggleRules} />}
+      </RulesInfo>
     </Background>
   );
 };

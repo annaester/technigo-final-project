@@ -3,55 +3,29 @@ import { useSelector, useDispatch, batch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
-import styled from "styled-components";
-
-const Background = styled.div`
-  background: linear-gradient(
-    to bottom right,
-    rgb(215, 208, 203) 0%,
-    rgb(255, 248, 243) 100%
-  );
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
-  align-items: center;
-  font-family: "Oswald", sans-serif;
-}
-`;
-
-const LoginBox = styled.div`
-  margin-top: 50px;
-  padding: 20px;
-  border: 1px solid white;
-  border-radius: 5px;
-  height: 300px;
-  width: 400px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  background: rgb(163, 228, 219);
-  box-shadow: 2px 2px 15px #6e6e6e;
-`;
-
-const Button = styled.button`
-  color: rgb(28, 109, 208);
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid rgb(254, 209, 239);
-  border-radius: 3px;
-`;
+import Rules from "./Rules";
+import {
+  Background,
+  LoginBox,
+  FormBox,
+  InputStyle,
+  Button,
+  RulesInfo,
+} from "./Themes";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [rules, setRules] = useState(false);
 
   const accessToken = useSelector((store) => store.member.accessToken);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const toggleRules = () => {
+    setRules(!rules);
+  };
 
   useEffect(() => {
     if (accessToken) {
@@ -94,11 +68,12 @@ const Register = () => {
 
   return (
     <Background>
-      <div>Welcome!</div>
+      <h1>Welcome!</h1>
+      <h4>Register to get access to the game.</h4>
       <LoginBox>
-        <form onSubmit={onFormSubmit}>
+        <FormBox onSubmit={onFormSubmit}>
           <label htmlFor="username">Username:</label>
-          <input
+          <InputStyle
             id="username"
             type="text"
             autoComplete="username"
@@ -106,7 +81,7 @@ const Register = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
           <label htmlFor="current-password">Password:</label>
-          <input
+          <InputStyle
             id="current-password"
             type="password"
             autoComplete="current-password"
@@ -116,9 +91,14 @@ const Register = () => {
           <Button type="submit" onClick={onFormSubmit}>
             Register
           </Button>
-        </form>
+        </FormBox>
         <Link to="/">Already a member? Login here</Link>
       </LoginBox>
+      <RulesInfo>
+        <p>Wanna know what this is all about..?</p>
+        <input type="button" value="RULES" onClick={toggleRules} />
+        {rules && <Rules handleClose={toggleRules} />}
+      </RulesInfo>
     </Background>
   );
 };

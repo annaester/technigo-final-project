@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 // import { API_URL } from "../utils/constants";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import member from "../reducers/member";
 import { fetchEasyQuestions } from "../reducers/questions";
 import { fetchMiddleQuestions } from "../reducers/questions";
 import { fetchHardQuestions } from "../reducers/questions";
-// import { quiz } from "../reducers/questions";
+import { questions } from "../reducers/questions";
 import styled from "styled-components";
 import Timer from "./Timer";
+
+import { GP, DLBtn, Button, FetchBtn, AnswerBtn, QuestionB } from "./Themes";
 
 // import { counter } from "../reducers/counter";
 
@@ -19,26 +21,34 @@ const GameBoard = styled.main`
   flex-direction: column;
   align-items: center;
   height: 100vh;
+
+  h1 {
+    color: ${(props) => props.theme.titleColor};
+  }
 `;
 
 const TimeAndQ = styled.div`
   display: flex;
   width: 80vw;
   justify-content: space-between;
+  color: ${(props) => props.theme.titleColor};
+  font-size: 20px;
 `;
 
 const GameCard = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
+  color: ${(props) => props.theme.titleColor};
 `;
 
-const Game = () => {
+const Game = (props) => {
   const [start, setStart] = useState(false);
   // const [amountOfQuestions, setAmountOfQuestions] = useState(24);
   const accessToken = useSelector((store) => store.member.accessToken);
-  const questions = useSelector((store) => store.questions.questionList);
+  const ques = useSelector((store) => store.questions.questionList);
   const amountOfQ = useSelector((store) => store.questions.amountOfQuestions);
+  // const questions = useSelector((store) => store.questions.questions);
 
   // const quizStore = useSelector((store) => store.questions);
   // console.log("quizStore", quizStore);
@@ -73,71 +83,80 @@ const Game = () => {
     );
   };
 
+  const changeTheme = () => {
+    if (props.theme === "light") {
+      props.setTheme("dark");
+    } else {
+      props.setTheme("light");
+    }
+  };
+
   return (
-    <>
-      <button onClick={logout}>Sign out!</button>
+    <GP>
+      <Button onClick={logout}>Sign out!</Button>
+      <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
       <GameBoard>
-        <button onClick={exitGame}>Exit game</button>
+        <Button onClick={exitGame}>Exit game</Button>
         <TimeAndQ>
           {start === true && <Timer />}
           <p>You have {amountOfQ} Q's left</p>
           {/* <Timer /> */}
         </TimeAndQ>
-        <p>QuizTime</p>
+        <h1>QuizTime</h1>
         {!start && (
-          <button
+          <Button
             onClick={() => {
               setStart(true);
             }}
           >
             Start the game
-          </button>
+          </Button>
         )}
         {/* <GameCard /> */}
 
         {start === true && (
           <GameCard>
             <div>
-              <button
+              <FetchBtn
                 onClick={() => {
                   dispatch(fetchEasyQuestions());
                   // setAmountOfQuestions(amountOfQuestions - 1);
                 }}
               >
                 Easy Questions
-              </button>
-              <button
+              </FetchBtn>
+              <FetchBtn
                 onClick={() => {
                   dispatch(fetchMiddleQuestions());
                   // setAmountOfQuestions(amountOfQuestions - 2);
                 }}
               >
                 Middle Questions
-              </button>
-              <button
+              </FetchBtn>
+              <FetchBtn
                 onClick={() => {
                   dispatch(fetchHardQuestions());
                   // setAmountOfQuestions(amountOfQuestions - 4);
                 }}
               >
                 Hard Questions
-              </button>
+              </FetchBtn>
             </div>
             <div>
-              <p>{questions.question}</p>
-              {questions?.options?.map((answer, index) => (
-                <button
+              <QuestionB>{ques.question}</QuestionB>
+              {ques?.options?.map((answer, index) => (
+                <AnswerBtn
                   key={answer}
-                  onClick={() => onAnswerSubmit(questions._id, index)}
+                  onClick={() => onAnswerSubmit(ques._id, index)}
                 >
                   {answer}
-                </button>
+                </AnswerBtn>
               ))}
             </div>
           </GameCard>
         )}
       </GameBoard>
-    </>
+    </GP>
   );
 };
 

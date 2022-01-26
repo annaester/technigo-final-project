@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+
+const TimerDiv = styled.div`
+  color: ${(props) => props.theme.titleColor};
+  font-size: 20px;
+`;
 
 const Timer = () => {
   const [count, setCount] = useState(360);
@@ -17,7 +23,7 @@ const Timer = () => {
 
   return (
     <div>
-      <div>Time left: {formatted}</div>
+      <TimerDiv>Time left: {formatted}</TimerDiv>
     </div>
   );
 };

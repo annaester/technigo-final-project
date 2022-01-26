@@ -4,12 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import member from "../reducers/member";
 import styled from "styled-components";
 import Rules from "./Rules";
-
-const ProfileHeader = styled.header`
-  button {
-    margin: 20px;
-  }
-`;
+import { DLBtn, GP, Button } from "./Themes";
 
 const ProfileMain = styled.section`
   display: flex;
@@ -19,10 +14,19 @@ const ProfileMain = styled.section`
 const InfoBox = styled.aside`
   display: flex;
   flex-direction: column;
-  width: 100px;
+  width: 140px;
 
   a {
-    margin-left: 20px;
+    color: ${(props) => props.theme.titleColor};
+    text-decoration: none;
+    background: ${(props) => props.theme.buttonBg};
+    font-size: 1em;
+    margin: 1em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: Oswald;
+    text-align: center;
   }
 
   button {
@@ -35,6 +39,19 @@ const ProfileBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: ${(props) => props.theme.titleColor};
+
+  a {
+    color: ${(props) => props.theme.titleColor};
+    text-decoration: none;
+    background: ${(props) => props.theme.buttonBg};
+    font-size: 1em;
+    margin: 1em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: Oswald;
+  }
 `;
 
 const AvatarPic = styled.div`
@@ -44,7 +61,7 @@ const AvatarPic = styled.div`
   border-radius: 50%;
 `;
 
-const Profile = () => {
+const Profile = (props) => {
   const [rules, setRules] = useState(false);
 
   const accessToken = useSelector((store) => store.member.accessToken);
@@ -67,15 +84,22 @@ const Profile = () => {
     dispatch(member.actions.setAccessToken(""));
   };
 
+  const changeTheme = () => {
+    if (props.theme === "light") {
+      props.setTheme("dark");
+    } else {
+      props.setTheme("light");
+    }
+  };
+
   return (
-    <>
-      <ProfileHeader>
-        <button onClick={logout}>Sign out!</button>
-      </ProfileHeader>{" "}
+    <GP>
       <InfoBox>
-        <button onClick={toggleRules}>RULES</button>
+        <Button onClick={logout}>Sign out!</Button>
+        <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
+        <Button onClick={toggleRules}>RULES</Button>
         {rules && <Rules handleClose={toggleRules} />}
-        <Link to="/scoreboard">scoreboard</Link>
+        <Link to="/scoreboard">Scoreboard</Link>
       </InfoBox>
       <ProfileMain>
         <ProfileBox>
@@ -84,7 +108,7 @@ const Profile = () => {
           <Link to="/game">Lets start the game</Link>
         </ProfileBox>
       </ProfileMain>
-    </>
+    </GP>
   );
 };
 
