@@ -6,10 +6,11 @@ import member from "../reducers/member";
 import { fetchEasyQuestions } from "../reducers/questions";
 import { fetchMiddleQuestions } from "../reducers/questions";
 import { fetchHardQuestions } from "../reducers/questions";
+// import { quiz } from "../reducers/questions";
 import styled from "styled-components";
 import Timer from "./Timer";
 
-import { counter } from "../reducers/counter";
+// import { counter } from "../reducers/counter";
 
 // import GameCard from "./GameCard";
 
@@ -38,6 +39,11 @@ const Game = () => {
   const questions = useSelector((store) => store.questions.questionList);
   const amountOfQ = useSelector((store) => store.questions.amountOfQuestions);
 
+  // const quizStore = useSelector((store) => store.questions);
+  // console.log("quizStore", quizStore);
+  // const globalStore = useSelector((store) => store);
+  // console.log("globalstore", globalStore);
+
   // const counter = useSelector((store) => store.counter.counter);
 
   const dispatch = useDispatch();
@@ -53,15 +59,21 @@ const Game = () => {
     dispatch(member.actions.setAccessToken(""));
   };
 
-  // const onButtonClick1 = () => {
-  //   dispatch(fetchEasyQuestions()), setCurrentQuestion(currentQuestion + 1);
-  // };
+  const onAnswerSubmit = (_id, index) => {
+    dispatch(
+      questions.actions.submitAnswer({
+        questionId: _id,
+        answerIndex: index,
+      })
+    );
+  };
 
   return (
     <>
       <button onClick={logout}>Sign out!</button>
       <GameBoard>
         <TimeAndQ>
+          {/* {quizStart === true && <Timer />} */}
           <Timer />
           <p>You have {amountOfQ} Q's left</p>
         </TimeAndQ>
@@ -98,8 +110,13 @@ const Game = () => {
           </div>
           <div>
             <p>{questions.question}</p>
-            {questions?.options?.map((answer) => (
-              <button key={answer}>{answer}</button>
+            {questions?.options?.map((answer, index) => (
+              <button
+                key={answer}
+                onClick={() => onAnswerSubmit(questions._id, index)}
+              >
+                {answer}
+              </button>
             ))}
           </div>
         </GameCard>

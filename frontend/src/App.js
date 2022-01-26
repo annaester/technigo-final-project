@@ -1,6 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import thunkMiddleware from "redux-thunk";
+import {
+  combineReducers,
+  createStore,
+  compose,
+  applyMiddleware,
+} from "@reduxjs/toolkit";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Register from "./components/Register";
@@ -18,7 +24,26 @@ const reducer = combineReducers({
   questions: questions.reducer,
 });
 
-const store = configureStore({ reducer });
+const persistedStateJSON = localStorage.getItem("myAppReduxState");
+const persistedState = persistedStateJSON ? JSON.parse(persistedStateJSON) : {};
+
+const composedEnhancers =
+  (process.env.NODE_ENV !== "production" &&
+    typeof window !== "undefined" &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
+
+const store = createStore(
+  reducer,
+  persistedState,
+  composedEnhancers(applyMiddleware(thunkMiddleware))
+);
+
+store.subscribe(() => {
+  localStorage.setItem("myAppReduxState", JSON.stringify(store.getState()));
+});
+
+// const store = configureStore({ reducer });
 
 function App() {
   return (
