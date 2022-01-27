@@ -6,7 +6,9 @@ import member from "../reducers/member";
 import { fetchEasyQuestions } from "../reducers/questions";
 import { fetchMiddleQuestions } from "../reducers/questions";
 import { fetchHardQuestions } from "../reducers/questions";
+
 import { questions } from "../reducers/questions";
+
 import styled from "styled-components";
 import Timer from "./Timer";
 
@@ -38,8 +40,13 @@ const TimeAndQ = styled.div`
 const GameCard = styled.div`
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   color: ${(props) => props.theme.titleColor};
+`;
+
+const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 const Game = (props) => {
@@ -47,15 +54,11 @@ const Game = (props) => {
   // const [amountOfQuestions, setAmountOfQuestions] = useState(24);
   const accessToken = useSelector((store) => store.member.accessToken);
   const ques = useSelector((store) => store.questions.questionList);
-  const amountOfQ = useSelector((store) => store.questions.amountOfQuestions);
-  // const questions = useSelector((store) => store.questions.questions);
-
-  // const quizStore = useSelector((store) => store.questions);
-  // console.log("quizStore", quizStore);
-  // const globalStore = useSelector((store) => store);
-  // console.log("globalstore", globalStore);
-
-  // const counter = useSelector((store) => store.counter.counter);
+  console.log("ques", ques);
+  const questionsLeft = useSelector(
+    (store) => store.questions.amountOfQuestions
+  );
+  console.log("amount", questionsLeft);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -99,7 +102,7 @@ const Game = (props) => {
         <Button onClick={exitGame}>Exit game</Button>
         <TimeAndQ>
           {start === true && <Timer />}
-          <p>You have {amountOfQ} Q's left</p>
+          <p>You have {questionsLeft} Q's left</p>
           {/* <Timer /> */}
         </TimeAndQ>
         <h1>QuizTime</h1>
@@ -120,7 +123,6 @@ const Game = (props) => {
               <FetchBtn
                 onClick={() => {
                   dispatch(fetchEasyQuestions());
-                  // setAmountOfQuestions(amountOfQuestions - 1);
                 }}
               >
                 Easy Questions
@@ -128,7 +130,6 @@ const Game = (props) => {
               <FetchBtn
                 onClick={() => {
                   dispatch(fetchMiddleQuestions());
-                  // setAmountOfQuestions(amountOfQuestions - 2);
                 }}
               >
                 Middle Questions
@@ -136,7 +137,6 @@ const Game = (props) => {
               <FetchBtn
                 onClick={() => {
                   dispatch(fetchHardQuestions());
-                  // setAmountOfQuestions(amountOfQuestions - 4);
                 }}
               >
                 Hard Questions
@@ -144,14 +144,16 @@ const Game = (props) => {
             </div>
             <div>
               <QuestionB>{ques.question}</QuestionB>
-              {ques?.options?.map((answer, index) => (
-                <AnswerBtn
-                  key={answer}
-                  onClick={() => onAnswerSubmit(ques._id, index)}
-                >
-                  {answer}
-                </AnswerBtn>
-              ))}
+              <ButtonBox>
+                {ques?.options?.map((answer, index) => (
+                  <AnswerBtn
+                    key={answer}
+                    onClick={() => onAnswerSubmit(ques._id, index)}
+                  >
+                    {answer}
+                  </AnswerBtn>
+                ))}
+              </ButtonBox>
             </div>
           </GameCard>
         )}

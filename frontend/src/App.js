@@ -29,6 +29,7 @@ import { questions } from "./reducers/questions";
 const reducer = combineReducers({
   member: member.reducer,
   questions: questions.reducer,
+  // quizreducer: quizreducer.reducer,
 });
 
 const persistedStateJSON = localStorage.getItem("myAppReduxState");
@@ -49,8 +50,6 @@ const store = createStore(
 store.subscribe(() => {
   localStorage.setItem("myAppReduxState", JSON.stringify(store.getState()));
 });
-
-// const store = configureStore({ reducer });
 
 const LightTheme = {
   pageBackground: "#FAF1E6",

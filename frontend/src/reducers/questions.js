@@ -2,60 +2,39 @@ import { createSlice } from "@reduxjs/toolkit";
 // import { ui } from "./ui"
 import { API_URL } from "../utils/constants";
 
+const initialState = {
+  questionList: [],
+  amountOfQuestions: 24,
+  currentQuestion: 0,
+  answers: [],
+  steps: 20,
+  quizOver: false,
+  quizStart: true,
+};
+
 export const questions = createSlice({
   name: "questions",
-  initialState: {
-    questionList: [],
-    amountOfQuestions: 24,
-    // currentQuestionIndex: 0,
-    error: null,
-    quizStart: true,
-    quizOver: false,
-    answers: [],
-  },
+  initialState,
   reducers: {
-    //functions on how to update the store
     setQuestionList: (store, action) => {
+      // console.log(store, action);
       store.questionList = action.payload;
-    },
-    setError: (store, action) => {
-      store.error = action.payload;
     },
     setAmountOfQuestions: (store, action) => {
       store.amountOfQuestions = action.payload;
     },
-
+    setSteps: (store, action) => {
+      store.steps = action.payload;
+    },
     submitAnswer: (store, action) => {
       console.log(store, action);
-      const { questionId, answerIndex } = action.payload;
-      const question = store.questions.find((q) => q._id === questionId);
-
-      if (!question) {
-        throw new Error(
-          "Could not find question! Check to make sure you are passing the question id correctly."
-        );
-      }
-
-      if (question.options[answerIndex] === undefined) {
-        throw new Error(
-          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
-        );
-      }
-
-      store.answers.push({
-        questionId,
-        answerIndex,
-        question,
-        answer: question.options[answerIndex],
-        isCorrect: question.correctanswer === answerIndex,
-      });
     },
-
-    start: (store) => {
-      store.quizStart = false;
-    },
-    gameOver: (store) => {
-      store.quizOver = true;
+    goToNextQuestion: (store) => {
+      if (store.amountOfQuestions <= 0) {
+        store.quizOver = true;
+      } else {
+        store.currentQuestion += 1;
+      }
     },
   },
 });
@@ -85,7 +64,6 @@ export const fetchMiddleQuestions = () => {
       .then((json) => {
         const randomQ = Math.floor(Math.random() * json.length);
         dispatch(questions.actions.setQuestionList(json[randomQ]));
-        // dispatch(ui.action.setLoading())
       });
   };
 };
@@ -99,7 +77,6 @@ export const fetchHardQuestions = () => {
       .then((json) => {
         const randomQ = Math.floor(Math.random() * json.length);
         dispatch(questions.actions.setQuestionList(json[randomQ]));
-        // dispatch(ui.action.setLoading())
       });
   };
 };
