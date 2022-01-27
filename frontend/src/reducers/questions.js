@@ -27,7 +27,28 @@ export const questions = createSlice({
       store.steps = action.payload;
     },
     submitAnswer: (store, action) => {
-      console.log(store, action);
+      const { questionId, answerIndex } = action.payload;
+      const question = store.questions.find((q) => q._id === questionId);
+
+      if (!question) {
+        throw new Error(
+          "Could not find question! Check to make sure you are passing the question id correctly."
+        );
+      }
+
+      if (question.options[answerIndex] === undefined) {
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
+      }
+
+      store.answers.push({
+        questionId,
+        answerIndex,
+        question,
+        answer: question.options[answerIndex],
+        isCorrect: question.correctanswer === answerIndex,
+      });
     },
     goToNextQuestion: (store) => {
       if (store.amountOfQuestions <= 0) {
@@ -127,6 +148,6 @@ export const fetchHardQuestions = () => {
 //     answer: question.options[answerIndex],
 //     isCorrect: question.correctanswer === answerIndex,
 //   });
-// },
+// }
 //   },
 // });
