@@ -1,15 +1,45 @@
-import React from "react";
 import styled from "styled-components";
 import img from "../pictures/suddig_bakgrund.jpeg";
+import img2 from "../pictures/startpgBgLight.jpeg";
+import img3 from "../pictures/gameBgDark.jpeg";
+import img4 from "../pictures/gameBgLight.jpeg";
+import img5 from "../pictures/scoreBD.jpeg";
+import img6 from "../pictures/scoreBL.jpeg";
+
+export const LightTheme = {
+  pageBackground: "#FAF1E6",
+  titleColor: "black",
+  backgroundImage: `url(${img2})`,
+  backgroundImageGame: `url(${img4})`,
+  formBackground: "rgba(251, 108, 108, 0.8)",
+  dlBtnBackground: "rgba(251, 108, 108, 0.8)",
+  buttonBg: "rgba(43, 194, 204, 0.8)",
+  fetchButton: "rgba(248, 169, 169, 0.8)",
+  answerButton: "rgba(248, 245, 169, 0.8)",
+  questionBox: "rgba(243, 233, 238, 0.8)",
+  scoreBoardBg: `url(${img6})`,
+};
+
+export const DarkTheme = {
+  pageBackground: "#0F044C",
+  titleColor: "white",
+  backgroundImage: `url(${img})`,
+  backgroundImageGame: `url(${img3})`,
+  formBackground: "rgba(27, 27, 27, 0.8)",
+  dlBtnBackground: "rgba(27, 27, 27, 0.8)",
+  buttonBg: "rgba(43, 194, 204, 0.8)",
+  fetchButton: "rgba(164, 0, 61, 0.8)",
+  answerButton: "rgba(15, 18, 154, 0.8)",
+  questionBox: "rgba(160, 120, 233, 0.8)",
+  scoreBoardBg: `url(${img5})`,
+};
 
 export const Background = styled.div`
   background: ${(props) => props.theme.pageBackground};
   background-image: ${(props) => props.theme.backgroundImage};
-  /* url(${img}); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* filter: blur(1px); */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,7 +66,6 @@ export const LoginBox = styled.div`
   color: white;
   background: ${(props) => props.theme.formBackground};
   box-shadow: 2px 2px 15px #6e6e6e;
-  /* filter: blur(0); */
 
   a {
     color: white;
@@ -65,6 +94,10 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   font-family: Oswald;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const RulesInfo = styled.div`
@@ -84,6 +117,10 @@ export const RulesInfo = styled.div`
     border: none;
     border-radius: 5px;
     font-family: Oswald;
+
+    :hover {
+      cursor: pointer;
+    }
   }
 `;
 
@@ -97,6 +134,10 @@ export const DLBtn = styled.button`
   border: none;
   border-radius: 5px;
   font-family: Oswald;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const GP = styled.main`
@@ -116,6 +157,10 @@ export const AnswerBtn = styled.button`
   border: none;
   border-radius: 5px;
   font-family: Oswald;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const FetchBtn = styled.button`
@@ -127,7 +172,12 @@ export const FetchBtn = styled.button`
   border: none;
   border-radius: 5px;
   font-family: Oswald;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
+
 export const QuestionB = styled.p`
   background: ${(props) => props.theme.questionBox};
   color: ${(props) => props.theme.titleColor};

@@ -45,7 +45,6 @@ const Login = (props) => {
       body: JSON.stringify({ username, password }),
     };
 
-    //flytta denna fetch till reducer - members
     fetch(API_URL("login"), options)
       .then((res) => res.json())
       .then((data) => {

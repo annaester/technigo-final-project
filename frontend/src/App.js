@@ -16,19 +16,16 @@ import Game from "./components/Game";
 import Profile from "./components/Profile";
 import Scoreboard from "./components/Scoreboard";
 import { ThemeProvider } from "styled-components";
-import img from "../src/pictures/suddig_bakgrund.jpeg";
-import img2 from "../src/pictures/startpgBgLight.jpeg";
-import img3 from "../src/pictures/gameBgDark.jpeg";
-import img4 from "../src/pictures/gameBgLight.jpeg";
-import img5 from "../src/pictures/scoreBD.jpeg";
-import img6 from "../src/pictures/scoreBL.jpeg";
+import { LightTheme, DarkTheme } from "./components/Themes";
 
 import member from "./reducers/member";
 import { questions } from "./reducers/questions";
+import { counter } from "./reducers/counter";
 
 const reducer = combineReducers({
   member: member.reducer,
   questions: questions.reducer,
+  counter: counter.reducer,
   // quizreducer: quizreducer.reducer,
 });
 
@@ -50,34 +47,6 @@ const store = createStore(
 store.subscribe(() => {
   localStorage.setItem("myAppReduxState", JSON.stringify(store.getState()));
 });
-
-const LightTheme = {
-  pageBackground: "#FAF1E6",
-  titleColor: "black",
-  backgroundImage: `url(${img2})`,
-  backgroundImageGame: `url(${img4})`,
-  formBackground: "rgba(251, 108, 108, 0.8)",
-  dlBtnBackground: "rgba(251, 108, 108, 0.8)",
-  buttonBg: "rgba(43, 194, 204, 0.8)",
-  fetchButton: "rgba(248, 169, 169, 0.8)",
-  answerButton: "rgba(248, 245, 169, 0.8)",
-  questionBox: "rgba(243, 233, 238, 0.8)",
-  scoreBoardBg: `url(${img6})`,
-};
-
-const DarkTheme = {
-  pageBackground: "#0F044C",
-  titleColor: "white",
-  backgroundImage: `url(${img})`,
-  backgroundImageGame: `url(${img3})`,
-  formBackground: "rgba(27, 27, 27, 0.8)",
-  dlBtnBackground: "rgba(27, 27, 27, 0.8)",
-  buttonBg: "rgba(43, 194, 204, 0.8)",
-  fetchButton: "rgba(164, 0, 61, 0.8)",
-  answerButton: "rgba(15, 18, 154, 0.8)",
-  questionBox: "rgba(160, 120, 233, 0.8)",
-  scoreBoardBg: `url(${img5})`,
-};
 
 const themes = {
   light: LightTheme,
