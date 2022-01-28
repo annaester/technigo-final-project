@@ -51,7 +51,8 @@ const Game = (props) => {
   let questionsLeft = useSelector((store) => store.questions.amountOfQuestions);
   // const steps = useSelector((store) => store.questions.steps);
   console.log("amount", questionsLeft);
-
+  const ans = useSelector((store) => store.questions.answers);
+  console.log("answers", ans);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
