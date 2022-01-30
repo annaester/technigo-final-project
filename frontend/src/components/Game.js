@@ -45,14 +45,10 @@ const ButtonBox = styled.div`
 const Game = (props) => {
   const [start, setStart] = useState(false);
   const [showQues, setShowQues] = useState(false);
-  const [queLeft, setQueLeft] = useState();
+
   const accessToken = useSelector((store) => store.member.accessToken);
   const ques = useSelector((store) => store.questions.questionList);
-  let questionsLeft = useSelector((store) => store.questions.amountOfQuestions);
-  // const steps = useSelector((store) => store.questions.steps);
-  console.log("amount", questionsLeft);
-  const ans = useSelector((store) => store.questions.answers);
-  console.log("answers", ans);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -121,6 +117,7 @@ const Game = (props) => {
               <FetchBtn
                 onClick={() => {
                   chooseLevel("questions?level=1");
+                  dispatch(questions.actions.setAmountOfQuestions1());
                   setShowQues(true);
                 }}
               >
@@ -129,6 +126,7 @@ const Game = (props) => {
               <FetchBtn
                 onClick={() => {
                   chooseLevel("questions?level=2");
+                  dispatch(questions.actions.setAmountOfQuestions2());
                   setShowQues(true);
                 }}
               >
@@ -137,6 +135,7 @@ const Game = (props) => {
               <FetchBtn
                 onClick={() => {
                   chooseLevel("questions?level=4");
+                  dispatch(questions.actions.setAmountOfQuestions4());
                   setShowQues(true);
                 }}
               >
