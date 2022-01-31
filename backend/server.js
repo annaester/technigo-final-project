@@ -81,6 +81,10 @@ const authenticateMember = async (req, res, next) => {
 // app.get("/results", authenticateMember)
 // app.get("/results", (req, res) => {
 
+// username
+// amount of questions
+// time
+
 //   res.send()
 //    limit(10)
 //    sorterade på tid?

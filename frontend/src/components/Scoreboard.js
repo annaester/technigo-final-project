@@ -31,6 +31,19 @@ const ScorBoard = styled.main`
   h1 {
     text-align: center;
   }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 20px;
+    }
+
+    a {
+      padding: 5px;
+      font-size: 12px;
+      width: 90px;
+      margin: 5px;
+    }
+  }
 `;
 
 const Scoreboard = (props) => {

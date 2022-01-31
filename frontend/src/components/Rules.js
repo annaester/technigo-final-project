@@ -22,6 +22,10 @@ const RulesBox = styled.article`
   padding: 20px;
   border: 1px solid #999;
   overflow: auto;
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
 `;
 
 const CloseIcon = styled.span`

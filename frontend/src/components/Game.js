@@ -9,7 +9,15 @@ import { fetchQuestions } from "../reducers/questions";
 import Timer from "./Timer";
 
 import styled from "styled-components";
-import { GP, DLBtn, Button, FetchBtn, AnswerBtn, QuestionB } from "./Themes";
+import {
+  GP,
+  DLBtn,
+  Button,
+  StartButton,
+  FetchBtn,
+  AnswerBtn,
+  QuestionB,
+} from "./Themes";
 
 const GameBoard = styled.main`
   display: flex;
@@ -19,6 +27,20 @@ const GameBoard = styled.main`
 
   h1 {
     color: ${(props) => props.theme.titleColor};
+  }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 24px;
+    }
+  }
+`;
+
+const MenuBox = styled.div`
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
   }
 `;
 
@@ -93,21 +115,22 @@ const Game = (props) => {
 
   return (
     <GP>
-      <Button onClick={logout}>Sign out!</Button>
-
-      <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
+      <MenuBox>
+        <Button onClick={logout}>Sign out!</Button>
+        <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
+      </MenuBox>
       <GameBoard>
         <Button onClick={exitGame}>Exit game</Button>
         <TimeAndQ>{start === true && <Timer />}</TimeAndQ>
         <h1>QuizTime</h1>
         {!start && (
-          <Button
+          <StartButton
             onClick={() => {
               setStart(true);
             }}
           >
             Start the game
-          </Button>
+          </StartButton>
         )}
         {/* <GameCard /> */}
 
@@ -157,7 +180,6 @@ const Game = (props) => {
                 </ButtonBox>
               </div>
             )}
-            ,
           </GameCard>
         )}
       </GameBoard>

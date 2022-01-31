@@ -49,6 +49,19 @@ export const Background = styled.div`
 
   h1, h4 {
     color: ${(props) => props.theme.titleColor};
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 20px;
+        margin: 10px;
+      }
+
+      h4 {
+        font-size: 14px;
+        margin: 10px;
+      }
+    }
   }
 }
 `;
@@ -71,6 +84,11 @@ export const LoginBox = styled.div`
     color: white;
     text-decoration: none;
   }
+
+  @media (max-width: 700px) {
+    width: 250px;
+    font-size: 14px;
+  }
 `;
 
 export const FormBox = styled.form`
@@ -83,6 +101,33 @@ export const InputStyle = styled.input`
   border: none;
   border-radius: 5px;
   margin: 5px;
+
+  @media (max-width: 700px) {
+    margin: 5px 0;
+  }
+`;
+
+export const StartButton = styled.button`
+  color: ${(props) => props.theme.titleColor};
+  background: ${(props) => props.theme.buttonBg};
+  font-size: 1em;
+  margin: 1em;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: Oswald;
+
+  :hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+    margin: 5px;
+    padding: 10px;
+    width: auto;
+    /* align-self: end; */
+  }
 `;
 
 export const Button = styled.button`
@@ -97,6 +142,14 @@ export const Button = styled.button`
 
   :hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+    margin: 5px;
+    padding: 4px;
+    width: 70px;
+    /* align-self: end; */
   }
 `;
 
@@ -121,6 +174,14 @@ export const RulesInfo = styled.div`
     :hover {
       cursor: pointer;
     }
+    @media (max-width: 700px) {
+      font-size: 14px;
+      padding: 7px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    font-size: 14px;
   }
 `;
 
@@ -137,6 +198,14 @@ export const DLBtn = styled.button`
 
   :hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+    padding: 5px;
+    text-align: center;
+    margin: 5px;
+    width: 70px;
   }
 `;
 
@@ -161,6 +230,11 @@ export const AnswerBtn = styled.button`
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+    margin: 5px;
+  }
 `;
 
 export const FetchBtn = styled.button`
@@ -176,6 +250,11 @@ export const FetchBtn = styled.button`
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+    margin: 5px;
+  }
 `;
 
 export const QuestionB = styled.p`
@@ -184,4 +263,9 @@ export const QuestionB = styled.p`
   padding: 30px;
   border-radius: 5px;
   text-align: center;
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+    margin: 5px;
+  }
 `;

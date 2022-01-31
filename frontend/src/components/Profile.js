@@ -15,6 +15,12 @@ const InfoBox = styled.aside`
   display: flex;
   flex-direction: column;
   width: 140px;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    align-items: flex-start;
+    width: 70px;
+  }
 
   a {
     color: ${(props) => props.theme.titleColor};
@@ -27,10 +33,22 @@ const InfoBox = styled.aside`
     border-radius: 5px;
     font-family: Oswald;
     text-align: center;
+
+    @media (max-width: 700px) {
+      font-size: 12px;
+      margin: 5px;
+      width: 50px;
+      padding: 5px;
+    }
   }
 
   button {
     margin-left: 20px;
+
+    @media (max-width: 700px) {
+      margin: 5px;
+      width: 60px;
+    }
   }
 `;
 
@@ -51,6 +69,16 @@ const ProfileBox = styled.div`
     border: none;
     border-radius: 5px;
     font-family: Oswald;
+
+    @media (max-width: 700px) {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 20px;
+    }
   }
 `;
 

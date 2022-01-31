@@ -6,6 +6,17 @@ import { questions } from "../reducers/questions";
 const TimerDiv = styled.div`
   color: ${(props) => props.theme.titleColor};
   font-size: 20px;
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+    background: rgba(249, 249, 249, 0.8);
+    padding: 5px;
+    border-radius: 6px;
+
+    p {
+      margin: 2px;
+    }
+  }
 `;
 
 const Timer = () => {
@@ -36,9 +47,11 @@ const Timer = () => {
 
   return (
     <div>
-      <TimerDiv>Time left: {formatted}</TimerDiv>
-      <p>You have {questionsLeft} Q's left</p>
-      <p>You have gone {steps}/20 steps</p>
+      <TimerDiv>
+        <p>Time left: {formatted}</p>
+        <p>You have {questionsLeft} Q's left</p>
+        <p>You have gone {steps}/20 steps</p>
+      </TimerDiv>
     </div>
   );
 };
