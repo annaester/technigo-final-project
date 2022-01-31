@@ -31,10 +31,7 @@ const Member = mongoose.model("Member", MemberSchema);
 
 const QuestionSchema = new mongoose.Schema({
   question: String,
-  answerone: String,
-  answertwo: String,
-  answerthree: String,
-  answerfour: String,
+  options: Array,
   level: Number,
   correctanswer: String,
 });
