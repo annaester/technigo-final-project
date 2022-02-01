@@ -11,7 +11,7 @@ import Timer from "./Timer";
 import styled from "styled-components";
 import {
   GP,
-  DLBtn,
+  DLToggle,
   Button,
   StartButton,
   FetchBtn,
@@ -37,9 +37,11 @@ const GameBoard = styled.main`
 `;
 
 const MenuBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+
   @media (max-width: 700px) {
-    display: flex;
-    flex-direction: column;
     width: 100px;
   }
 `;
@@ -70,6 +72,8 @@ const Game = (props) => {
 
   const accessToken = useSelector((store) => store.member.accessToken);
   const ques = useSelector((store) => store.questions.questionList);
+
+  const minsSecs = { minutes: 3, seconds: 10 };
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -117,11 +121,15 @@ const Game = (props) => {
     <GP>
       <MenuBox>
         <Button onClick={logout}>Sign out!</Button>
-        <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
+        <DLToggle>
+          <input type="checkbox" onClick={changeTheme} />
+          <span></span>
+          <p>Dark/light</p>
+        </DLToggle>
       </MenuBox>
       <GameBoard>
         <Button onClick={exitGame}>Exit game</Button>
-        <TimeAndQ>{start === true && <Timer />}</TimeAndQ>
+        <TimeAndQ>{start === true && <Timer minsSecs={minsSecs} />}</TimeAndQ>
         <h1>QuizTime</h1>
         {!start && (
           <StartButton
@@ -132,7 +140,6 @@ const Game = (props) => {
             Start the game
           </StartButton>
         )}
-        {/* <GameCard /> */}
 
         {start === true && (
           <GameCard>

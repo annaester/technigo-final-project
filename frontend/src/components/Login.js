@@ -11,7 +11,7 @@ import {
   InputStyle,
   Button,
   RulesInfo,
-  DLBtn,
+  DLToggle,
 } from "./Themes";
 
 const Login = (props) => {
@@ -76,7 +76,12 @@ const Login = (props) => {
 
   return (
     <Background>
-      <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
+      <DLToggle>
+        <input type="checkbox" onClick={changeTheme} />
+        <span></span>
+        <p>Dark/light</p>
+      </DLToggle>
+      {/* <DLBtn onClick={changeTheme}>Dark/light</DLBtn> */}
       <h1>Welcome to QuizTime!</h1>
       <h4>Log in to start the game.</h4>
       <LoginBox>

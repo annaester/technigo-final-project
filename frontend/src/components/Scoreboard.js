@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { DLBtn } from "./Themes";
+import { DLToggle } from "./Themes";
 
 const ScorBoard = styled.main`
   background-image: ${(props) => props.theme.scoreBoardBg};
@@ -68,7 +68,11 @@ const Scoreboard = (props) => {
   return (
     <ScorBoard>
       <Link to="/profile">Go back to profile</Link>
-      <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
+      <DLToggle>
+        <input type="checkbox" onClick={changeTheme} />
+        <span></span>
+        <p>Dark/light</p>
+      </DLToggle>
       <h1>Scoreboard</h1>
     </ScorBoard>
   );

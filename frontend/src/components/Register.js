@@ -7,13 +7,14 @@ import Rules from "./Rules";
 import {
   Background,
   LoginBox,
+  DLToggle,
   FormBox,
   InputStyle,
   Button,
   RulesInfo,
 } from "./Themes";
 
-const Register = () => {
+const Register = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rules, setRules] = useState(false);
@@ -66,8 +67,21 @@ const Register = () => {
       });
   };
 
+  const changeTheme = () => {
+    if (props.theme === "light") {
+      props.setTheme("dark");
+    } else {
+      props.setTheme("light");
+    }
+  };
+
   return (
     <Background>
+      <DLToggle>
+        <input type="checkbox" onClick={changeTheme} />
+        <span></span>
+        <p>Dark/light</p>
+      </DLToggle>
       <h1>Welcome!</h1>
       <h4>Register to get access to the game.</h4>
       <LoginBox>

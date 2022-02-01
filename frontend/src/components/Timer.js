@@ -20,18 +20,13 @@ const TimerDiv = styled.div`
 `;
 
 const Timer = () => {
-  const [count, setCount] = useState(60);
+  const [count, setCount] = useState(10);
   const questionsLeft = useSelector(
     (store) => store.questions.amountOfQuestions
   );
   const steps = useSelector((store) => store.questions.steps);
 
   const dispatch = useDispatch();
-
-  // if (count === 0) {
-  //   alert("times up!");
-  //   dispatch(questions.actions.gameOver());
-  // }
 
   const minutes = Math.floor(count / 60);
   var seconds = count % 60;

@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import member from "../reducers/member";
 import styled from "styled-components";
 import Rules from "./Rules";
-import { DLBtn, GP, Button } from "./Themes";
+import { DLToggle, GP, Button } from "./Themes";
+import DarkLightBtn from "./DarkLightBtn";
 
 const ProfileMain = styled.section`
   display: flex;
@@ -15,11 +16,13 @@ const InfoBox = styled.aside`
   display: flex;
   flex-direction: column;
   width: 140px;
-  align-items: center;
+  align-items: flex-start;
+  /* justify-content: space-around; */
 
   @media (max-width: 700px) {
     align-items: flex-start;
     width: 70px;
+    height: 200px;
   }
 
   a {
@@ -27,7 +30,7 @@ const InfoBox = styled.aside`
     text-decoration: none;
     background: ${(props) => props.theme.buttonBg};
     font-size: 1em;
-    margin: 1em;
+    margin: 5px 20px;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -124,7 +127,11 @@ const Profile = (props) => {
     <GP>
       <InfoBox>
         <Button onClick={logout}>Sign out!</Button>
-        <DLBtn onClick={changeTheme}>Dark/light</DLBtn>
+        <DLToggle>
+          <input type="checkbox" onClick={changeTheme} />
+          <span></span>
+          <p>Dark/light</p>
+        </DLToggle>
         <Button onClick={toggleRules}>RULES</Button>
         {rules && <Rules handleClose={toggleRules} />}
         <Link to="/scoreboard">Scoreboard</Link>

@@ -134,7 +134,7 @@ export const Button = styled.button`
   color: ${(props) => props.theme.titleColor};
   background: ${(props) => props.theme.buttonBg};
   font-size: 1em;
-  margin: 1em;
+  margin: 15px 15px 5px 15px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -146,7 +146,7 @@ export const Button = styled.button`
 
   @media (max-width: 700px) {
     font-size: 12px;
-    margin: 5px;
+    margin: 15px 5px 5px 5px;
     padding: 4px;
     width: 70px;
     /* align-self: end; */
@@ -206,6 +206,91 @@ export const DLBtn = styled.button`
     text-align: center;
     margin: 5px;
     width: 70px;
+  }
+`;
+
+export const DLToggle = styled.label`
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  color: ${(props) => props.theme.titleColor};
+  align-self: flex-start;
+  margin: 15px 20px;
+
+  @media (max-width: 700px) {
+    width: 40px;
+    height: 20px;
+    margin: 5px;
+  }
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  span {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+
+  span:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+
+    @media (max-width: 700px) {
+      width: 16px;
+      height: 16px;
+      left: 2px;
+      bottom: 2px;
+    }
+  }
+
+  input:checked + span {
+    background-color: #2196f3;
+  }
+
+  input:focus + span {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + span:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+
+    @media (max-width: 700px) {
+      -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+      transform: translateX(20px);
+    }
+  }
+
+  p {
+    margin: 10px 0;
+
+    @media (max-width: 700px) {
+      font-size: 10px;
+      margin: 0;
+    }
+  }
   }
 `;
 
