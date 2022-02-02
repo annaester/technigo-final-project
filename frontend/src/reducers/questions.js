@@ -9,7 +9,7 @@ const initialState = {
   steps: 0,
   quizOver: false,
   quizStart: true,
-  time: "120",
+  time: 120,
 };
 
 export const questions = createSlice({

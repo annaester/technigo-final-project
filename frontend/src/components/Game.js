@@ -84,6 +84,7 @@ const Game = (props) => {
 
   useEffect(() => {
     if (questionsLeft < 0) {
+      alert("Sorry, you ran out of questions!");
       dispatch(questions.actions.gameOver());
       navigate("/profile");
     } else if (stepsGone === 20) {

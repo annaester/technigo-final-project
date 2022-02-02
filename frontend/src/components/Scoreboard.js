@@ -61,7 +61,7 @@ const ResultsList = styled.div`
   }
 
   th {
-    background: ${(props) => props.theme.infoBg};
+    background: ${(props) => props.theme.formBackground};
   }
 
   td,
@@ -70,7 +70,7 @@ const ResultsList = styled.div`
     padding: 5px;
   }
 
-  tr:nth-child(odd) {
+  tr:nth-child(even) {
     background: ${(props) => props.theme.formBackground};
   }
 
@@ -117,18 +117,22 @@ const Scoreboard = (props) => {
       <ResultsList>
         <h1>Scoreboard</h1>
         <table>
-          <tr>
-            <th>Player</th>
-            <th>Questions used</th>
-            <th>Finished on</th>
-          </tr>
-          {results.map((data) => (
-            <tr key={data._id}>
-              <td>{data.username}</td>
-              <td> {data.answers}</td>
-              <td>{data.time}</td>
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Questions used</th>
+              <th>Finished in</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {results.map((data) => (
+              <tr key={data._id}>
+                <td>{data.username}</td>
+                <td> {data.answers}</td>
+                <td>{data.time}</td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </ResultsList>
     </ScoreBoard>

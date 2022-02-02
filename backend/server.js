@@ -100,7 +100,10 @@ const authenticateMember = async (req, res, next) => {
 
 app.get("/results", async (req, res) => {
   try {
-    const results = await Results.find().limit(10).exec();
+    const results = await Results.find()
+      .limit(10)
+      .sort({ answers: +1 })
+      .exec();
     res.status(200).json(results);
   } catch (error) {
     res.status(400).json({ message: "No results found today", success: false });
