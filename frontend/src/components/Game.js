@@ -7,6 +7,7 @@ import { questions } from "../reducers/questions";
 import { fetchQuestions } from "../reducers/questions";
 
 import Timer from "./Timer";
+import Stepper from "./Stepper";
 
 import styled from "styled-components";
 import {
@@ -73,10 +74,22 @@ const Game = (props) => {
   const accessToken = useSelector((store) => store.member.accessToken);
   const ques = useSelector((store) => store.questions.questionList);
 
-  const minsSecs = { minutes: 3, seconds: 10 };
+  const stepsGone = useSelector((store) => store.questions.steps);
+  const questionsLeft = useSelector(
+    (store) => store.questions.amountOfQuestions
+  );
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (questionsLeft < 0) {
+      dispatch(questions.actions.gameOver());
+      navigate("/profile");
+    } else if (stepsGone === 20) {
+      alert("you made it!");
+    }
+  });
 
   useEffect(() => {
     if (!accessToken) {
@@ -127,9 +140,10 @@ const Game = (props) => {
           <p>Dark/light</p>
         </DLToggle>
       </MenuBox>
+
       <GameBoard>
         <Button onClick={exitGame}>Exit game</Button>
-        <TimeAndQ>{start === true && <Timer minsSecs={minsSecs} />}</TimeAndQ>
+        <TimeAndQ>{start === true && <Timer />}</TimeAndQ>
         <h1>QuizTime</h1>
         {!start && (
           <StartButton
@@ -142,53 +156,56 @@ const Game = (props) => {
         )}
 
         {start === true && (
-          <GameCard>
-            <div>
-              <FetchBtn
-                onClick={() => {
-                  chooseLevel("questions?level=1");
-                  dispatch(questions.actions.setAmountOfQuestions1());
-                  setShowQues(true);
-                }}
-              >
-                Easy Questions
-              </FetchBtn>
-              <FetchBtn
-                onClick={() => {
-                  chooseLevel("questions?level=2");
-                  dispatch(questions.actions.setAmountOfQuestions2());
-                  setShowQues(true);
-                }}
-              >
-                Middle Questions
-              </FetchBtn>
-              <FetchBtn
-                onClick={() => {
-                  chooseLevel("questions?level=4");
-                  dispatch(questions.actions.setAmountOfQuestions4());
-                  setShowQues(true);
-                }}
-              >
-                Hard Questions
-              </FetchBtn>
-            </div>
-            {showQues && (
+          <>
+            <GameCard>
               <div>
-                <QuestionB>{ques.question}</QuestionB>
-                <ButtonBox>
-                  {ques?.options?.map((answer, index) => (
-                    <AnswerBtn
-                      key={answer}
-                      onClick={() => onAnswerSubmit(ques._id, index)}
-                    >
-                      {answer}
-                    </AnswerBtn>
-                  ))}
-                </ButtonBox>
+                <FetchBtn
+                  onClick={() => {
+                    chooseLevel("questions?level=1");
+                    dispatch(questions.actions.setAmountOfQuestions1());
+                    setShowQues(true);
+                  }}
+                >
+                  Easy Questions
+                </FetchBtn>
+                <FetchBtn
+                  onClick={() => {
+                    chooseLevel("questions?level=2");
+                    dispatch(questions.actions.setAmountOfQuestions2());
+                    setShowQues(true);
+                  }}
+                >
+                  Middle Questions
+                </FetchBtn>
+                <FetchBtn
+                  onClick={() => {
+                    chooseLevel("questions?level=4");
+                    dispatch(questions.actions.setAmountOfQuestions4());
+                    setShowQues(true);
+                  }}
+                >
+                  Hard Questions
+                </FetchBtn>
               </div>
-            )}
-          </GameCard>
+              {showQues && (
+                <div>
+                  <QuestionB>{ques.question}</QuestionB>
+                  <ButtonBox>
+                    {ques?.options?.map((answer, index) => (
+                      <AnswerBtn
+                        key={answer}
+                        onClick={() => onAnswerSubmit(ques._id, index)}
+                      >
+                        {answer}
+                      </AnswerBtn>
+                    ))}
+                  </ButtonBox>
+                </div>
+              )}
+            </GameCard>
+          </>
         )}
+        <Stepper />
       </GameBoard>
     </GP>
   );

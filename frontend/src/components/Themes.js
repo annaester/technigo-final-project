@@ -18,6 +18,10 @@ export const LightTheme = {
   answerButton: "rgba(248, 245, 169, 0.8)",
   questionBox: "rgba(243, 233, 238, 0.8)",
   scoreBoardBg: `url(${img6})`,
+  progressBarBg: "rgba(255, 255, 0, 0.5)",
+  progressBarValue: "rgba(0, 255, 0, 0.5)",
+  progressShadow: "1px 1px 5px 3px rgba(255, 0, 255, 0.3)",
+  infoBg: "rgba(255, 255, 255, 0.6)",
 };
 
 export const DarkTheme = {
@@ -32,6 +36,10 @@ export const DarkTheme = {
   answerButton: "rgba(15, 18, 154, 0.8)",
   questionBox: "rgba(160, 120, 233, 0.8)",
   scoreBoardBg: `url(${img5})`,
+  progressBarBg: "rgba(255,255,255,0.6)",
+  progressBarValue: "rgba(255,0,255,0.6)",
+  progressShadow: "1px 1px 5px 3px rgba(0,255,0,0.3)",
+  infoBg: "rgba(10, 10, 10, 0.6)",
 };
 
 export const Background = styled.div`

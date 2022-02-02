@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
 import Rules from "./Rules";
+import Stepper from "./Stepper";
 import {
   Background,
   LoginBox,
@@ -81,6 +82,7 @@ const Login = (props) => {
         <span></span>
         <p>Dark/light</p>
       </DLToggle>
+      <Stepper />
       {/* <DLBtn onClick={changeTheme}>Dark/light</DLBtn> */}
       <h1>Welcome to QuizTime!</h1>
       <h4>Log in to start the game.</h4>

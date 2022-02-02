@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { questions } from "../reducers/questions";
 
 const TimerDiv = styled.div`
   color: ${(props) => props.theme.titleColor};
   font-size: 20px;
+  background: ${(props) => props.theme.infoBg};
+  padding: 10px;
+  border-radius: 6px;
 
   @media (max-width: 700px) {
     font-size: 12px;
@@ -25,8 +27,6 @@ const Timer = () => {
     (store) => store.questions.amountOfQuestions
   );
   const steps = useSelector((store) => store.questions.steps);
-
-  const dispatch = useDispatch();
 
   const minutes = Math.floor(count / 60);
   var seconds = count % 60;
