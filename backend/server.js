@@ -38,6 +38,14 @@ const QuestionSchema = new mongoose.Schema({
 
 const Question = mongoose.model("Question", QuestionSchema);
 
+const ResultsSchema = new mongoose.Schema({
+  username: String,
+  answers: Number,
+  time: Number,
+});
+
+const Results = mongoose.model("Results", ResultsSchema);
+
 if (process.env.RESET_DB) {
   const seedDatabase = async () => {
     await Question.deleteMany({});
@@ -89,6 +97,33 @@ const authenticateMember = async (req, res, next) => {
 //    limit(10)
 //    sorterade på tid?
 // })
+
+app.get("/results", async (req, res) => {
+  try {
+    const results = await Results.find().limit(10).exec();
+    res.status(200).json(results);
+  } catch (error) {
+    res.status(400).json({ message: "No results found today", success: false });
+  }
+});
+
+app.post("/results", async (req, res) => {
+  const { username, answers, time } = req.body;
+
+  try {
+    const newResults = await new Results({
+      username: username,
+      answers: answers,
+      time: time,
+    }).save();
+    res.status(201).json({
+      response: newResults,
+      success: true,
+    });
+  } catch (error) {
+    res.status(400).json({ response: error, success: false });
+  }
+});
 
 app.get("/game");
 app.get("/game", (req, res) => {

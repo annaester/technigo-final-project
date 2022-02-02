@@ -15,6 +15,7 @@ import NotFound from "./components/NotFound";
 import Game from "./components/Game";
 import Profile from "./components/Profile";
 import Scoreboard from "./components/Scoreboard";
+import Goal from "./components/Goal";
 import { ThemeProvider } from "styled-components";
 import { LightTheme, DarkTheme } from "./components/Themes";
 
@@ -81,6 +82,10 @@ function App() {
               <Route
                 path="/scoreboard"
                 element={<Scoreboard theme={theme} setTheme={setTheme} />}
+              />
+              <Route
+                path="/goal"
+                element={<Goal theme={theme} setTheme={setTheme} />}
               />
             </Routes>
           </BrowserRouter>

@@ -9,7 +9,7 @@ const StepperBar = styled.div`
   transform: rotate(-90deg);
   width: 500px;
 
-  margin-top: 600px;
+  margin-top: 400px;
   margin-right: -150px;
 
   progress {

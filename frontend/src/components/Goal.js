@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+import { DLToggle, Button } from "./Themes";
+import { questions } from "../reducers/questions";
 import { API_URL } from "../utils/constants";
-import { DLToggle } from "./Themes";
 
-const ScoreBoard = styled.main`
+const GoalBoard = styled.main`
   background-image: ${(props) => props.theme.scoreBoardBg};
   background-size: cover;
   background-repeat: no-repeat;
@@ -31,7 +32,7 @@ const ScoreBoard = styled.main`
     align-self: flex-start;
   }
 
-  h1 {
+  h1 p {
     text-align: center;
   }
 
@@ -49,53 +50,28 @@ const ScoreBoard = styled.main`
   }
 `;
 
-const ResultsList = styled.div`
+const ResultsInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: ${(props) => props.theme.infoBg};
   width: 500px;
   border-radius: 6px;
-  padding: 10px;
-
-  table {
-    width: 100%;
-    border: none;
-  }
-
-  th {
-    background: ${(props) => props.theme.infoBg};
-  }
-
-  td,
-  th {
-    text-align: left;
-    padding: 5px;
-  }
-
-  tr:nth-child(odd) {
-    background: ${(props) => props.theme.formBackground};
-  }
-
-  @media (max-width: 700px) {
-    font-size: 12px;
-    width: 80vw;
-  }
 `;
 
-const Scoreboard = (props) => {
-  const [results, setResults] = useState([]);
+const Goal = (props) => {
+  const [newResults, setNewResults] = useState({});
+  const answers = useSelector((store) => store.questions.answers);
   const accessToken = useSelector((store) => store.member.accessToken);
+  const username = useSelector((store) => store.member.username);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!accessToken) {
       navigate("/");
     }
   }, [accessToken, navigate]);
-
-  useEffect(() => {
-    fetch(API_URL("results"))
-      .then((res) => res.json())
-      .then((data) => setResults(data));
-  }, []);
 
   const changeTheme = () => {
     if (props.theme === "light") {
@@ -105,34 +81,45 @@ const Scoreboard = (props) => {
     }
   };
 
+  const onButtonSubmit = (event) => {
+    console.log(username, answers.length);
+
+    event.preventDefault();
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, answers: answers.length }),
+    };
+
+    fetch(API_URL("results"), options)
+      .then((res) => res.json())
+      .then((data) => console.log("posting", data));
+
+    // dispatch(questions.actions.gameOver());
+    // navigate("/profile");
+  };
+
+  //här vill jag subimtta resutltatet till api. Så en json post OCH gå tillbaka till profil.
+
   return (
-    <ScoreBoard>
+    <GoalBoard>
       <Link to="/profile">Go back to profile</Link>
       <DLToggle>
         <input type="checkbox" onClick={changeTheme} />
         <span></span>
         <p>Dark/light</p>
       </DLToggle>
-
-      <ResultsList>
-        <h1>Scoreboard</h1>
-        <table>
-          <tr>
-            <th>Player</th>
-            <th>Questions used</th>
-            <th>Finished on</th>
-          </tr>
-          {results.map((data) => (
-            <tr key={data._id}>
-              <td>{data.username}</td>
-              <td> {data.answers}</td>
-              <td>{data.time}</td>
-            </tr>
-          ))}
-        </table>
-      </ResultsList>
-    </ScoreBoard>
+      <ResultsInfo>
+        <h1>Woho! {username} you made it!</h1>
+        <p>You reached the goal by answering {answers.length} questions!</p>
+        <p>And in xx time!</p>
+      </ResultsInfo>
+      <Button onClick={onButtonSubmit}>Go back to profile</Button>
+    </GoalBoard>
   );
 };
 
-export default Scoreboard;
+export default Goal;

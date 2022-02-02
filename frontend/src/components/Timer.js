@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { questions } from "../reducers/questions";
 
 const TimerDiv = styled.div`
   color: ${(props) => props.theme.titleColor};
@@ -22,11 +24,15 @@ const TimerDiv = styled.div`
 `;
 
 const Timer = () => {
+  const time = useSelector((store) => store.questions.time);
   const [count, setCount] = useState(10);
   const questionsLeft = useSelector(
     (store) => store.questions.amountOfQuestions
   );
   const steps = useSelector((store) => store.questions.steps);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const minutes = Math.floor(count / 60);
   var seconds = count % 60;
@@ -39,6 +45,13 @@ const Timer = () => {
     const timer = count > 0 && setInterval(() => setCount(count - 1), 1000);
     return () => clearInterval(timer);
   }, [count]);
+
+  // useEffect(() => {
+  //   if (count === 0) {
+  //     dispatch(questions.actions.gameOver());
+  //     navigate("/profile");
+  //   }
+  // }, [count]);
 
   return (
     <div>

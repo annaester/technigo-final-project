@@ -272,11 +272,11 @@ export const DLToggle = styled.label`
   }
 
   input:checked + span {
-    background-color: #2196f3;
+    background-color: #f32163;
   }
 
   input:focus + span {
-    box-shadow: 0 0 1px #2196f3;
+    box-shadow: 0 0 1px #f32163;
   }
 
   input:checked + span:before {

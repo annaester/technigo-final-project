@@ -88,6 +88,7 @@ const Game = (props) => {
       navigate("/profile");
     } else if (stepsGone === 20) {
       alert("you made it!");
+      navigate("/goal");
     }
   });
 
