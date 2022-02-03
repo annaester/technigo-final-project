@@ -10,6 +10,7 @@ const initialState = {
   quizOver: false,
   quizStart: true,
   time: 120,
+  currentTime: "",
 };
 
 export const questions = createSlice({
@@ -32,6 +33,13 @@ export const questions = createSlice({
     setSteps: (store) => {
       store.steps += 1;
     },
+    setTimeLeft: (store, action) => {
+      const { timeleft } = action.payload;
+
+      store.currentTime.push({
+        timeleft,
+      });
+    },
     submitAnswer: (store, action) => {
       const { questionId, answerIndex } = action.payload;
 
@@ -40,13 +48,10 @@ export const questions = createSlice({
 
       if (answerIndex === +makeNum && level === 1) {
         store.steps += 1;
-        console.log("correct 1!");
       } else if (answerIndex === +makeNum && level === 2) {
         store.steps += 2;
-        console.log("correct 2!");
       } else if (answerIndex === +makeNum && level === 4) {
         store.steps += 4;
-        console.log("correct 4!");
       }
 
       store.answers.push({

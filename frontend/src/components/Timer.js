@@ -24,8 +24,9 @@ const TimerDiv = styled.div`
 `;
 
 const Timer = () => {
-  const time = useSelector((store) => store.questions.time);
-  const [count, setCount] = useState(10);
+  const counter = useSelector((store) => store.questions.time);
+
+  const [count, setCount] = useState(counter);
   const questionsLeft = useSelector(
     (store) => store.questions.amountOfQuestions
   );
@@ -33,6 +34,8 @@ const Timer = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  //const setCounter = dispatch(questions.actions.setCounter());
 
   const minutes = Math.floor(count / 60);
   var seconds = count % 60;
@@ -48,9 +51,12 @@ const Timer = () => {
 
   // useEffect(() => {
   //   if (count === 0) {
+  // alert("Sorry, times up!")
   //     dispatch(questions.actions.gameOver());
   //     navigate("/profile");
-  //   }
+  //   } if (steps === 20) {
+  //  dispatch(questions.actions.setTimeLeft(time - count))
+  //}
   // }, [count]);
 
   return (

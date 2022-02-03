@@ -60,10 +60,10 @@ const ResultsInfo = styled.div`
 `;
 
 const Goal = (props) => {
-  const [newResults, setNewResults] = useState({});
   const answers = useSelector((store) => store.questions.answers);
   const accessToken = useSelector((store) => store.member.accessToken);
   const username = useSelector((store) => store.member.username);
+  const time = useSelector((store) => store.questions.time);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -82,7 +82,7 @@ const Goal = (props) => {
   };
 
   const onButtonSubmit = (event) => {
-    console.log(username, answers.length);
+    console.log(username, answers.length, time);
 
     event.preventDefault();
 
@@ -91,7 +91,8 @@ const Goal = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, answers: answers.length }),
+      body: JSON.stringify({ username, answers: answers.length, time: time }),
+      // ska byta time till currentTime
     };
 
     fetch(API_URL("results"), options)
@@ -115,7 +116,8 @@ const Goal = (props) => {
       <ResultsInfo>
         <h1>Woho! {username} you made it!</h1>
         <p>You reached the goal by answering {answers.length} questions!</p>
-        <p>And in xx time!</p>
+        <p>And in {time} time!</p>
+        {/* ska vara currentTime sen */}
       </ResultsInfo>
       <Button onClick={onButtonSubmit}>Go back to profile</Button>
     </GoalBoard>
