@@ -88,6 +88,7 @@ const Game = (props) => {
       dispatch(questions.actions.gameOver());
       navigate("/profile");
     } else if (stepsGone === 20) {
+      dispatch(questions.actions.setFinish(Date.now()));
       alert("you made it!");
       navigate("/goal");
     }
@@ -118,8 +119,7 @@ const Game = (props) => {
       questions.actions.submitAnswer({
         questionId: _id,
         answerIndex: index,
-      }),
-      questions.actions.setSteps()
+      })
     );
     setShowQues(false);
   };
@@ -150,6 +150,7 @@ const Game = (props) => {
         {!start && (
           <StartButton
             onClick={() => {
+              dispatch(questions.actions.setStart(Date.now()));
               setStart(true);
             }}
           >

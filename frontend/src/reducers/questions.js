@@ -10,7 +10,9 @@ const initialState = {
   quizOver: false,
   quizStart: true,
   time: 120,
-  currentTime: "",
+  timeSpent: "0",
+  start: 0,
+  finish: 0,
 };
 
 export const questions = createSlice({
@@ -30,15 +32,17 @@ export const questions = createSlice({
     setAmountOfQuestions4: (store) => {
       store.amountOfQuestions -= 4;
     },
-    setSteps: (store) => {
-      store.steps += 1;
-    },
-    setTimeLeft: (store, action) => {
-      const { timeleft } = action.payload;
+    setTime: (store, action) => {
+      const formatted = action.payload;
+      //console.log("settime", action.payload, formatted);
 
-      store.currentTime.push({
-        timeleft,
-      });
+      store.timeSpent = formatted;
+    },
+    setStart: (store, action) => {
+      store.start = action.payload;
+    },
+    setFinish: (store, action) => {
+      store.finish = action.payload;
     },
     submitAnswer: (store, action) => {
       const { questionId, answerIndex } = action.payload;

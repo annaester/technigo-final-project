@@ -64,7 +64,25 @@ const Goal = (props) => {
   const accessToken = useSelector((store) => store.member.accessToken);
   const username = useSelector((store) => store.member.username);
   const time = useSelector((store) => store.questions.time);
+  //const timeleft = useSelector((store) => store.questions.timeSpent);
+  const startTime = useSelector((store) => store.questions.start);
+  const finishTime = useSelector((store) => store.questions.finish);
+
+  const timeSpent = Math.round((finishTime - startTime) / 1000);
+
+  const minutes = Math.floor(timeSpent / 60);
+  var seconds = timeSpent % 60;
+  const formatted =
+    minutes.toString().padStart(2, "0") +
+    ":" +
+    seconds.toString().padStart(2, "0");
+
+  console.log(formatted);
+
+  console.log(time, startTime, finishTime);
+
   const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -82,7 +100,7 @@ const Goal = (props) => {
   };
 
   const onButtonSubmit = (event) => {
-    console.log(username, answers.length, time);
+    console.log(username, answers.length, formatted);
 
     event.preventDefault();
 
@@ -91,23 +109,27 @@ const Goal = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, answers: answers.length, time: time }),
-      // ska byta time till currentTime
+      body: JSON.stringify({
+        username,
+        answers: answers.length,
+        timespent: formatted,
+      }),
     };
 
     fetch(API_URL("results"), options)
       .then((res) => res.json())
       .then((data) => console.log("posting", data));
 
-    // dispatch(questions.actions.gameOver());
-    // navigate("/profile");
+    dispatch(questions.actions.setTime());
+    dispatch(questions.actions.gameOver());
+    navigate("/profile");
   };
-
-  //här vill jag subimtta resutltatet till api. Så en json post OCH gå tillbaka till profil.
 
   return (
     <GoalBoard>
-      <Link to="/profile">Go back to profile</Link>
+      <Link to="/profile" onClick={onButtonSubmit}>
+        Go back to profile
+      </Link>
       <DLToggle>
         <input type="checkbox" onClick={changeTheme} />
         <span></span>
@@ -116,8 +138,7 @@ const Goal = (props) => {
       <ResultsInfo>
         <h1>Woho! {username} you made it!</h1>
         <p>You reached the goal by answering {answers.length} questions!</p>
-        <p>And in {time} time!</p>
-        {/* ska vara currentTime sen */}
+        <p>And in {formatted} time!</p>
       </ResultsInfo>
       <Button onClick={onButtonSubmit}>Go back to profile</Button>
     </GoalBoard>

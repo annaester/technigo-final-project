@@ -41,7 +41,7 @@ const Question = mongoose.model("Question", QuestionSchema);
 const ResultsSchema = new mongoose.Schema({
   username: String,
   answers: Number,
-  time: Number,
+  timespent: String,
 });
 
 const Results = mongoose.model("Results", ResultsSchema);
@@ -111,13 +111,13 @@ app.get("/results", async (req, res) => {
 });
 
 app.post("/results", async (req, res) => {
-  const { username, answers, time } = req.body;
+  const { username, answers, timespent } = req.body;
 
   try {
     const newResults = await new Results({
       username: username,
       answers: answers,
-      time: time,
+      timespent: timespent,
     }).save();
     res.status(201).json({
       response: newResults,

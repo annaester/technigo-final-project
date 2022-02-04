@@ -49,15 +49,22 @@ const Timer = () => {
     return () => clearInterval(timer);
   }, [count]);
 
-  // useEffect(() => {
-  //   if (count === 0) {
-  // alert("Sorry, times up!")
-  //     dispatch(questions.actions.gameOver());
-  //     navigate("/profile");
-  //   } if (steps === 20) {
-  //  dispatch(questions.actions.setTimeLeft(time - count))
-  //}
-  // }, [count]);
+  useEffect(() => {
+    if (count === 0) {
+      alert("Sorry, times up!");
+      dispatch(questions.actions.gameOver());
+      navigate("/profile");
+    }
+    // if (steps === 20) {
+    //   dispatch(questions.actions.setTime(formatted));
+    // }
+  }, [count]);
+
+  useEffect(() => {
+    if (steps === 20) {
+      dispatch(questions.actions.setTime(formatted));
+    }
+  }, [steps]);
 
   return (
     <div>

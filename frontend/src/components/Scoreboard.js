@@ -129,7 +129,7 @@ const Scoreboard = (props) => {
               <tr key={data._id}>
                 <td>{data.username}</td>
                 <td> {data.answers}</td>
-                <td>{data.time}</td>
+                <td>{data.timeleft}</td>
               </tr>
             ))}
           </tbody>
