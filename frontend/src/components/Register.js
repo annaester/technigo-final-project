@@ -55,6 +55,8 @@ const Register = (props) => {
             dispatch(member.actions.setUsername(data.response.username));
             dispatch(member.actions.setAccessToken(data.response.accessToken));
             dispatch(member.actions.setError(null));
+            alert("Great! Now you just need to login!");
+            navigate("/");
           });
         } else {
           batch(() => {
@@ -62,9 +64,13 @@ const Register = (props) => {
             dispatch(member.actions.setUsername(null));
             dispatch(member.actions.setAccessToken(null));
             dispatch(member.actions.setError(data.response));
+            alert("Username already taken or password too short!");
           });
         }
       });
+
+    setUsername("");
+    setPassword("");
   };
 
   const changeTheme = () => {

@@ -308,6 +308,8 @@ export const GP = styled.main`
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const AnswerBtn = styled.button`

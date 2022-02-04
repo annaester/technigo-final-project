@@ -34,8 +34,6 @@ export const questions = createSlice({
     },
     setTime: (store, action) => {
       const formatted = action.payload;
-      //console.log("settime", action.payload, formatted);
-
       store.timeSpent = formatted;
     },
     setStart: (store, action) => {
@@ -47,14 +45,14 @@ export const questions = createSlice({
     submitAnswer: (store, action) => {
       const { questionId, answerIndex } = action.payload;
 
-      const makeNum = store.questionList.correctanswer;
+      const correctanswer = store.questionList.correctanswer;
       const level = store.questionList.level;
 
-      if (answerIndex === +makeNum && level === 1) {
+      if (answerIndex === correctanswer && level === 1) {
         store.steps += 1;
-      } else if (answerIndex === +makeNum && level === 2) {
+      } else if (answerIndex === correctanswer && level === 2) {
         store.steps += 2;
-      } else if (answerIndex === +makeNum && level === 4) {
+      } else if (answerIndex === correctanswer && level === 4) {
         store.steps += 4;
       }
 

@@ -33,7 +33,7 @@ const QuestionSchema = new mongoose.Schema({
   question: String,
   options: Array,
   level: Number,
-  correctanswer: String,
+  correctanswer: Number,
 });
 
 const Question = mongoose.model("Question", QuestionSchema);
@@ -84,19 +84,6 @@ const authenticateMember = async (req, res, next) => {
     res.status(400).json({ response: error, success: false });
   }
 };
-
-// Vi måste göra en get och post till /results - måste göra en mongoose.model då? Jo, som i happy-thoughts-api!
-// app.get("/results", authenticateMember)
-// app.get("/results", (req, res) => {
-
-// username
-// amount of questions
-// time
-
-//   res.send()
-//    limit(10)
-//    sorterade på tid?
-// })
 
 app.get("/results", async (req, res) => {
   try {

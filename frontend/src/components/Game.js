@@ -24,6 +24,7 @@ const GameBoard = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  //justify-content: center;
   height: 100vh;
 
   h1 {
@@ -67,6 +68,20 @@ const ButtonBox = styled.div`
   justify-content: center;
 `;
 
+const StepperBox = styled.div`
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: -300px;
+  align-self: end;
+
+  //transform: rotate(270deg);
+`;
+
+const StartBox = styled.div`
+  text-align: center;
+`;
+
 const Game = (props) => {
   const [start, setStart] = useState(false);
   const [showQues, setShowQues] = useState(false);
@@ -83,18 +98,6 @@ const Game = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (questionsLeft < 0) {
-      alert("Sorry, you ran out of questions!");
-      dispatch(questions.actions.gameOver());
-      navigate("/profile");
-    } else if (stepsGone === 20) {
-      dispatch(questions.actions.setFinish(Date.now()));
-      alert("you made it!");
-      navigate("/goal");
-    }
-  });
-
-  useEffect(() => {
     if (!accessToken) {
       navigate("/");
     }
@@ -107,7 +110,6 @@ const Game = (props) => {
   const exitGame = () => {
     dispatch(questions.actions.gameOver());
     navigate("/profile");
-    console.log("gameover");
   };
 
   const chooseLevel = (level) => {
@@ -121,8 +123,25 @@ const Game = (props) => {
         answerIndex: index,
       })
     );
+    if (questionsLeft === 0) {
+      dispatch(questions.actions.gameOver());
+      navigate("/profile");
+      alert("Sorry, you ran out of questions!");
+    }
     setShowQues(false);
   };
+
+  useEffect(() => {
+    if (questionsLeft < 0) {
+      alert("Sorry, you ran out of questions!");
+      dispatch(questions.actions.gameOver());
+      navigate("/profile");
+    } else if (stepsGone === 20) {
+      dispatch(questions.actions.setFinish(Date.now()));
+      alert("you made it!");
+      navigate("/goal");
+    }
+  });
 
   const changeTheme = () => {
     if (props.theme === "light") {
@@ -144,19 +163,22 @@ const Game = (props) => {
       </MenuBox>
 
       <GameBoard>
-        <Button onClick={exitGame}>Exit game</Button>
-        <TimeAndQ>{start === true && <Timer />}</TimeAndQ>
-        <h1>QuizTime</h1>
-        {!start && (
-          <StartButton
-            onClick={() => {
-              dispatch(questions.actions.setStart(Date.now()));
-              setStart(true);
-            }}
-          >
-            Start the game
-          </StartButton>
-        )}
+        <StartBox>
+          <Button onClick={exitGame}>Exit game</Button>
+          <h1>QuizTime</h1>
+          <TimeAndQ>{start === true && <Timer />}</TimeAndQ>
+
+          {!start && (
+            <StartButton
+              onClick={() => {
+                dispatch(questions.actions.setStart(Date.now()));
+                setStart(true);
+              }}
+            >
+              Start the game
+            </StartButton>
+          )}
+        </StartBox>
 
         {start === true && (
           <>
@@ -208,8 +230,11 @@ const Game = (props) => {
             </GameCard>
           </>
         )}
-        <Stepper />
       </GameBoard>
+      <StepperBox>
+        <Stepper />
+      </StepperBox>
+      {/* <Stepper /> */}
     </GP>
   );
 };

@@ -679,7 +679,7 @@
     "question": "What was the first toy to be advertised on television?",
     "options": ["Lego", "Batman", "Barbie", "Mr Potato Head"],
     "level": 4,
-    "correctanwser": 3
+    "correctanswer": 3
   },
   {
     "question": "What TV series showed the first interracial kiss on American network television?",
@@ -715,7 +715,7 @@
     "correctanswer": 0
   },
   {
-    "question": "What country touches the Indian Ocean, the Arabian Sea, and the Bay of Bengal?",
+    "question": "Whay country touches the Indian Ocean, the Arabian Sea and the Bay of Bengal?",
     "options": ["Japan", "Maldives", "India", "Australia"],
     "level": 4,
     "correctanswer": 2
@@ -765,90 +765,90 @@
     "question": "In public places in the state of Florida, what's illegal to do when wearing a swimsuit?",
     "options": ["Visit a mall", "Drink alcohol", "Run", "Sing"],
     "level": 4,
-    "correctanwser": 3
+    "correctanswer": 3
   },
   {
     "question": "How long is New Zealand’s Ninety Mile Beach?",
     "options": ["65 miles", "90 miles", "55 miles", "80 miles"],
     "level": 4,
-    "correctanwser": 2
+    "correctanswer": 2
   },
   {
     "question": "In what year was the first episode of South Park aired?",
     "options": ["1999", "2005", "2001", "1997"],
     "level": 4,
-    "correctanwser": 3
+    "correctanswer": 3
   },
   {
     "question": "In what year was Broadway established?",
     "options": ["1650", "1750", "1850", "1950"],
     "level": 4,
-    "correctanwser": 1
+    "correctanswer": 1
   },
   {
     "question": "How many books are in the Catholic Bible?",
     "options": ["15", "73", "132", "49"],
     "level": 4,
-    "correctanwser": 1
+    "correctanswer": 1
   },
   {
     "question": "Where does Buddhism fall in a ranking of the world’s largest religion?",
     "options": ["1st", "2nd", "4th", "5th"],
     "level": 4,
-    "correctanwser": 3
+    "correctanswer": 3
   },
   {
     "question": "In which country was Buddha born?",
     "options": ["Nepal", "China", "India", "Tibet"],
     "level": 4,
-    "correctanwser": 0
+    "correctanswer": 0
   },
   {
     "question": "Independence Day in Cambodia is when?",
     "options": ["9th November", "23rd December", "14th August", "4th June"],
     "level": 4,
-    "correctanwser": 0
+    "correctanswer": 0
   },
   {
     "question": "“Astro Boy” is what genre of a video game?",
     "options": ["Horror", "Platform", "Action", "Strategy"],
     "level": 4,
-    "correctanwser": 2
+    "correctanswer": 2
   },
   {
     "question": "How many cards are there in a deck of Uno?",
     "options": ["106", "107", "108", "109"],
     "level": 4,
-    "correctanwser": 2
+    "correctanswer": 2
   },
   {
     "question": "Which company has a pointed crown as its logo?",
     "options": ["Hermés", "Rolex", "Louis Vuitton", "Prada"],
     "level": 4,
-    "correctanwser": 1
+    "correctanswer": 1
   },
   {
     "question": "Richard Branson is the owner of which airline?",
     "options": ["Emirates", "Virgin Atlantic", "United", "Delta"],
     "level": 4,
-    "correctanwser": 1
+    "correctanswer": 1
   },
   {
     "question": "Butch Cassidy was famous for doing what?",
     "options": ["Stealing", "Murder", "Fighting at bars", "Eating hot dogs"],
     "level": 4,
-    "correctanwser": 0
+    "correctanswer": 0
   },
   {
     "question": "How many homicides did Ted Bundy admit to?",
     "options": ["20", "33", "27", "30"],
     "level": 4,
-    "correctanwser": 3
+    "correctanswer": 3
   },
   {
     "question": "Where can you find the Petronas Towers?",
     "options": ["Seattle", "Singapore", "Tokyo", "Kuala Lumpur"],
     "level": 4,
-    "correctanwser": 3
+    "correctanswer": 3
   }
 ]

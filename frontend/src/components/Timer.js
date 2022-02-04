@@ -55,9 +55,6 @@ const Timer = () => {
       dispatch(questions.actions.gameOver());
       navigate("/profile");
     }
-    // if (steps === 20) {
-    //   dispatch(questions.actions.setTime(formatted));
-    // }
   }, [count]);
 
   useEffect(() => {
