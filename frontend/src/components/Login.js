@@ -82,7 +82,7 @@ const Login = (props) => {
         <p>Dark/light</p>
       </DLToggle>
       <h1>Welcome to QuizTime!</h1>
-      <h4>Log in to start the game.</h4>
+      <h4>Please log in to start the game.</h4>
       <LoginBox>
         <FormBox onSubmit={onFormSubmit}>
           <label htmlFor="username">Username:</label>
@@ -105,11 +105,16 @@ const Login = (props) => {
             Login
           </Button>
         </FormBox>
-        <Link to="/register">Not member yet? Register here</Link>
+        <Link to="/register">
+          <i>Not member yet? </i>
+          <b>Register here</b>
+        </Link>
         {/* <Timer /> */}
       </LoginBox>
       <RulesInfo>
-        <p>Wanna know what this is all about..?</p>
+        <p>
+          <b>Wanna know what this is all about..?</b>
+        </p>
         <input type="button" value="RULES" onClick={toggleRules} />
         {rules && <Rules handleClose={toggleRules} />}
       </RulesInfo>

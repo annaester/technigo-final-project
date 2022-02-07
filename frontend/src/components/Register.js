@@ -89,7 +89,7 @@ const Register = (props) => {
         <p>Dark/light</p>
       </DLToggle>
       <h1>Welcome!</h1>
-      <h4>Register to get access to the game.</h4>
+      <h4>Please register to get access to the game.</h4>
       <LoginBox>
         <FormBox onSubmit={onFormSubmit}>
           <label htmlFor="username">Username:</label>
@@ -112,7 +112,9 @@ const Register = (props) => {
             Register
           </Button>
         </FormBox>
-        <Link to="/">Already a member? Login here</Link>
+        <Link to="/">
+          <i>Already a member?</i> <b>Login here</b>
+        </Link>
       </LoginBox>
       <RulesInfo>
         <p>Wanna know what this is all about..?</p>

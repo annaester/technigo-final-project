@@ -17,11 +17,16 @@ const RulesBox = styled.article`
   height: auto;
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
-  background: #fff;
+  background: rgba(243, 236, 239, 0.9);
   border-radius: 4px;
   padding: 20px;
   border: 1px solid #999;
   overflow: auto;
+  font-size: 20px;
+
+  p {
+    color: black;
+  }
 
   @media (max-width: 700px) {
     font-size: 12px;

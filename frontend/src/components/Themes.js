@@ -12,8 +12,9 @@ export const LightTheme = {
   backgroundImage: `url(${img2})`,
   backgroundImageGame: `url(${img4})`,
   formBackground: "rgba(251, 108, 108, 0.8)",
+  profileBackground: "rgba(255, 249, 168, 0.7)",
   dlBtnBackground: "rgba(251, 108, 108, 0.8)",
-  buttonBg: "rgba(43, 194, 204, 0.8)",
+  buttonBg: "rgba(253, 167, 42, 0.8)",
   fetchButton: "rgba(248, 169, 169, 0.8)",
   answerButton: "rgba(248, 245, 169, 0.8)",
   questionBox: "rgba(243, 233, 238, 0.8)",
@@ -30,6 +31,7 @@ export const DarkTheme = {
   backgroundImage: `url(${img})`,
   backgroundImageGame: `url(${img3})`,
   formBackground: "rgba(27, 27, 27, 0.8)",
+  profileBackground: "rgba(113, 0, 252, 0.7)",
   dlBtnBackground: "rgba(27, 27, 27, 0.8)",
   buttonBg: "rgba(43, 194, 204, 0.8)",
   fetchButton: "rgba(164, 0, 61, 0.8)",
@@ -53,7 +55,7 @@ export const Background = styled.div`
   flex-direction: column;
   padding-top: 20px;
   align-items: center;
-  font-family: "Oswald", sans-serif;
+  font-family: "Inter", sans-serif;
 
   h1, h4 {
     color: ${(props) => props.theme.titleColor};
@@ -91,6 +93,7 @@ export const LoginBox = styled.div`
   a {
     color: white;
     text-decoration: none;
+    margin-top: 10px;
   }
 
   @media (max-width: 700px) {
@@ -108,7 +111,7 @@ export const InputStyle = styled.input`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  margin: 5px;
+  margin: 5px 0;
 
   @media (max-width: 700px) {
     margin: 5px 0;
@@ -123,10 +126,11 @@ export const StartButton = styled.button`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-family: Oswald;
+  font-family: Inter;
 
   :hover {
     cursor: pointer;
+    color: white;
   }
 
   @media (max-width: 700px) {
@@ -146,10 +150,12 @@ export const Button = styled.button`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-family: Oswald;
+  font-family: Inter;
 
   :hover {
     cursor: pointer;
+    box-shadow: 2px 5px 3px rgba(255, 255, 255, 0.8);
+    transition: 0.1s;
   }
 
   @media (max-width: 700px) {
@@ -177,10 +183,12 @@ export const RulesInfo = styled.div`
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-family: Oswald;
+    font-family: Inter;
 
     :hover {
       cursor: pointer;
+      background-color: rgba(43, 194, 204, 0.9);
+      color: white;
     }
     @media (max-width: 700px) {
       font-size: 14px;
@@ -193,29 +201,29 @@ export const RulesInfo = styled.div`
   }
 `;
 
-export const DLBtn = styled.button`
-  color: ${(props) => props.theme.titleColor};
-  background: ${(props) => props.theme.dlBtnBackground};
-  font-size: 1em;
-  width: 100px;
-  margin: 1em;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-family: Oswald;
+// export const DLBtn = styled.button`
+//   color: ${(props) => props.theme.titleColor};
+//   background: ${(props) => props.theme.dlBtnBackground};
+//   font-size: 1em;
+//   width: 100px;
+//   margin: 1em;
+//   padding: 10px;
+//   border: none;
+//   border-radius: 5px;
+//   font-family: Inter;
 
-  :hover {
-    cursor: pointer;
-  }
+//   :hover {
+//     cursor: pointer;
+//   }
 
-  @media (max-width: 700px) {
-    font-size: 12px;
-    padding: 5px;
-    text-align: center;
-    margin: 5px;
-    width: 70px;
-  }
-`;
+//   @media (max-width: 700px) {
+//     font-size: 12px;
+//     padding: 5px;
+//     text-align: center;
+//     margin: 5px;
+//     width: 70px;
+//   }
+// `;
 
 export const DLToggle = styled.label`
   position: relative;
@@ -225,6 +233,10 @@ export const DLToggle = styled.label`
   color: ${(props) => props.theme.titleColor};
   align-self: flex-start;
   margin: 15px 20px;
+
+  p {
+    padding: 7px 0;
+  }
 
   @media (max-width: 700px) {
     width: 40px;
@@ -245,7 +257,7 @@ export const DLToggle = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color:rgba(43, 194, 204);
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 34px;
@@ -310,6 +322,7 @@ export const GP = styled.main`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: Inter;
 `;
 
 export const AnswerBtn = styled.button`
@@ -320,7 +333,7 @@ export const AnswerBtn = styled.button`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-family: Oswald;
+  font-family: Inter;
 
   :hover {
     cursor: pointer;
@@ -340,7 +353,7 @@ export const FetchBtn = styled.button`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-family: Oswald;
+  font-family: Inter;
 
   :hover {
     cursor: pointer;

@@ -5,7 +5,6 @@ import member from "../reducers/member";
 import styled from "styled-components";
 import Rules from "./Rules";
 import { DLToggle, GP, Button } from "./Themes";
-import DarkLightBtn from "./DarkLightBtn";
 
 const ProfileMain = styled.section`
   display: flex;
@@ -17,7 +16,6 @@ const InfoBox = styled.aside`
   flex-direction: column;
   width: 140px;
   align-items: flex-start;
-  /* justify-content: space-around; */
 
   @media (max-width: 700px) {
     align-items: flex-start;
@@ -34,7 +32,7 @@ const InfoBox = styled.aside`
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-family: Oswald;
+    font-family: Inter;
     text-align: center;
 
     @media (max-width: 700px) {
@@ -60,18 +58,27 @@ const ProfileBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 24px;
+  background: ${(props) => props.theme.profileBackground};
+  padding: 20px;
+  border-radius: 12px;
   color: ${(props) => props.theme.titleColor};
 
   a {
     color: ${(props) => props.theme.titleColor};
     text-decoration: none;
     background: ${(props) => props.theme.buttonBg};
-    font-size: 1em;
-    margin: 1em;
+    font-size: 20px;
+    margin: 10px;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-family: Oswald;
+    font-family: Inter;
+
+    :hover {
+      color: white;
+      filter: drop-shadow(7px 5px 4px white);
+    }
 
     @media (max-width: 700px) {
       font-size: 16px;
