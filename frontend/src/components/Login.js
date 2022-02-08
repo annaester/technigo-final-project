@@ -61,9 +61,13 @@ const Login = (props) => {
             dispatch(member.actions.setUsername(null));
             dispatch(member.actions.setAccessToken(null));
             dispatch(member.actions.setError(data.response));
+            alert("Invalid login, try again!");
           });
         }
       });
+
+    setUsername("");
+    setPassword("");
   };
 
   const changeTheme = () => {

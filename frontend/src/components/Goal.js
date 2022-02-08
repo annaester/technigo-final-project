@@ -26,7 +26,7 @@ const GoalBoard = styled.main`
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-family: Oswald;
+    font-family: "Inter", sans-serif;
     text-align: center;
     width: 150px;
     align-self: flex-start;
@@ -64,7 +64,6 @@ const Goal = (props) => {
   const accessToken = useSelector((store) => store.member.accessToken);
   const username = useSelector((store) => store.member.username);
   const time = useSelector((store) => store.questions.time);
-  //const timeleft = useSelector((store) => store.questions.timeSpent);
   const startTime = useSelector((store) => store.questions.start);
   const finishTime = useSelector((store) => store.questions.finish);
 

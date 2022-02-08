@@ -8,13 +8,15 @@ import img6 from "../pictures/scoreBL.jpeg";
 
 export const LightTheme = {
   pageBackground: "#FAF1E6",
-  titleColor: "black",
+  titleColor: "rgba(36,29,16,1)",
   backgroundImage: `url(${img2})`,
   backgroundImageGame: `url(${img4})`,
   formBackground: "rgba(251, 108, 108, 0.8)",
-  profileBackground: "rgba(255, 249, 168, 0.7)",
+  profileBackground: "rgba(81, 218, 198, 0.7)",
+  //profileBackground: "rgba(255, 249, 168, 0.7)",
   dlBtnBackground: "rgba(251, 108, 108, 0.8)",
-  buttonBg: "rgba(253, 167, 42, 0.8)",
+  buttonBg: "rgba(255, 255, 255, 0.8)",
+  //buttonBg: "rgba(253, 167, 42, 0.7)",
   fetchButton: "rgba(248, 169, 169, 0.8)",
   answerButton: "rgba(248, 245, 169, 0.8)",
   questionBox: "rgba(243, 233, 238, 0.8)",
@@ -126,11 +128,11 @@ export const StartButton = styled.button`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
 
   :hover {
     cursor: pointer;
-    color: white;
+    //color: white;
   }
 
   @media (max-width: 700px) {
@@ -150,11 +152,11 @@ export const Button = styled.button`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
 
   :hover {
     cursor: pointer;
-    box-shadow: 2px 5px 3px rgba(255, 255, 255, 0.8);
+    box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.8);
     transition: 0.1s;
   }
 
@@ -183,7 +185,7 @@ export const RulesInfo = styled.div`
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-family: Inter;
+    font-family: "Inter", sans-serif;
 
     :hover {
       cursor: pointer;
@@ -322,7 +324,7 @@ export const GP = styled.main`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
 `;
 
 export const AnswerBtn = styled.button`
@@ -333,7 +335,7 @@ export const AnswerBtn = styled.button`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
 
   :hover {
     cursor: pointer;
@@ -353,7 +355,7 @@ export const FetchBtn = styled.button`
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
 
   :hover {
     cursor: pointer;

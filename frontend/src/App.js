@@ -21,13 +21,10 @@ import { LightTheme, DarkTheme } from "./components/Themes";
 
 import member from "./reducers/member";
 import { questions } from "./reducers/questions";
-import { counter } from "./reducers/counter";
 
 const reducer = combineReducers({
   member: member.reducer,
   questions: questions.reducer,
-  counter: counter.reducer,
-  // quizreducer: quizreducer.reducer,
 });
 
 const persistedStateJSON = localStorage.getItem("myAppReduxState");

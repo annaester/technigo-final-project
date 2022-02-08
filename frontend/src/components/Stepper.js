@@ -3,14 +3,7 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 const StepperBar = styled.div`
-  //align-self: flex-end;
-  //margin-right: 40px;
-  //position: absolute;
   transform: rotate(-90deg);
-  //width: 500px;
-
-  //margin-top: 55vh;
-  //margin-right: -150px;
 
   progress {
     border-radius: 7px;
@@ -30,9 +23,6 @@ const StepperBar = styled.div`
   }
 
   @media (max-width: 900px) {
-    //margin-top: 40vh;
-    //margin-right: -150px;
-
     progress {
       border-radius: 7px;
       height: 20px;

@@ -20,7 +20,6 @@ export const questions = createSlice({
   initialState,
   reducers: {
     setQuestionList: (store, action) => {
-      // console.log(store, action);
       store.questionList = action.payload;
     },
     setAmountOfQuestions1: (store) => {
@@ -70,8 +69,6 @@ export const questions = createSlice({
 
 export const fetchQuestions = (level) => {
   return (dispatch) => {
-    // dispatch(ui.actions.setLoading(true))
-
     fetch(API_URL(level))
       .then((res) => res.json())
       .then((json) => {
@@ -80,23 +77,3 @@ export const fetchQuestions = (level) => {
       });
   };
 };
-
-// reducers för:
-// - start game
-// - start timer
-// - count questions
-// - select questions
-// - fetch questions -filtered om lavel
-// - post answer - jämföra med rätt svar
-// - gå frammåt
-// - tiden är slut
-// - frågorna är slut
-// - man klarade det!
-
-// goToNextQuestion: (store) => {
-//   if (store.amountOfQuestions <= 0) {
-//     store.quizOver = true;
-//   } else {
-//     store.currentQuestion += 1;
-//   }
-// },

@@ -32,8 +32,14 @@ const InfoBox = styled.aside`
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-family: Inter;
+    font-family: "Inter", sans-serif;
     text-align: center;
+
+    :hover {
+      cursor: pointer;
+      box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.8);
+      transition: 0.1s;
+    }
 
     @media (max-width: 700px) {
       font-size: 12px;
@@ -76,8 +82,9 @@ const ProfileBox = styled.div`
     font-family: Inter;
 
     :hover {
-      color: white;
-      filter: drop-shadow(7px 5px 4px white);
+      cursor: pointer;
+      box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.8);
+      transition: 0.1s;
     }
 
     @media (max-width: 700px) {
@@ -147,7 +154,7 @@ const Profile = (props) => {
         <ProfileBox>
           <AvatarPic></AvatarPic>
           <h1>Welcome {username} to your gamepage</h1>
-          <Link to="/game">Lets start the game</Link>
+          <Link to="/game">Click to go to the Quiz!</Link>
         </ProfileBox>
       </ProfileMain>
     </GP>

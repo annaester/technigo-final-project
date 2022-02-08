@@ -25,7 +25,7 @@ const ScoreBoard = styled.main`
     padding: 10px;
     border: none;
     border-radius: 5px;
-    font-family: Oswald;
+    font-family: "Inter", sans-serif;
     text-align: center;
     width: 150px;
     align-self: flex-start;
@@ -50,10 +50,12 @@ const ScoreBoard = styled.main`
 `;
 
 const ResultsList = styled.div`
-  background: ${(props) => props.theme.infoBg};
-  width: 500px;
+  background: ${(props) => props.theme.buttonBg};
+  width: 550px;
   border-radius: 6px;
   padding: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
 
   table {
     width: 100%;
@@ -61,7 +63,7 @@ const ResultsList = styled.div`
   }
 
   th {
-    background: ${(props) => props.theme.formBackground};
+    background: ${(props) => props.theme.infoBg};
   }
 
   td,
@@ -71,7 +73,9 @@ const ResultsList = styled.div`
   }
 
   tr:nth-child(even) {
-    background: ${(props) => props.theme.formBackground};
+    //background: rgba(27, 27, 27, 0.2);
+    background: ${(props) => props.theme.infoBg};
+    margin: 0;
   }
 
   @media (max-width: 700px) {
@@ -129,7 +133,7 @@ const Scoreboard = (props) => {
               <tr key={data._id}>
                 <td>{data.username}</td>
                 <td> {data.answers}</td>
-                <td>{data.timeleft}</td>
+                <td>{data.timespent}</td>
               </tr>
             ))}
           </tbody>

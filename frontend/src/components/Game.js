@@ -24,7 +24,6 @@ const GameBoard = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  //justify-content: center;
   height: 100vh;
 
   h1 {
@@ -74,8 +73,6 @@ const StepperBox = styled.div`
   bottom: 50%;
   right: -300px;
   align-self: end;
-
-  //transform: rotate(270deg);
 `;
 
 const StartBox = styled.div`

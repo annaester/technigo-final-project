@@ -13,6 +13,7 @@ const NotfoundBox = styled.main`
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  font-family: "Inter", sans-serif;
 `;
 
 const NotFound = () => {
