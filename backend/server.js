@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import cors from "cors";
 import crypto from "crypto";
 import mongoose from "mongoose";
+import listEndpoints from "express-list-endpoints";
 
 import questionsData from "./data/questions.json";
 
@@ -85,47 +86,12 @@ const authenticateMember = async (req, res, next) => {
   }
 };
 
-app.get("/results", async (req, res) => {
-  try {
-    const results = await Results.find()
-      .limit(10)
-      .sort({ answers: +1 })
-      .exec();
-    res.status(200).json(results);
-  } catch (error) {
-    res.status(400).json({ message: "No results found today", success: false });
-  }
-});
-
-app.post("/results", async (req, res) => {
-  const { username, answers, timespent } = req.body;
-
-  try {
-    const newResults = await new Results({
-      username: username,
-      answers: answers,
-      timespent: timespent,
-    }).save();
-    res.status(201).json({
-      response: newResults,
-      success: true,
-    });
-  } catch (error) {
-    res.status(400).json({ response: error, success: false });
-  }
-});
-
-app.get("/game");
-app.get("/game", (req, res) => {
-  res.send("here is the game");
-});
-
 // Start defining your routes here
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.send(listEndpoints(app));
 });
 
-// app.get("/questions", authenticateMember);
+app.get("/questions", authenticateMember);
 app.get("/questions", async (req, res) => {
   const { level } = req.query;
 
@@ -193,26 +159,57 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.post("/profile/:id", async (req, res) => {
-  const { id } = req.params;
-  const { username } = req.params;
+app.get("/results", authenticateMember);
+app.get("/results", async (req, res) => {
+  try {
+    const results = await Results.find()
+      .limit(10)
+      .sort({ answers: +1, timespent: +1 })
+      .exec();
+    res.status(200).json(results);
+  } catch (error) {
+    res.status(400).json({ message: "No results found today", success: false });
+  }
+});
+
+app.post("/results", async (req, res) => {
+  const { username, answers, timespent } = req.body;
 
   try {
-    const updatedMember = await Member.findByIdAndUpdate(
-      { _id: id },
-      { username },
-      { new: true }
-    );
-
-    if (updatedUser) {
-      res.status(200).json({ response: updatedMember, success: true });
-    } else {
-      res.status(404).json({ response: "Member not found", success: false });
-    }
+    const newResults = await new Results({
+      username: username,
+      answers: answers,
+      timespent: timespent,
+    }).save();
+    res.status(201).json({
+      response: newResults,
+      success: true,
+    });
   } catch (error) {
     res.status(400).json({ response: error, success: false });
   }
 });
+
+// app.post("/profile/:id", async (req, res) => {
+//   const { id } = req.params;
+//   const { username } = req.params;
+
+//   try {
+//     const updatedMember = await Member.findByIdAndUpdate(
+//       { _id: id },
+//       { username },
+//       { new: true }
+//     );
+
+//     if (updatedUser) {
+//       res.status(200).json({ response: updatedMember, success: true });
+//     } else {
+//       res.status(404).json({ response: "Member not found", success: false });
+//     }
+//   } catch (error) {
+//     res.status(400).json({ response: error, success: false });
+//   }
+// });
 
 // Start the server
 app.listen(port, () => {
