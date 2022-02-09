@@ -11,6 +11,11 @@ const TimerDiv = styled.div`
   padding: 10px;
   border-radius: 6px;
 
+  span {
+    color: #f32163;
+    font-weight: bold;
+  }
+
   @media (max-width: 700px) {
     font-size: 12px;
     background: rgba(249, 249, 249, 0.8);
@@ -63,9 +68,15 @@ const Timer = () => {
   return (
     <div>
       <TimerDiv>
-        <p>Time left: {formatted}</p>
-        <p>You have {questionsLeft} Q's left</p>
-        <p>You have gone {steps}/20 steps</p>
+        <p>
+          Time left: <span>{formatted}</span>
+        </p>
+        <p>
+          You have <span>{questionsLeft}</span> Q's left
+        </p>
+        <p>
+          You have gone <span>{steps}</span>/20 steps
+        </p>
       </TimerDiv>
     </div>
   );

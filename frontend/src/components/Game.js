@@ -157,7 +157,7 @@ const Game = (props) => {
         <DLToggle>
           <input type="checkbox" onClick={changeTheme} />
           <span></span>
-          <p>D/L</p>
+          <p>Dark/Light</p>
         </DLToggle>
       </MenuBox>
 

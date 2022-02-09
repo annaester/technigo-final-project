@@ -103,6 +103,8 @@ export const LoginBox = styled.div`
   @media (max-width: 700px) {
     width: 250px;
     font-size: 14px;
+    height: 200px;
+    margin-top: 20px;
   }
 `;
 
@@ -243,7 +245,7 @@ export const DLToggle = styled.label`
 
   /* p {
     padding: 7px 0;
-    font-family: "Inter" sans-serif;
+    margin: 0 0 0 5px;
   } */
 
   @media (max-width: 700px) {
@@ -314,28 +316,42 @@ export const DLToggle = styled.label`
 
   p {
     text-align: center;
-    margin: 10px;
-    padding: 10px 0;
+    margin: 7px 15px 0 -10px;
+    padding-top: 10px;
+    padding-right: 20px;
 
     @media (max-width: 700px) {
       font-size: 12px;
       text-align: center;
-      margin: 3px;
-      //padding-top: 5px;
-      //padding-right: 10px;
+      margin-right: -10px;
+      padding-top: 2px;
+      //padding-right: 20px;
       /* padding: 5px 0; */
     }
   }
   }
 `;
 
+export const DlBut = styled.div`
+  align-self: flex-end;
+  width: 100px;
+  margin-right: 20px;
+  text-align: center;
+`;
+
 export const HeaderBox = styled.div`
   display: flex;
   justify-content: space-between;
   margin-right: 30px;
-  margin-left: 10px;
+  margin-left: 30px;
   margin-bottom: 50px;
   width: 100vw;
+
+  @media (max-width: 700px) {
+    width: 90vw;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 `;
 
 export const GP = styled.main`

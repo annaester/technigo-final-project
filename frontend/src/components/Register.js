@@ -12,6 +12,7 @@ import {
   InputStyle,
   Button,
   RulesInfo,
+  DlBut,
 } from "./Themes";
 
 const Register = (props) => {
@@ -83,11 +84,13 @@ const Register = (props) => {
 
   return (
     <Background>
-      <DLToggle>
-        <input type="checkbox" onClick={changeTheme} />
-        <span></span>
-        <p>D/L</p>
-      </DLToggle>
+      <DlBut>
+        <DLToggle>
+          <input type="checkbox" onClick={changeTheme} />
+          <span></span>
+          <p>Dark/Light</p>
+        </DLToggle>
+      </DlBut>
       <h1>Welcome!</h1>
       <h4>Please register to get access to the game.</h4>
       <LoginBox>

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { DLToggle, Button } from "./Themes";
 import { questions } from "../reducers/questions";
 import { API_URL } from "../utils/constants";
+import { HeaderBox } from "./Themes";
 
 const GoalBoard = styled.main`
   background-image: ${(props) => props.theme.scoreBoardBg};
@@ -31,6 +32,12 @@ const GoalBoard = styled.main`
     text-align: center;
     width: 150px;
     align-self: flex-start;
+
+    :hover {
+      cursor: pointer;
+      box-shadow: ${(props) => props.theme.buttonShadow};
+      transition: 0.1s;
+    }
   }
 
   h1 p {
@@ -56,12 +63,12 @@ const ResultsInfo = styled.div`
   flex-direction: column;
   align-items: center;
   background: ${(props) => props.theme.profileBackground};
-  width: 550px;
+  width: auto;
   border-radius: 6px;
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
-  padding: 5px;
+  padding: 20px;
 
   @media (max-width: 900px) {
     width: 65vw;
@@ -141,18 +148,20 @@ const Goal = (props) => {
 
   return (
     <GoalBoard>
-      <Link to="/profile" onClick={onButtonSubmit}>
-        Go back to profile
-      </Link>
-      <DLToggle>
-        <input type="checkbox" onClick={changeTheme} />
-        <span></span>
-        <p>D/L</p>
-      </DLToggle>
+      <HeaderBox>
+        <Link to="/profile" onClick={onButtonSubmit}>
+          Go back to profile
+        </Link>
+        <DLToggle>
+          <input type="checkbox" onClick={changeTheme} />
+          <span></span>
+          <p>Dark/Light</p>
+        </DLToggle>
+      </HeaderBox>
       <ResultsInfo>
         <h1>Woho! {username} you made it!</h1>
         <p>You reached the goal by answering {answers.length} questions!</p>
-        <p>And in {formatted}.</p>
+        <p>And in {formatted}</p>
         <h3>Good job!</h3>
       </ResultsInfo>
       <Button onClick={onButtonSubmit}>Go back to profile</Button>

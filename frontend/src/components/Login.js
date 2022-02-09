@@ -13,11 +13,15 @@ import {
   Button,
   RulesInfo,
   DLToggle,
+  DlBut,
 } from "./Themes";
 
-const DlBut = styled.div`
-  align-self: flex-end;
-`;
+// const DlBut = styled.div`
+//   align-self: flex-end;
+//   width: 100px;
+//   margin-right: 20px;
+//   text-align: center;
+// `;
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -89,7 +93,7 @@ const Login = (props) => {
         <DLToggle>
           <input type="checkbox" onClick={changeTheme} />
           <span></span>
-          <p>D/L</p>
+          <p>Dark/Light</p>
         </DLToggle>
       </DlBut>
       <h1>Welcome to QuizTime!</h1>

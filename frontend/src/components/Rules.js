@@ -63,20 +63,23 @@ const Rules = (props) => {
         <h3>Let's go over the basics and rules of this game.</h3>
         <ul>
           <li>
-            The goal of this quiz is to reach the goal within six minutes.{" "}
+            The goal of this quiz is to reach the finish line within two
+            minutes.
           </li>
-          <li>The path to get to the goal is 20 steps. </li>
+          <li>The path to get to the finish line is 20 steps. </li>
           <li>
-            There is 3 different types of questions: Easy, medium and hard.
+            There is 3 different types of questions: easy, medium and hard.
           </li>
           <li>
             Easy gets you one step forward, medium gets you two steps forward
-            and hard gets you 4 steps forward.
+            and hard gets you four steps forward.
           </li>
           <li>The max amount of questions you are allowed to answer is 24.</li>
           <li>
-            If you don't reach the goal within these you game over You will not
-            lose steps if you get a question wrong BUT you will lose questions!
+            If you don't reach the goal within these parameters it's game over.
+            You will not lose steps if you get a question wrong. BUT every time
+            you choose a question you will lose the amount of questions that the
+            question is worth!
           </li>
           <li>You lose 1 question for easy, 2 for medium and 4 for hard.</li>
           <li>

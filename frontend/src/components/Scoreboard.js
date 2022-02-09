@@ -21,7 +21,7 @@ const ScoreBoard = styled.main`
     text-decoration: none;
     background: ${(props) => props.theme.buttonBg};
     font-size: 1em;
-    margin: 1em;
+    margin: 10px 0;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -50,7 +50,6 @@ const ScoreBoard = styled.main`
       padding: 5px;
       font-size: 12px;
       width: 80px;
-      margin-left: 20px;
     }
   }
 `;
@@ -85,7 +84,7 @@ const ResultsList = styled.div`
 
   @media (max-width: 700px) {
     font-size: 12px;
-    width: 80vw;
+    width: 85vw;
   }
 `;
 
@@ -128,7 +127,7 @@ const Scoreboard = (props) => {
         <DLToggle>
           <input type="checkbox" onClick={changeTheme} />
           <span></span>
-          <p>Dark/light</p>
+          <p>Dark/Light</p>
         </DLToggle>
       </HeaderBox>
 

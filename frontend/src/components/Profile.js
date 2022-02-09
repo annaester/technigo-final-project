@@ -15,9 +15,13 @@ const ProfileMain = styled.section`
 const HeaderBox = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-right: 3px;
+  margin-right: 10px;
   margin-left: 3px;
   margin-bottom: 50px;
+
+  @media (max-width: 700px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const InfoBox = styled.aside`
@@ -29,7 +33,7 @@ const InfoBox = styled.aside`
   @media (max-width: 700px) {
     align-items: flex-start;
     width: 70px;
-    height: 200px;
+    margin-bottom: 10px;
   }
 
   a {
@@ -119,6 +123,10 @@ const AvatarPic = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
+
+  @media (max-width: 700px) {
+    padding: 30px;
+  }
 `;
 
 const Profile = (props) => {
@@ -159,7 +167,7 @@ const Profile = (props) => {
         <DLToggle>
           <input type="checkbox" onClick={changeTheme} />
           <span></span>
-          <p>D/L</p>
+          <p>Dark/Light</p>
         </DLToggle>
       </HeaderBox>
       <InfoBox>
