@@ -86,7 +86,7 @@ const Register = (props) => {
       <DLToggle>
         <input type="checkbox" onClick={changeTheme} />
         <span></span>
-        <p>Dark/light</p>
+        <p>D/L</p>
       </DLToggle>
       <h1>Welcome!</h1>
       <h4>Please register to get access to the game.</h4>

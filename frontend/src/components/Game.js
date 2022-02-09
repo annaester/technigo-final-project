@@ -43,11 +43,9 @@ const MenuBox = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-right: 30px;
-  //width: 120px;
 
   @media (max-width: 700px) {
     margin-right: 5px;
-    //align-items: center;
   }
 `;
 
@@ -159,7 +157,7 @@ const Game = (props) => {
         <DLToggle>
           <input type="checkbox" onClick={changeTheme} />
           <span></span>
-          <p>Dark/light</p>
+          <p>D/L</p>
         </DLToggle>
       </MenuBox>
 

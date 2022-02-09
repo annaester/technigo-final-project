@@ -159,7 +159,7 @@ const Profile = (props) => {
         <DLToggle>
           <input type="checkbox" onClick={changeTheme} />
           <span></span>
-          <p>Dark/light</p>
+          <p>D/L</p>
         </DLToggle>
       </HeaderBox>
       <InfoBox>

@@ -147,7 +147,7 @@ const Goal = (props) => {
       <DLToggle>
         <input type="checkbox" onClick={changeTheme} />
         <span></span>
-        <p>Dark/light</p>
+        <p>D/L</p>
       </DLToggle>
       <ResultsInfo>
         <h1>Woho! {username} you made it!</h1>

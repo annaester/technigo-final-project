@@ -25,13 +25,16 @@ const RulesBox = styled.article`
   font-size: 20px;
   color: black;
 
-  h4,
-  p {
-    color: black;
+  h5 {
+    font-size: 20px;
   }
 
   @media (max-width: 700px) {
     font-size: 12px;
+
+    h5 {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -57,7 +60,7 @@ const Rules = (props) => {
       <RulesBox>
         <CloseIcon onClick={props.handleClose}>x</CloseIcon>
         <h2>Welcome to Quiztep!</h2>
-        <h4>Let's go over the basics and rules of this game.</h4>
+        <h3>Let's go over the basics and rules of this game.</h3>
         <ul>
           <li>
             The goal of this quiz is to reach the goal within six minutes.{" "}
@@ -81,10 +84,10 @@ const Rules = (props) => {
             questions left when you take the quiz.
           </li>
         </ul>
-        <p>
+        <h5>
           Challenge yourself! Can you get to the goal in the least amount of
           questions answered in the least amount of time?
-        </p>
+        </h5>
       </RulesBox>
     </RulesBackground>
   );

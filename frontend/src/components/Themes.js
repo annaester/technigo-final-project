@@ -313,14 +313,17 @@ export const DLToggle = styled.label`
   }
 
   p {
-    margin-top: 10px;
-    margin-right: 10px;
+    text-align: center;
+    margin: 10px;
     padding: 10px 0;
 
     @media (max-width: 700px) {
       font-size: 12px;
-      margin: 5px 0;
-      padding: 5px 0;
+      text-align: center;
+      margin: 3px;
+      //padding-top: 5px;
+      //padding-right: 10px;
+      /* padding: 5px 0; */
     }
   }
   }

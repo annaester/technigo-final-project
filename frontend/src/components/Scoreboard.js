@@ -79,7 +79,6 @@ const ResultsList = styled.div`
   }
 
   tr:nth-child(even) {
-    //background: rgba(27, 27, 27, 0.2);
     background: ${(props) => props.theme.infoBg};
     margin: 0;
   }
