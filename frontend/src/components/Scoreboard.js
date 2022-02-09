@@ -96,10 +96,17 @@ const Scoreboard = (props) => {
   }, [accessToken, navigate]);
 
   useEffect(() => {
-    fetch(API_URL("results"))
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: accessToken,
+      },
+    };
+
+    fetch(API_URL("results"), options)
       .then((res) => res.json())
       .then((data) => setResults(data));
-  }, []);
+  }, [accessToken]);
 
   const changeTheme = () => {
     if (props.theme === "light") {

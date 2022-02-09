@@ -91,7 +91,7 @@ app.get("/", (req, res) => {
   res.send(listEndpoints(app));
 });
 
-//app.get("/questions", authenticateMember);
+app.get("/questions", authenticateMember);
 app.get("/questions", async (req, res) => {
   const { level } = req.query;
 
@@ -159,7 +159,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-//app.get("/results", authenticateMember);
+app.get("/results", authenticateMember);
 app.get("/results", async (req, res) => {
   try {
     const results = await Results.find()

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { ui } from "./ui"
 import { API_URL } from "../utils/constants";
 
 const initialState = {
@@ -67,9 +66,16 @@ export const questions = createSlice({
   },
 });
 
-export const fetchQuestions = (level) => {
+export const fetchQuestions = (level, accessToken) => {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: accessToken,
+    },
+  };
+
   return (dispatch) => {
-    fetch(API_URL(level))
+    fetch(API_URL(level), options)
       .then((res) => res.json())
       .then((json) => {
         const randomQ = Math.floor(Math.random() * json.length);

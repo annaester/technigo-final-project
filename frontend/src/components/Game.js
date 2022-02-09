@@ -110,7 +110,7 @@ const Game = (props) => {
   };
 
   const chooseLevel = (level) => {
-    dispatch(fetchQuestions(level));
+    dispatch(fetchQuestions(level, accessToken));
   };
 
   const onAnswerSubmit = (_id, index) => {
@@ -135,7 +135,7 @@ const Game = (props) => {
       navigate("/profile");
     } else if (stepsGone === 20) {
       dispatch(questions.actions.setFinish(Date.now()));
-      alert("you made it!");
+      alert("You made it!");
       navigate("/goal");
     }
   });

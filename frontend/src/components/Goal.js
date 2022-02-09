@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
@@ -16,6 +16,7 @@ const GoalBoard = styled.main`
   flex-direction: column;
   align-items: center;
   color: ${(props) => props.theme.titleColor};
+  font-family: "Inter", sans-serif;
 
   a {
     color: ${(props) => props.theme.titleColor};
@@ -63,7 +64,7 @@ const Goal = (props) => {
   const answers = useSelector((store) => store.questions.answers);
   const accessToken = useSelector((store) => store.member.accessToken);
   const username = useSelector((store) => store.member.username);
-  const time = useSelector((store) => store.questions.time);
+  //const time = useSelector((store) => store.questions.time);
   const startTime = useSelector((store) => store.questions.start);
   const finishTime = useSelector((store) => store.questions.finish);
 
@@ -76,9 +77,9 @@ const Goal = (props) => {
     ":" +
     seconds.toString().padStart(2, "0");
 
-  console.log(formatted);
+  // console.log(formatted);
 
-  console.log(time, startTime, finishTime);
+  // console.log(time, startTime, finishTime);
 
   const navigate = useNavigate();
 
@@ -99,7 +100,7 @@ const Goal = (props) => {
   };
 
   const onButtonSubmit = (event) => {
-    console.log(username, answers.length, formatted);
+    //console.log(username, answers.length, formatted);
 
     event.preventDefault();
 
@@ -107,6 +108,7 @@ const Goal = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: accessToken,
       },
       body: JSON.stringify({
         username,
@@ -117,11 +119,13 @@ const Goal = (props) => {
 
     fetch(API_URL("results"), options)
       .then((res) => res.json())
-      .then((data) => console.log("posting", data));
-
-    dispatch(questions.actions.setTime());
-    dispatch(questions.actions.gameOver());
-    navigate("/profile");
+      .then((data) => {
+        if (data.success) {
+          dispatch(questions.actions.setTime());
+          dispatch(questions.actions.gameOver());
+          navigate("/profile");
+        }
+      });
   };
 
   return (
@@ -137,7 +141,7 @@ const Goal = (props) => {
       <ResultsInfo>
         <h1>Woho! {username} you made it!</h1>
         <p>You reached the goal by answering {answers.length} questions!</p>
-        <p>And in {formatted} time!</p>
+        <p>And in {formatted}! Good job!</p>
       </ResultsInfo>
       <Button onClick={onButtonSubmit}>Go back to profile</Button>
     </GoalBoard>

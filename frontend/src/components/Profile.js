@@ -5,6 +5,7 @@ import member from "../reducers/member";
 import styled from "styled-components";
 import Rules from "./Rules";
 import { DLToggle, GP, Button } from "./Themes";
+import riddel from "../pictures/theriddle.jpeg";
 
 const ProfileMain = styled.section`
   display: flex;
@@ -101,9 +102,13 @@ const ProfileBox = styled.div`
 
 const AvatarPic = styled.div`
   margin-top: 20px;
-  padding: 20px;
-  background: grey;
+  padding: 40px;
   border-radius: 50%;
+  background-image: url(${riddel});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
 `;
 
 const Profile = (props) => {
