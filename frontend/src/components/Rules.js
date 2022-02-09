@@ -23,7 +23,9 @@ const RulesBox = styled.article`
   border: 1px solid #999;
   overflow: auto;
   font-size: 20px;
+  color: black;
 
+  h4,
   p {
     color: black;
   }
@@ -55,7 +57,7 @@ const Rules = (props) => {
       <RulesBox>
         <CloseIcon onClick={props.handleClose}>x</CloseIcon>
         <h2>Welcome to Quiztep!</h2>
-        <p>Let's go over the basics and rules of this game.</p>
+        <h4>Let's go over the basics and rules of this game.</h4>
         <ul>
           <li>
             The goal of this quiz is to reach the goal within six minutes.{" "}
@@ -76,7 +78,7 @@ const Rules = (props) => {
           <li>You lose 1 question for easy, 2 for medium and 4 for hard.</li>
           <li>
             Don't worry, you will both have a timer, a progress bar and
-            questions left when you take the quiz.{" "}
+            questions left when you take the quiz.
           </li>
         </ul>
         <p>

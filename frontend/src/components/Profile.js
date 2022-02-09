@@ -12,6 +12,14 @@ const ProfileMain = styled.section`
   justify-content: center;
 `;
 
+const HeaderBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-right: 3px;
+  margin-left: 3px;
+  margin-bottom: 50px;
+`;
+
 const InfoBox = styled.aside`
   display: flex;
   flex-direction: column;
@@ -38,14 +46,13 @@ const InfoBox = styled.aside`
 
     :hover {
       cursor: pointer;
-      box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.8);
+      box-shadow: ${(props) => props.theme.buttonShadow};
       transition: 0.1s;
     }
 
     @media (max-width: 700px) {
       font-size: 12px;
       margin: 5px;
-      width: 50px;
       padding: 5px;
     }
   }
@@ -84,7 +91,7 @@ const ProfileBox = styled.div`
 
     :hover {
       cursor: pointer;
-      box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.8);
+      box-shadow: ${(props) => props.theme.buttonShadow};
       transition: 0.1s;
     }
 
@@ -94,6 +101,9 @@ const ProfileBox = styled.div`
   }
 
   @media (max-width: 700px) {
+    width: 80vw;
+    text-align: center;
+
     h1 {
       font-size: 20px;
     }
@@ -144,13 +154,15 @@ const Profile = (props) => {
 
   return (
     <GP>
-      <InfoBox>
+      <HeaderBox>
         <Button onClick={logout}>Sign out!</Button>
         <DLToggle>
           <input type="checkbox" onClick={changeTheme} />
           <span></span>
           <p>Dark/light</p>
         </DLToggle>
+      </HeaderBox>
+      <InfoBox>
         <Button onClick={toggleRules}>RULES</Button>
         {rules && <Rules handleClose={toggleRules} />}
         <Link to="/scoreboard">Scoreboard</Link>

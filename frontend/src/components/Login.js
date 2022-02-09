@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
 import Rules from "./Rules";
+import styled from "styled-components";
 import {
   Background,
   LoginBox,
@@ -13,6 +14,10 @@ import {
   RulesInfo,
   DLToggle,
 } from "./Themes";
+
+const DlBut = styled.div`
+  align-self: flex-end;
+`;
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -80,11 +85,13 @@ const Login = (props) => {
 
   return (
     <Background>
-      <DLToggle>
-        <input type="checkbox" onClick={changeTheme} />
-        <span></span>
-        <p>Dark/light</p>
-      </DLToggle>
+      <DlBut>
+        <DLToggle>
+          <input type="checkbox" onClick={changeTheme} />
+          <span></span>
+          <p>Dark/light</p>
+        </DLToggle>
+      </DlBut>
       <h1>Welcome to QuizTime!</h1>
       <h4>Please log in to start the game.</h4>
       <LoginBox>

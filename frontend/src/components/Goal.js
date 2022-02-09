@@ -22,8 +22,8 @@ const GoalBoard = styled.main`
     color: ${(props) => props.theme.titleColor};
     text-decoration: none;
     background: ${(props) => props.theme.buttonBg};
-    font-size: 1em;
-    margin: 1em;
+    font-size: 16px;
+    margin: 10px;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -55,16 +55,27 @@ const ResultsInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${(props) => props.theme.infoBg};
-  width: 500px;
+  background: ${(props) => props.theme.profileBackground};
+  width: 550px;
   border-radius: 6px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 5px;
+
+  @media (max-width: 900px) {
+    width: 65vw;
+
+    h3 {
+      font-size: 20px;
+    }
+  }
 `;
 
 const Goal = (props) => {
   const answers = useSelector((store) => store.questions.answers);
   const accessToken = useSelector((store) => store.member.accessToken);
   const username = useSelector((store) => store.member.username);
-  //const time = useSelector((store) => store.questions.time);
   const startTime = useSelector((store) => store.questions.start);
   const finishTime = useSelector((store) => store.questions.finish);
 
@@ -141,7 +152,8 @@ const Goal = (props) => {
       <ResultsInfo>
         <h1>Woho! {username} you made it!</h1>
         <p>You reached the goal by answering {answers.length} questions!</p>
-        <p>And in {formatted}! Good job!</p>
+        <p>And in {formatted}.</p>
+        <h3>Good job!</h3>
       </ResultsInfo>
       <Button onClick={onButtonSubmit}>Go back to profile</Button>
     </GoalBoard>

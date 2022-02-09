@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { API_URL } from "../utils/constants";
-import { DLToggle } from "./Themes";
+import { DLToggle, HeaderBox } from "./Themes";
 
 const ScoreBoard = styled.main`
   background-image: ${(props) => props.theme.scoreBoardBg};
@@ -28,7 +28,13 @@ const ScoreBoard = styled.main`
     font-family: "Inter", sans-serif;
     text-align: center;
     width: 150px;
-    align-self: flex-start;
+    //align-self: flex-start;
+
+    :hover {
+      cursor: pointer;
+      box-shadow: ${(props) => props.theme.buttonShadow};
+      transition: 0.1s;
+    }
   }
 
   h1 {
@@ -43,8 +49,8 @@ const ScoreBoard = styled.main`
     a {
       padding: 5px;
       font-size: 12px;
-      width: 90px;
-      margin: 5px;
+      width: 80px;
+      margin-left: 20px;
     }
   }
 `;
@@ -118,12 +124,14 @@ const Scoreboard = (props) => {
 
   return (
     <ScoreBoard>
-      <Link to="/profile">Go back to profile</Link>
-      <DLToggle>
-        <input type="checkbox" onClick={changeTheme} />
-        <span></span>
-        <p>Dark/light</p>
-      </DLToggle>
+      <HeaderBox>
+        <Link to="/profile">Go back to profile</Link>
+        <DLToggle>
+          <input type="checkbox" onClick={changeTheme} />
+          <span></span>
+          <p>Dark/light</p>
+        </DLToggle>
+      </HeaderBox>
 
       <ResultsList>
         <h1>Scoreboard</h1>

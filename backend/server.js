@@ -190,27 +190,6 @@ app.post("/results", async (req, res) => {
   }
 });
 
-// app.post("/profile/:id", async (req, res) => {
-//   const { id } = req.params;
-//   const { username } = req.params;
-
-//   try {
-//     const updatedMember = await Member.findByIdAndUpdate(
-//       { _id: id },
-//       { username },
-//       { new: true }
-//     );
-
-//     if (updatedUser) {
-//       res.status(200).json({ response: updatedMember, success: true });
-//     } else {
-//       res.status(404).json({ response: "Member not found", success: false });
-//     }
-//   } catch (error) {
-//     res.status(400).json({ response: error, success: false });
-//   }
-// });
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);

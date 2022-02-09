@@ -25,6 +25,7 @@ export const LightTheme = {
   progressBarValue: "rgba(0, 255, 0, 0.5)",
   progressShadow: "1px 1px 5px 3px rgba(255, 0, 255, 0.3)",
   infoBg: "rgba(255, 255, 255, 0.6)",
+  buttonShadow: "2px 5px 3px rgba(0, 0, 0, 0.8)",
 };
 
 export const DarkTheme = {
@@ -44,6 +45,7 @@ export const DarkTheme = {
   progressBarValue: "rgba(255,0,255,0.6)",
   progressShadow: "1px 1px 5px 3px rgba(0,255,0,0.3)",
   infoBg: "rgba(10, 10, 10, 0.6)",
+  buttonShadow: "2px 5px 3px rgba(255, 255, 255, 0.8)",
 };
 
 export const Background = styled.div`
@@ -123,8 +125,8 @@ export const InputStyle = styled.input`
 export const StartButton = styled.button`
   color: ${(props) => props.theme.titleColor};
   background: ${(props) => props.theme.buttonBg};
-  font-size: 1em;
-  margin: 1em;
+  font-size: 20px;
+  margin: 15px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -132,7 +134,8 @@ export const StartButton = styled.button`
 
   :hover {
     cursor: pointer;
-    //color: white;
+    box-shadow: ${(props) => props.theme.buttonShadow};
+    transition: 0.1s;
   }
 
   @media (max-width: 700px) {
@@ -156,7 +159,7 @@ export const Button = styled.button`
 
   :hover {
     cursor: pointer;
-    box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.8);
+    box-shadow: ${(props) => props.theme.buttonShadow};
     transition: 0.1s;
   }
 
@@ -175,7 +178,7 @@ export const RulesInfo = styled.div`
   align-items: center;
 
   p {
-    color: ${(props) => props.theme.titleColor};
+    color: white;
   }
 
   input {
@@ -235,15 +238,19 @@ export const DLToggle = styled.label`
   color: ${(props) => props.theme.titleColor};
   align-self: flex-start;
   margin: 15px 20px;
+  font-family: "Inter", sans-serif;
+  
 
-  p {
+  /* p {
     padding: 7px 0;
-  }
+    font-family: "Inter" sans-serif;
+  } */
 
   @media (max-width: 700px) {
     width: 40px;
     height: 20px;
-    margin: 5px;
+    margin: 10px 5px 5px 5px;
+
   }
 
   input {
@@ -306,14 +313,26 @@ export const DLToggle = styled.label`
   }
 
   p {
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px 0;
 
     @media (max-width: 700px) {
-      font-size: 10px;
-      margin: 0;
+      font-size: 12px;
+      margin: 5px 0;
+      padding: 5px 0;
     }
   }
   }
+`;
+
+export const HeaderBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  width: 100vw;
 `;
 
 export const GP = styled.main`

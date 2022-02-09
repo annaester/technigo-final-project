@@ -28,6 +28,7 @@ const GameBoard = styled.main`
 
   h1 {
     color: ${(props) => props.theme.titleColor};
+    font-size: 45px;
   }
 
   @media (max-width: 700px) {
@@ -39,11 +40,14 @@ const GameBoard = styled.main`
 
 const MenuBox = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 120px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 30px;
+  //width: 120px;
 
   @media (max-width: 700px) {
-    width: 100px;
+    margin-right: 5px;
+    //align-items: center;
   }
 `;
 
@@ -162,9 +166,9 @@ const Game = (props) => {
       <GameBoard>
         <StartBox>
           <Button onClick={exitGame}>Exit game</Button>
-          <h1>QuizTime</h1>
-          <TimeAndQ>{start === true && <Timer />}</TimeAndQ>
 
+          <TimeAndQ>{start === true && <Timer />}</TimeAndQ>
+          <h1>QuizTime</h1>
           {!start && (
             <StartButton
               onClick={() => {
@@ -180,7 +184,7 @@ const Game = (props) => {
         {start === true && (
           <>
             <GameCard>
-              <div>
+              <ButtonBox>
                 <FetchBtn
                   onClick={() => {
                     chooseLevel("questions?level=1");
@@ -208,7 +212,7 @@ const Game = (props) => {
                 >
                   Hard Questions
                 </FetchBtn>
-              </div>
+              </ButtonBox>
               {showQues && (
                 <div>
                   <QuestionB>{ques.question}</QuestionB>

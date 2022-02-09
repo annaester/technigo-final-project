@@ -117,7 +117,9 @@ const Register = (props) => {
         </Link>
       </LoginBox>
       <RulesInfo>
-        <p>Wanna know what this is all about..?</p>
+        <p>
+          <b>Wanna know what this is all about..?</b>
+        </p>
         <input type="button" value="RULES" onClick={toggleRules} />
         {rules && <Rules handleClose={toggleRules} />}
       </RulesInfo>
