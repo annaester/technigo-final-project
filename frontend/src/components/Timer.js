@@ -25,7 +25,6 @@ const TimerDiv = styled.div`
 
 const Timer = () => {
   const counter = useSelector((store) => store.questions.time);
-
   const [count, setCount] = useState(counter);
   const questionsLeft = useSelector(
     (store) => store.questions.amountOfQuestions
@@ -34,8 +33,6 @@ const Timer = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  //const setCounter = dispatch(questions.actions.setCounter());
 
   const minutes = Math.floor(count / 60);
   var seconds = count % 60;
@@ -55,13 +52,13 @@ const Timer = () => {
       dispatch(questions.actions.gameOver());
       navigate("/profile");
     }
-  }, [count]);
+  }, [count, dispatch, navigate]);
 
   useEffect(() => {
     if (steps === 20) {
       dispatch(questions.actions.setTime(formatted));
     }
-  }, [steps]);
+  }, [steps, dispatch, formatted]);
 
   return (
     <div>
