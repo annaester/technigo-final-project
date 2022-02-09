@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
 import Rules from "./Rules";
-import styled from "styled-components";
 import {
   Background,
   LoginBox,
