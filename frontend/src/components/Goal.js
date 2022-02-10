@@ -113,8 +113,6 @@ const Goal = (props) => {
   };
 
   const onButtonSubmit = (event) => {
-    //console.log(username, answers.length, formatted);
-
     event.preventDefault();
 
     const options = {

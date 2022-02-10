@@ -46,7 +46,6 @@ const Register = (props) => {
       body: JSON.stringify({ username, password }),
     };
 
-    //flytta fetch till reducer - members
     fetch(API_URL("register"), options)
       .then((res) => res.json())
       .then((data) => {

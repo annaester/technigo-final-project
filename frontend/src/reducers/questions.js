@@ -6,8 +6,6 @@ const initialState = {
   amountOfQuestions: 24,
   answers: [],
   steps: 0,
-  quizOver: false,
-  quizStart: true,
   time: 120,
   timeSpent: "0",
   start: 0,
