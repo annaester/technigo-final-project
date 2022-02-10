@@ -21,14 +21,13 @@ const ScoreBoard = styled.main`
     text-decoration: none;
     background: ${(props) => props.theme.buttonBg};
     font-size: 1em;
-    margin: 10px 0;
+    margin: 10px 10px;
     padding: 10px;
     border: none;
     border-radius: 5px;
     font-family: "Inter", sans-serif;
     text-align: center;
     width: 150px;
-    //align-self: flex-start;
 
     :hover {
       cursor: pointer;

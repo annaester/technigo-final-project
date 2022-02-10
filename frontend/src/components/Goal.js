@@ -95,12 +95,7 @@ const Goal = (props) => {
     ":" +
     seconds.toString().padStart(2, "0");
 
-  // console.log(formatted);
-
-  // console.log(time, startTime, finishTime);
-
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   useEffect(() => {

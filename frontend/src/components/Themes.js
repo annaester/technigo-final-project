@@ -13,10 +13,8 @@ export const LightTheme = {
   backgroundImageGame: `url(${img4})`,
   formBackground: "rgba(251, 108, 108, 0.8)",
   profileBackground: "rgba(81, 218, 198, 0.7)",
-  //profileBackground: "rgba(255, 249, 168, 0.7)",
   dlBtnBackground: "rgba(251, 108, 108, 0.8)",
   buttonBg: "rgba(255, 255, 255, 0.8)",
-  //buttonBg: "rgba(253, 167, 42, 0.7)",
   fetchButton: "rgba(248, 169, 169, 0.8)",
   answerButton: "rgba(248, 245, 169, 0.8)",
   questionBox: "rgba(243, 233, 238, 0.8)",
@@ -145,7 +143,6 @@ export const StartButton = styled.button`
     margin: 5px;
     padding: 10px;
     width: auto;
-    /* align-self: end; */
   }
 `;
 
@@ -170,7 +167,6 @@ export const Button = styled.button`
     margin: 15px 5px 5px 5px;
     padding: 4px;
     width: 70px;
-    /* align-self: end; */
   }
 `;
 
@@ -208,30 +204,6 @@ export const RulesInfo = styled.div`
   }
 `;
 
-// export const DLBtn = styled.button`
-//   color: ${(props) => props.theme.titleColor};
-//   background: ${(props) => props.theme.dlBtnBackground};
-//   font-size: 1em;
-//   width: 100px;
-//   margin: 1em;
-//   padding: 10px;
-//   border: none;
-//   border-radius: 5px;
-//   font-family: Inter;
-
-//   :hover {
-//     cursor: pointer;
-//   }
-
-//   @media (max-width: 700px) {
-//     font-size: 12px;
-//     padding: 5px;
-//     text-align: center;
-//     margin: 5px;
-//     width: 70px;
-//   }
-// `;
-
 export const DLToggle = styled.label`
   position: relative;
   display: inline-block;
@@ -241,12 +213,7 @@ export const DLToggle = styled.label`
   align-self: flex-start;
   margin: 15px 20px;
   font-family: "Inter", sans-serif;
-  
 
-  /* p {
-    padding: 7px 0;
-    margin: 0 0 0 5px;
-  } */
 
   @media (max-width: 700px) {
     width: 40px;
@@ -325,8 +292,6 @@ export const DLToggle = styled.label`
       text-align: center;
       margin-right: -10px;
       padding-top: 2px;
-      //padding-right: 20px;
-      /* padding: 5px 0; */
     }
   }
   }

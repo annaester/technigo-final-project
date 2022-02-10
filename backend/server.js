@@ -91,24 +91,6 @@ app.get("/", (req, res) => {
   res.send(listEndpoints(app));
 });
 
-app.get("/questions", authenticateMember);
-app.get("/questions", async (req, res) => {
-  const { level } = req.query;
-
-  try {
-    let question = await Question.find(req.query);
-
-    if (req.query.level) {
-      const questionsByLevel = await Question.find({ level });
-      question = questionsByLevel;
-    }
-
-    res.status(200).json(question);
-  } catch (err) {
-    res.status(400).json({ response: "No questions found", success: false });
-  }
-});
-
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
 
@@ -156,6 +138,24 @@ app.post("/login", async (req, res) => {
     }
   } catch (error) {
     res.status(400).json({ response: error, success: false });
+  }
+});
+
+app.get("/questions", authenticateMember);
+app.get("/questions", async (req, res) => {
+  const { level } = req.query;
+
+  try {
+    let question = await Question.find(req.query);
+
+    if (req.query.level) {
+      const questionsByLevel = await Question.find({ level });
+      question = questionsByLevel;
+    }
+
+    res.status(200).json(question);
+  } catch (err) {
+    res.status(400).json({ response: "No questions found", success: false });
   }
 });
 

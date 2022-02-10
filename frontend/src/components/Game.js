@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
 import member from "../reducers/member";
 import { questions } from "../reducers/questions";
 import { fetchQuestions } from "../reducers/questions";
-
 import Timer from "./Timer";
 import Stepper from "./Stepper";
-
 import styled from "styled-components";
 import {
   GP,
@@ -233,7 +230,6 @@ const Game = (props) => {
       <StepperBox>
         <Stepper />
       </StepperBox>
-      {/* <Stepper /> */}
     </GP>
   );
 };

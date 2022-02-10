@@ -15,13 +15,6 @@ import {
   DlBut,
 } from "./Themes";
 
-// const DlBut = styled.div`
-//   align-self: flex-end;
-//   width: 100px;
-//   margin-right: 20px;
-//   text-align: center;
-// `;
-
 const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -123,7 +116,6 @@ const Login = (props) => {
           <i>Not member yet? </i>
           <b>Register here</b>
         </Link>
-        {/* <Timer /> */}
       </LoginBox>
       <RulesInfo>
         <p>
