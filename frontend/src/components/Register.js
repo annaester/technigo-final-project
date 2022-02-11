@@ -91,7 +91,12 @@ const Register = (props) => {
         </DLToggle>
       </DlBut>
       <h1>Welcome!</h1>
+
       <h4>Please register to get access to the game.</h4>
+      <p>
+        You need to have a uniqe unsername and a password with at least 5
+        character.
+      </p>
       <LoginBox>
         <FormBox onSubmit={onFormSubmit}>
           <label htmlFor="username">Username:</label>

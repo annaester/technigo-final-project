@@ -59,8 +59,10 @@ export const Background = styled.div`
   align-items: center;
   font-family: "Inter", sans-serif;
 
-  h1, h4 {
+  h1, h4, p {
     color: ${(props) => props.theme.titleColor};
+    width: 500px;
+    text-align: center;
     }
 
     @media (max-width: 700px) {
@@ -72,6 +74,10 @@ export const Background = styled.div`
       h4 {
         font-size: 14px;
         margin: 10px;
+      }
+
+      p {
+        width: 250px;
       }
     }
   }

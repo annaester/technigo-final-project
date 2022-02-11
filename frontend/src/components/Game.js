@@ -184,7 +184,9 @@ const Game = (props) => {
                   onClick={() => {
                     chooseLevel("questions?level=1");
                     dispatch(questions.actions.setAmountOfQuestions1());
-                    setShowQues(true);
+                    setTimeout(() => {
+                      setShowQues(true);
+                    }, 500);
                   }}
                 >
                   Easy Questions
@@ -193,7 +195,9 @@ const Game = (props) => {
                   onClick={() => {
                     chooseLevel("questions?level=2");
                     dispatch(questions.actions.setAmountOfQuestions2());
-                    setShowQues(true);
+                    setTimeout(() => {
+                      setShowQues(true);
+                    }, 500);
                   }}
                 >
                   Middle Questions
@@ -202,7 +206,9 @@ const Game = (props) => {
                   onClick={() => {
                     chooseLevel("questions?level=4");
                     dispatch(questions.actions.setAmountOfQuestions4());
-                    setShowQues(true);
+                    setTimeout(() => {
+                      setShowQues(true);
+                    }, 500);
                   }}
                 >
                   Hard Questions

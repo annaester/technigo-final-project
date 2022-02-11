@@ -89,6 +89,12 @@ const Login = (props) => {
         </DLToggle>
       </DlBut>
       <h1>Welcome to QuizTime!</h1>
+      <p>
+        This is a place where you will get to test your general knowledge. Log
+        in to access the quiz and if you reach the finish line you might end up
+        on the coveted scorboard. Read more about the game by clicking on the
+        "Rules" button below.
+      </p>
       <h4>Please log in to start the game.</h4>
       <LoginBox>
         <FormBox onSubmit={onFormSubmit}>
