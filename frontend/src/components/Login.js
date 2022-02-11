@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
 import Rules from "./Rules";
+import PopUp from "./PopUp";
 import {
   Background,
   LoginBox,
@@ -19,6 +20,7 @@ const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rules, setRules] = useState(false);
+  const [popup, setPopup] = useState(false);
 
   const accessToken = useSelector((store) => store.member.accessToken);
 
@@ -27,6 +29,10 @@ const Login = (props) => {
 
   const toggleRules = () => {
     setRules(!rules);
+  };
+
+  const togglePopup = () => {
+    setPopup(!popup);
   };
 
   useEffect(() => {
@@ -62,7 +68,7 @@ const Login = (props) => {
             dispatch(member.actions.setUsername(null));
             dispatch(member.actions.setAccessToken(null));
             dispatch(member.actions.setError(data.response));
-            alert("Invalid login, try again!");
+            setPopup(true);
           });
         }
       });
@@ -130,6 +136,12 @@ const Login = (props) => {
         <input type="button" value="RULES" onClick={toggleRules} />
         {rules && <Rules handleClose={toggleRules} />}
       </RulesInfo>
+      {popup && (
+        <PopUp
+          handleClose={togglePopup}
+          text="Sorry, thats an invalid login. Try again!"
+        />
+      )}
     </Background>
   );
 };

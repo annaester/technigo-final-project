@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
 import member from "../reducers/member";
 import Rules from "./Rules";
+import PopUp from "./PopUp";
 import {
   Background,
   LoginBox,
@@ -19,6 +20,8 @@ const Register = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rules, setRules] = useState(false);
+  const [popup, setPopup] = useState(false);
+  const [popup2, setPopup2] = useState(false);
 
   const accessToken = useSelector((store) => store.member.accessToken);
 
@@ -27,6 +30,15 @@ const Register = (props) => {
 
   const toggleRules = () => {
     setRules(!rules);
+  };
+
+  const togglePopup = () => {
+    setPopup(!popup);
+    navigate("/");
+  };
+
+  const togglePopup2 = () => {
+    setPopup2(!popup2);
   };
 
   useEffect(() => {
@@ -55,8 +67,7 @@ const Register = (props) => {
             dispatch(member.actions.setUsername(data.response.username));
             dispatch(member.actions.setAccessToken(data.response.accessToken));
             dispatch(member.actions.setError(null));
-            alert("Great! Now you just need to login!");
-            navigate("/");
+            setPopup(true);
           });
         } else {
           batch(() => {
@@ -64,7 +75,7 @@ const Register = (props) => {
             dispatch(member.actions.setUsername(null));
             dispatch(member.actions.setAccessToken(null));
             dispatch(member.actions.setError(data.response));
-            alert("Username already taken or password too short!");
+            setPopup2(true);
           });
         }
       });
@@ -130,6 +141,15 @@ const Register = (props) => {
         <input type="button" value="RULES" onClick={toggleRules} />
         {rules && <Rules handleClose={toggleRules} />}
       </RulesInfo>
+      {popup && (
+        <PopUp handleClose={togglePopup} text="Great! Now you can login!" />
+      )}
+      {popup2 && (
+        <PopUp
+          handleClose={togglePopup2}
+          text="Username already taken or password too short!"
+        />
+      )}
     </Background>
   );
 };
