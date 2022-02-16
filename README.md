@@ -15,3 +15,5 @@ This is a quizbased game where the goal is to get to the goal in the least amnou
 7.  When the game is over you get the scoreboard with your progress
 
 This was created under four weeks in half-time pace as a final project
+
+https://quiztep.netlify.app/
