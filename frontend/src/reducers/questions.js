@@ -86,7 +86,6 @@ export const fetchQuestions = (level, accessToken) => {
           json[i] = json[j];
           json[j] = temp;
         }
-        //const randomQ = Math.floor(Math.random() * json.length);
         dispatch(questions.actions.setQuestionList(json[j]));
       });
   };
