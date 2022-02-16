@@ -31,7 +31,7 @@ const RulesBox = styled.article`
 
   @media (max-width: 700px) {
     font-size: 12px;
-    width: 50%;
+    width: 70%;
     align-self: center;
 
     h5 {
@@ -57,16 +57,11 @@ const CloseIcon = styled.span`
 
   @media (max-width: 700px) {
     top: calc(100vh - 85vh - 30px);
-    right: calc(20%);
+    right: calc(15%-9px);
     width: 15px;
     height: 15px;
     font-size: 15px;
-    text-align: center;
     line-height: 11px;
-  }
-
-  @media (max-width: 400px) {
-    right: calc(15%);
   }
 `;
 

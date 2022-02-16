@@ -54,7 +54,7 @@ const CloseIcon = styled.span`
   font-size: 20px;
 
   @media (max-width: 700px) {
-    right: calc(15%-9x);
+    right: calc(15%-9px);
     top: calc(100vh - 85vh - 30px);
     width: 15px;
     height: 15px;
