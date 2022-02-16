@@ -66,14 +66,17 @@ export const Background = styled.div`
     }
 
     @media (max-width: 700px) {
+
       h1 {
         font-size: 20px;
         margin: 10px;
+        width: 250px;
       }
 
       h4 {
         font-size: 14px;
         margin: 10px;
+        width: 250px;
       }
 
       p {
@@ -298,6 +301,7 @@ export const DLToggle = styled.label`
       text-align: center;
       margin: 7px 15px 0 -25px;
       padding-top: 2px;
+      padding-right: 0;
       width: 80px;
     }
   }
