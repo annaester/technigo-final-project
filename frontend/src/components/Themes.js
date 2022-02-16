@@ -225,7 +225,6 @@ export const DLToggle = styled.label`
     width: 40px;
     height: 20px;
     margin: 10px 5px 5px 5px;
-
   }
 
   input {
@@ -292,12 +291,14 @@ export const DLToggle = styled.label`
     margin: 7px 15px 0 -10px;
     padding-top: 10px;
     padding-right: 20px;
+    width: 100px;
 
     @media (max-width: 700px) {
       font-size: 12px;
       text-align: center;
-      margin-right: -10px;
+      margin: 7px 15px 0 -25px;
       padding-top: 2px;
+      width: 80px;
     }
   }
   }
@@ -308,6 +309,9 @@ export const DlBut = styled.div`
   width: 100px;
   margin-right: 20px;
   text-align: center;
+
+  @media (max-width: 700px) {
+  }
 `;
 
 export const HeaderBox = styled.div`

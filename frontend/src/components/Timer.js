@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { questions } from "../reducers/questions";
+import PopUp from "./PopUp";
 
 const TimerDiv = styled.div`
   color: ${(props) => props.theme.titleColor};
@@ -10,6 +11,7 @@ const TimerDiv = styled.div`
   background: ${(props) => props.theme.infoBg};
   padding: 10px;
   border-radius: 6px;
+  margin-left: 10vw;
 
   span {
     color: #f32163;
@@ -21,6 +23,7 @@ const TimerDiv = styled.div`
     background: rgba(249, 249, 249, 0.8);
     padding: 5px;
     border-radius: 6px;
+    margin-left: 2vw;
 
     p {
       margin: 2px;
@@ -28,9 +31,10 @@ const TimerDiv = styled.div`
   }
 `;
 
-const Timer = () => {
+const Timer = (props) => {
   const counter = useSelector((store) => store.questions.time);
   const [count, setCount] = useState(counter);
+  const [popup, setPopup] = useState(false);
   const questionsLeft = useSelector(
     (store) => store.questions.amountOfQuestions
   );
@@ -53,17 +57,22 @@ const Timer = () => {
 
   useEffect(() => {
     if (count === 0) {
-      alert("Sorry, times up!");
-      dispatch(questions.actions.gameOver());
-      navigate("/profile");
+      setPopup(true);
     }
-  }, [count, dispatch, navigate]);
+  }, [count]);
 
   useEffect(() => {
     if (steps === 20) {
       dispatch(questions.actions.setTime(formatted));
     }
   }, [steps, dispatch, formatted]);
+
+  const togglePopup = () => {
+    console.log("click");
+    setPopup(!popup);
+    dispatch(questions.actions.gameOver());
+    navigate("/profile");
+  };
 
   return (
     <div>
@@ -78,6 +87,7 @@ const Timer = () => {
           You have gone <span>{steps}</span>/20 steps
         </p>
       </TimerDiv>
+      {popup && <PopUp handleClose={togglePopup} text="Sorry, times up!" />}
     </div>
   );
 };

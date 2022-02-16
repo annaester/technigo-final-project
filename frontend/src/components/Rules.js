@@ -52,6 +52,15 @@ const CloseIcon = styled.span`
   text-align: center;
   border: 1px solid #999;
   font-size: 20px;
+
+  @media (max-width: 700px) {
+    right: calc(15%-9x);
+    top: calc(100vh - 85vh - 30px);
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    line-height: 12px;
+  }
 `;
 
 const Rules = (props) => {

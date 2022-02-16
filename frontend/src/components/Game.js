@@ -7,6 +7,7 @@ import { fetchQuestions } from "../reducers/questions";
 import Timer from "./Timer";
 import Stepper from "./Stepper";
 import styled from "styled-components";
+import PopUp from "./PopUp";
 import {
   GP,
   DLToggle,
@@ -49,6 +50,7 @@ const MenuBox = styled.div`
 const TimeAndQ = styled.div`
   display: flex;
   width: 80vw;
+
   justify-content: space-between;
   color: ${(props) => props.theme.titleColor};
   font-size: 20px;
@@ -72,15 +74,22 @@ const StepperBox = styled.div`
   bottom: 50%;
   right: -300px;
   align-self: end;
+
+  @media (max-width: 900px) {
+    right: -420px;
+  }
 `;
 
 const StartBox = styled.div`
   text-align: center;
+  width: 100vw;
 `;
 
 const Game = (props) => {
   const [start, setStart] = useState(false);
   const [showQues, setShowQues] = useState(false);
+  const [popup, setPopup] = useState(false);
+  const [popupGoal, setPopupGoal] = useState(false);
 
   const accessToken = useSelector((store) => store.member.accessToken);
   const ques = useSelector((store) => store.questions.questionList);
@@ -112,6 +121,17 @@ const Game = (props) => {
     dispatch(fetchQuestions(level, accessToken));
   };
 
+  const togglePopup = () => {
+    setPopup(!popup);
+    dispatch(questions.actions.gameOver());
+    navigate("/profile");
+  };
+
+  const togglePopupGoal = () => {
+    setPopupGoal(!popupGoal);
+    navigate("/goal");
+  };
+
   const onAnswerSubmit = (_id, index) => {
     dispatch(
       questions.actions.submitAnswer({
@@ -120,24 +140,19 @@ const Game = (props) => {
       })
     );
     if (questionsLeft === 0) {
-      dispatch(questions.actions.gameOver());
-      navigate("/profile");
-      alert("Sorry, you ran out of questions!");
+      setPopup(true);
     }
     setShowQues(false);
   };
 
   useEffect(() => {
     if (questionsLeft < 0) {
-      alert("Sorry, you ran out of questions!");
-      dispatch(questions.actions.gameOver());
-      navigate("/profile");
+      setPopup(true);
     } else if (stepsGone === 20) {
+      setPopupGoal(true);
       dispatch(questions.actions.setFinish(Date.now()));
-      alert("You made it!");
-      navigate("/goal");
     }
-  });
+  }, [dispatch, questionsLeft, stepsGone]);
 
   const changeTheme = () => {
     if (props.theme === "light") {
@@ -236,6 +251,18 @@ const Game = (props) => {
       <StepperBox>
         <Stepper />
       </StepperBox>
+      {popup && (
+        <PopUp
+          handleClose={togglePopup}
+          text="Sorry, you ran out of questions!"
+        />
+      )}
+      {popupGoal && (
+        <PopUp
+          handleClose={togglePopupGoal}
+          text="Congratulations, you made it!!"
+        />
+      )}
     </GP>
   );
 };

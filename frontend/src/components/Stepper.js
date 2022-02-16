@@ -32,6 +32,7 @@ const StepperBar = styled.div`
 
   @media (max-width: 700px) {
     display: none;
+    padding-top: 20px;
   }
 `;
 
