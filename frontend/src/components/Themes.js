@@ -66,6 +66,7 @@ export const Background = styled.div`
     }
 
     @media (max-width: 700px) {
+      height: 100%;
 
       h1 {
         font-size: 20px;
