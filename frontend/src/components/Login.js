@@ -94,7 +94,7 @@ const Login = (props) => {
           <p>Dark/Light</p>
         </DLToggle>
       </DlBut>
-      <h1>Welcome to QuizTime!</h1>
+      <h1>Welcome to QuiZtep!</h1>
       <p>
         This is a place where you will get to test your general knowledge. Log
         in to access the quiz and if you reach the finish line you might end up
